@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Памятка по уходу за татуировкой от Миши Ру: что делать сегодня, что можно и что нельзя.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<title>Памятка по уходу</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Моя тату">
+<meta name="theme-color" content="#0D0D0C">
+<style>@font-face{font-family:"Inter Tight";font-style:normal;font-weight:400 700;font-display:swap;src:url(../fonts/InterTight-cyrillic-ext.woff2) format("woff2");unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:400 700;font-display:swap;src:url(../fonts/InterTight-cyrillic.woff2) format("woff2");unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:400 700;font-display:swap;src:url(../fonts/InterTight-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:400 700;font-display:swap;src:url(../fonts/InterTight-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Literata";font-style:normal;font-weight:400 500;font-display:swap;src:url(../fonts/Literata-cyrillic-ext.woff2) format("woff2");unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F}
+@font-face{font-family:"Literata";font-style:normal;font-weight:400 500;font-display:swap;src:url(../fonts/Literata-cyrillic.woff2) format("woff2");unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:"Literata";font-style:normal;font-weight:400 500;font-display:swap;src:url(../fonts/Literata-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Literata";font-style:normal;font-weight:400 500;font-display:swap;src:url(../fonts/Literata-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}</style>
+<style>
+/* Цель — понятно клиенту за секунду и дорого на вид. Оформление сайта студии, одна тёмная тема, оранжевый — только у главного.
+   Главный экран: приветствие, большой номер дня, полоса пути «Плёнка → Заживает → Зажила» и одна строка «что дальше».
+   «Можно ли?» и «Нормально?» — плитки по частоте вопросов, нажал — окно по центру. Внизу — отдельная рамка «Написать мастеру».
+   Движение: карточки проявляются по очереди, номер досчитывает, полоса заполняется, окно и раскрытие — плавно. */
+:root {
+  --bg: #0B0B0A;
+  --surface: #161615;
+  --surface-2: #1D1D1B;
+  --ink: #EEEDE9;
+  --muted: #A3A29C;
+  --faint: #6F6E69;
+  --line: rgba(238,237,233,.10);
+  --gold: #F37021;
+  --on-gold: #121211;
+  --ok: #4CC77F;
+  --warn: #F2B544;
+  --stop: #8E8D88;
+  --alarm: #FF6B5E;
+  --edge: rgba(255,255,255,.06);
+  --drop: 0 22px 44px -28px rgba(0,0,0,.9);
+
+  --font: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "Literata", Georgia, "Times New Roman", serif;
+  --ease: cubic-bezier(.2,.7,.1,1);
+  --spring: cubic-bezier(.34,1.32,.64,1);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 16px/1.5 var(--font);
+  -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 14px calc(110px + env(safe-area-inset-bottom, 0px));
+  overflow-x: hidden;
+}
+/* мягкое оранжевое свечение сверху, как на сайте */
+body::after { content: ""; position: fixed; z-index: -1; top: -30vh; right: -40vw; width: 110vw; height: 80vh; pointer-events: none;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--gold) 13%, transparent), transparent); }
+html::after { content: ""; position: fixed; z-index: 55; left: 0; right: 0; bottom: 0; height: calc(130px + env(safe-area-inset-bottom, 0px)); pointer-events: none; background: linear-gradient(to top, var(--bg) 35%, transparent); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 61; background: var(--bg); }
+h1, h2, h3, p, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+button { font: inherit; color: inherit; -webkit-appearance: none; appearance: none; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 10px; }
+main { max-width: 34rem; margin: 0 auto; display: grid; gap: 14px; }
+.view { display: grid; gap: 12px; }
+.eyebrow { font-size: 13px; font-weight: 500; color: var(--gold); letter-spacing: .01em; }
+.sub { font-family: var(--serif); font-size: 15.5px; line-height: 1.45; color: var(--muted); padding: 4px 2px 2px; text-wrap: pretty; }
+.card { position: relative; background: linear-gradient(180deg, var(--surface-2), var(--surface)); border-radius: 26px; box-shadow: inset 0 1px 0 var(--edge), var(--drop); }
+.ic { width: 24px; height: 24px; flex: none; }
+
+/* ---------- верх ---------- */
+.top { display: flex; align-items: center; gap: 12px; padding: 2px 2px 4px; }
+.mono { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; flex: none; font-weight: 600; font-size: 15px; letter-spacing: -.03em;
+  background: linear-gradient(145deg, #2A2A27, #141413); box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 0 1px rgba(255,255,255,.05); color: var(--ink); }
+.top b { display: block; font-weight: 600; font-size: 16.5px; letter-spacing: -.03em; line-height: 1.15; }
+.top span { font-size: 13px; color: var(--muted); }
+
+/* ---------- разделы: прилипают к верху, стекло ---------- */
+.tabs {
+  position: fixed; z-index: 60; bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  left: max(10px, env(safe-area-inset-left, 0px)); right: max(10px, env(safe-area-inset-right, 0px));
+  max-width: calc(34rem + 12px); margin-inline: auto;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 4px; border-radius: 999px;
+  background: color-mix(in srgb, #1B1B19 78%, transparent); -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
+  box-shadow: inset 0 1px 0 var(--edge), 0 0 0 1px rgba(255,255,255,.05), 0 14px 30px -18px rgba(0,0,0,.9);
+}
+.tab { position: relative; z-index: 1; height: 44px; border: 0; border-radius: 999px; background: none; cursor: pointer; font-size: 15px; font-weight: 600; letter-spacing: -.02em; color: var(--muted); white-space: nowrap; min-width: 0; transition: color .35s var(--ease); }
+.tab[aria-current="page"] { color: var(--on-gold); }
+.ind { position: absolute; z-index: 0; top: 4px; left: 4px; width: calc((100% - 8px) / 3); height: 44px; border-radius: 999px;
+  background: linear-gradient(180deg, #FF8A45, var(--gold)); box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--gold) 70%, transparent), inset 0 1px 0 rgba(255,255,255,.35);
+  transition: transform .6s var(--spring); }
+
+/* ---------- главный экран: карточка дня ---------- */
+.hero { overflow: hidden; isolation: isolate; padding: 22px 20px 20px; display: grid; gap: 18px;
+  background: radial-gradient(120% 80% at 100% 0%, rgba(243,112,33,.16), transparent 55%), linear-gradient(180deg, #1E1E1C, #141413); }
+.hero::before { content: ""; position: absolute; z-index: -1; width: 70%; aspect-ratio: 1; right: -20%; top: -35%; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(243,112,33,.28), transparent); filter: blur(10px); }
+@media (prefers-reduced-motion: no-preference) { .hero::before { animation: drift 14s ease-in-out infinite alternate; } }
+@keyframes drift { to { transform: translate(-18%, 22%) scale(1.15); } }
+.hello { display: grid; gap: 4px; }
+.hello h2 { font-size: 24px; font-weight: 600; letter-spacing: -.035em; line-height: 1.1; }
+.meta { font-size: 14.5px; color: var(--muted); display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 6px; }
+.meta .sep { color: var(--faint); }
+.linkish { background: none; border: 0; padding: 4px 0; color: var(--gold); font-weight: 500; font-size: 14.5px; cursor: pointer; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--gold) 45%, transparent); text-underline-offset: 3px; }
+.day { display: flex; align-items: flex-end; gap: 12px; }
+.day-n { font-weight: 600; font-size: 128px; line-height: .78; letter-spacing: -.065em; margin-left: -.05em; font-variant-numeric: tabular-nums;
+  background: linear-gradient(180deg, #FFB07A 0%, var(--gold) 55%, #C9520F 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.day-w { display: grid; padding-bottom: 6px; }
+.day-w b { font-size: 26px; font-weight: 600; letter-spacing: -.035em; line-height: 1; }
+.day-w span { font-size: 15px; color: var(--muted); margin-top: 6px; }
+/* путь: плёнка → заживает → зажила */
+.path { display: grid; gap: 10px; }
+.track { position: relative; height: 10px; border-radius: 999px; background: rgba(238,237,233,.08); box-shadow: inset 0 1px 2px rgba(0,0,0,.5); }
+.fill { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: linear-gradient(90deg, #C9520F, var(--gold) 70%, #FFA06A); box-shadow: 0 0 16px -2px color-mix(in srgb, var(--gold) 70%, transparent); }
+.tick { position: absolute; top: -3px; bottom: -3px; width: 2px; border-radius: 2px; background: rgba(238,237,233,.22); transform: translateX(-1px); }
+.marker { position: absolute; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: #FFF4EC;
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--gold) 35%, transparent), 0 0 22px 2px color-mix(in srgb, var(--gold) 80%, transparent); }
+@media (prefers-reduced-motion: no-preference) { .marker { animation: beat 2.4s ease-in-out infinite; } }
+@keyframes beat { 50% { box-shadow: 0 0 0 9px color-mix(in srgb, var(--gold) 12%, transparent), 0 0 26px 4px color-mix(in srgb, var(--gold) 70%, transparent); } }
+.labels { position: relative; height: 18px; font-size: 13px; color: var(--muted); }
+.labels span { position: absolute; top: 0; white-space: nowrap; }
+.labels span.on { color: var(--ink); font-weight: 600; }
+.next { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 54px; padding: 8px 14px 8px 8px; border: 0; border-radius: 18px; text-align: left; cursor: default;
+  background: rgba(238,237,233,.06); box-shadow: inset 0 0 0 1px rgba(238,237,233,.08); font-size: 16px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); }
+.next.go { cursor: pointer; text-decoration: none; }
+.next .n-ic { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: rgba(243,112,33,.14); color: var(--gold); flex: none; }
+.next .n-ic svg { width: 20px; height: 20px; }
+.next .arr { margin-left: auto; color: var(--gold); width: 20px; height: 20px; }
+
+/* ---------- вопрос «когда был сеанс?» ---------- */
+.ask h1 { font-size: 40px; font-weight: 600; letter-spacing: -.05em; line-height: .98; text-wrap: balance; }
+.ask .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ask label { display: grid; gap: 8px; }
+.ask input { width: 100%; height: 56px; font: 600 17px var(--font); color: var(--ink); background: rgba(238,237,233,.06); border: 0; box-shadow: inset 0 0 0 1px rgba(238,237,233,.12); border-radius: 18px; padding: 0 16px; }
+.hint { font-family: var(--serif); font-size: 15.5px; line-height: 1.45; color: var(--muted); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 56px; padding: 0 22px; border-radius: 999px; border: 0; cursor: pointer;
+  font-size: 16.5px; font-weight: 600; letter-spacing: -.015em; text-decoration: none; color: var(--ink);
+  background: rgba(238,237,233,.07); box-shadow: inset 0 0 0 1px rgba(238,237,233,.14); transition: transform .2s var(--ease), background .25s;
+}
+.btn:active { transform: scale(.97); }
+.btn.main { background: linear-gradient(180deg, #FF8A45, var(--gold)); color: var(--on-gold); box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 10px 24px -12px color-mix(in srgb, var(--gold) 80%, transparent); }
+
+/* ---------- важный день: бегущая светящаяся рамка ---------- */
+@property --a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+.event { padding: 22px 20px 20px; display: grid; gap: 14px; }
+.event::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none;
+  background: conic-gradient(from var(--a), var(--gold), rgba(243,112,33,.15) 25%, rgba(243,112,33,.15) 60%, #FFB07A 85%, var(--gold));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+@media (prefers-reduced-motion: no-preference) { .event::before { animation: spin 7s linear infinite; } }
+@keyframes spin { to { --a: 360deg; } }
+.event h2 { font-size: 26px; font-weight: 600; letter-spacing: -.04em; line-height: 1.05; text-wrap: balance; }
+.event p { font-family: var(--serif); font-size: 16px; line-height: 1.5; color: var(--muted); }
+.steps { display: grid; counter-reset: s; }
+.steps li { display: flex; align-items: center; gap: 14px; padding: 11px 0; }
+.steps li + li { border-top: 1px solid var(--line); }
+.steps b { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; font-size: 14px; font-weight: 600; color: var(--gold); background: rgba(243,112,33,.14); }
+.steps .st { display: grid; font-size: 16px; font-weight: 600; letter-spacing: -.02em; min-width: 0; }
+.steps small { font-family: var(--serif); font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+
+/* ---------- что делать сейчас: спокойные значки вместо точек ---------- */
+.now { padding: 22px 20px 12px; display: grid; gap: 6px; }
+.now-h { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; margin-bottom: 8px; }
+.now-h h2 { font-size: 26px; font-weight: 600; letter-spacing: -.04em; line-height: 1.05; }
+.chip { flex: none; height: 28px; padding: 0 12px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 13px; font-weight: 500; color: var(--muted); background: rgba(238,237,233,.06); box-shadow: inset 0 0 0 1px rgba(238,237,233,.1); }
+.do li { display: flex; align-items: center; gap: 14px; padding: 10px 0; font-size: 16.5px; line-height: 1.35; font-weight: 500; letter-spacing: -.015em; }
+.do li + li { border-top: 1px solid var(--line); }
+.do .d-ic { width: 40px; height: 40px; border-radius: 13px; display: grid; place-items: center; flex: none; color: var(--ink); background: rgba(238,237,233,.06); box-shadow: inset 0 0 0 1px rgba(238,237,233,.08); }
+.do .d-ic svg { width: 20px; height: 20px; }
+
+/* ---------- как пройдёт заживление: плавное раскрытие, как вопросы на сайте ---------- */
+.acc { padding: 0 20px; }
+.acc-h { display: flex; justify-content: space-between; align-items: center; gap: 16px; width: 100%; min-height: 62px; border: 0; background: none; cursor: pointer; text-align: left; font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
+.plus { position: relative; width: 30px; height: 30px; border-radius: 50%; flex: none; background: rgba(238,237,233,.07); transition: transform .5s var(--spring), background .3s; }
+.plus::before, .plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.8px; margin: -.9px 0 0 -6px; border-radius: 2px; background: var(--ink); }
+.plus::after { transform: rotate(90deg); }
+.acc-h[aria-expanded="true"] .plus { transform: rotate(135deg); background: rgba(243,112,33,.16); }
+.acc-b { overflow: hidden; }
+.tl { position: relative; display: grid; gap: 0; padding: 4px 0 18px 4px; }
+.tl::before { content: ""; position: absolute; left: 11px; top: 14px; bottom: 30px; width: 2px; border-radius: 2px; background: var(--line); }
+.tl li { position: relative; display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 16px; padding: 8px 0; }
+.tl .pt { position: relative; z-index: 1; width: 16px; height: 16px; margin-top: 3px; border-radius: 50%; background: #2A2A27; box-shadow: 0 0 0 4px var(--surface); }
+.tl li.done .pt { background: var(--ink); }
+.tl li.cur .pt { background: var(--gold); box-shadow: 0 0 0 4px var(--surface), 0 0 14px 2px color-mix(in srgb, var(--gold) 70%, transparent); }
+.tl .tl-d { font-size: 13px; color: var(--muted); }
+.tl li.cur .tl-d { color: var(--gold); font-weight: 600; }
+.tl .tl-t { font-weight: 600; font-size: 16.5px; letter-spacing: -.02em; }
+.tl .tl-s { font-family: var(--serif); font-size: 14.5px; color: var(--muted); }
+
+/* ---------- плитки ---------- */
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.tile {
+  position: relative; overflow: hidden; display: grid; align-content: space-between; gap: 18px; min-height: 156px; padding: 16px; text-align: left; cursor: pointer; border: 0; color: var(--ink);
+  border-radius: 26px; background: linear-gradient(160deg, #222220, var(--surface) 60%); box-shadow: inset 0 1px 0 var(--edge), var(--drop);
+  transition: transform .25s var(--ease), box-shadow .25s;
+}
+.tile:active { transform: scale(.965); }
+.tile::after { content: ""; position: absolute; inset: auto -30% -60% auto; width: 90%; aspect-ratio: 1; border-radius: 50%; pointer-events: none; opacity: .5;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--c) 22%, transparent), transparent); }
+.tile.plain { min-height: 128px; }
+.t-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.t-ic { width: 46px; height: 46px; border-radius: 15px; display: grid; place-items: center; color: var(--ink);
+  background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.02)); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
+.t-ic svg { width: 24px; height: 24px; }
+.t-name { font-size: 18px; font-weight: 600; letter-spacing: -.03em; line-height: 1.15; text-wrap: balance; }
+.t-st { display: grid; gap: 2px; }
+.t-st b { font-size: 14.5px; font-weight: 600; letter-spacing: -.01em; color: var(--c); }
+.t-st span { font-size: 13px; color: var(--muted); }
+.t-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; }
+.tile:last-child:nth-child(odd) { grid-column: 1 / -1; min-height: 0; }
+
+/* значок ответа: галочка, восклицательный знак, крестик — не путается с буквой «о» */
+.badge { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; flex: none; color: var(--c); background: color-mix(in srgb, var(--c) 18%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 35%, transparent); }
+.badge svg { width: 15px; height: 15px; }
+.s-yes { --c: var(--ok); } .s-care { --c: var(--warn); } .s-no { --c: var(--stop); } .s-alarm { --c: var(--alarm); }
+.tile.s-no .t-ic { color: var(--muted); }
+
+/* ---------- окно по центру ---------- */
+.mwrap { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center;
+  padding: max(20px, env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) max(20px, env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px)); }
+.mback { position: absolute; inset: 0; background: rgba(5,5,4,.62); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.modal { position: relative; width: min(100%, 26rem); max-height: 100%; overflow: auto; border-radius: 30px; padding: 24px 22px 20px; display: grid; gap: 14px;
+  background: linear-gradient(180deg, #232321, #171716); box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 40px 80px -30px rgba(0,0,0,.95); }
+.m-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.m-top .t-ic { width: 54px; height: 54px; border-radius: 18px; }
+.m-top .t-ic svg { width: 28px; height: 28px; }
+.m-st { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 14px 0 4px; border-radius: 999px; font-size: 14.5px; font-weight: 600; color: var(--c); background: color-mix(in srgb, var(--c) 12%, transparent); }
+.m-st .badge { width: 26px; height: 26px; box-shadow: none; }
+.modal h2 { font-size: 30px; font-weight: 600; letter-spacing: -.045em; line-height: 1.02; text-wrap: balance; }
+.modal p { font-family: var(--serif); font-size: 17px; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+.modal .when { font-family: var(--font); font-size: 15px; font-weight: 600; color: var(--ink); }
+.m-acts { display: grid; gap: 8px; margin-top: 6px; }
+
+/* ---------- внизу: отдельная рамка с одной кнопкой ---------- */
+.write-box {
+  position: fixed; z-index: 60; bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  left: max(10px, env(safe-area-inset-left, 0px)); right: max(10px, env(safe-area-inset-right, 0px));
+  max-width: calc(34rem + 12px); margin-inline: auto; padding: 6px; border-radius: 999px;
+  background: color-mix(in srgb, #1B1B19 80%, transparent); -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
+  box-shadow: inset 0 1px 0 var(--edge), 0 0 0 1px rgba(255,255,255,.05), 0 18px 40px -14px rgba(0,0,0,.8);
+}
+.write {
+  position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 54px; padding: 0 5px 0 22px; border-radius: 999px;
+  background: linear-gradient(180deg, #FF8A45, var(--gold)); color: var(--on-gold); text-decoration: none; font-size: 16.5px; font-weight: 600; letter-spacing: -.015em;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.35); transition: transform .2s var(--ease);
+}
+.write:active { transform: scale(.98); }
+.write small { display: block; font-size: 12.5px; font-weight: 500; opacity: .7; letter-spacing: 0; margin-top: 1px; }
+.write .b-ic { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: #121211; color: var(--gold); }
+.write .b-ic svg { width: 20px; height: 20px; transform: translate(-1px, 1px); }
+/* блик проходит по кнопке раз в несколько секунд */
+.write::after { content: ""; position: absolute; inset: 0; transform: translateX(-120%); pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.45) 50%, transparent 65%); }
+@media (prefers-reduced-motion: no-preference) { .write::after { animation: shine 6s ease-in-out 2s infinite; } }
+@keyframes shine { 0%, 70% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+
+@media (max-width: 370px) {
+  .day-n { font-size: 108px; }
+  .tab { font-size: 14px; }
+  .tile { min-height: 148px; padding: 14px; }
+  .t-name { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ---------- одна полоса: три раздела и выделенная кнопка «Написать» ---------- */
+.dock { position: fixed; z-index: 60; bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  left: max(10px, env(safe-area-inset-left, 0px)); right: max(10px, env(safe-area-inset-right, 0px)); max-width: calc(34rem + 12px); margin-inline: auto;
+  display: flex; align-items: center; gap: 4px; padding: 5px; border-radius: 999px;
+  background: color-mix(in srgb, #1B1B19 80%, transparent); -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
+  box-shadow: inset 0 1px 0 var(--edge), 0 0 0 1px rgba(255,255,255,.05), 0 18px 40px -14px rgba(0,0,0,.8); }
+.dock .tabs { position: relative; inset: auto; bottom: auto; flex: 1 1 auto; min-width: 0; max-width: none; margin: 0; padding: 0; border-radius: 999px; background: none; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.dock .tab { height: 48px; font-size: 14px; padding: 0 2px; }
+.dock .tab[aria-current="page"] { color: var(--ink); }
+.dock .ind { top: 0; left: 0; width: calc(100% / 3); height: 48px; background: rgba(238,237,233,.14); box-shadow: inset 0 0 0 1px rgba(238,237,233,.12); }
+.dock .write { flex: none; height: 48px; gap: 8px; padding: 0 5px 0 16px; font-size: 14.5px; }
+.dock .write small { display: none; }
+.dock .write .b-ic { width: 38px; height: 38px; }
+.dock .write .b-ic svg { width: 17px; height: 17px; }
+@media (max-width: 375px) { .dock .tab { font-size: 12.5px; } .dock .write { padding-left: 12px; font-size: 13.5px; gap: 6px; } }
+.inst { padding: 22px 20px 20px; display: grid; gap: 14px; }
+.inst h2 { font-size: 24px; font-weight: 600; letter-spacing: -.035em; line-height: 1.1; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; padding: 3px; border-radius: 999px; background: rgba(238,237,233,.06); box-shadow: inset 0 0 0 1px rgba(238,237,233,.1); }
+.seg button { height: 38px; border: 0; border-radius: 999px; background: none; font-size: 14.5px; font-weight: 600; color: var(--muted); cursor: pointer; transition: background .3s, color .3s; }
+.seg button[aria-pressed="true"] { background: rgba(238,237,233,.14); color: var(--ink); }
+.pillbtn { margin-left: auto; height: 34px; padding: 0 14px; border-radius: 999px; border: 0; cursor: pointer; font-size: 13.5px; font-weight: 600; color: var(--gold); background: rgba(243,112,33,.12); box-shadow: inset 0 0 0 1px rgba(243,112,33,.3); }
+#imodal .steps li { padding: 9px 0; }
+.save-strip { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 50px; padding: 6px 14px 6px 8px; border: 0; border-radius: 18px; cursor: pointer; text-align: left;
+  font-size: 15.5px; font-weight: 600; letter-spacing: -.015em; color: var(--ink); background: rgba(243,112,33,.11); box-shadow: inset 0 0 0 1px rgba(243,112,33,.32); }
+.save-strip .s-ic { width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center; flex: none; color: var(--gold); background: rgba(243,112,33,.16); }
+.save-strip .s-ic svg { width: 20px; height: 20px; }
+.save-strip .chev { margin-left: auto; width: 18px; height: 18px; color: var(--gold); flex: none; }
+.inst .steps li, #imodal .steps li { align-items: flex-start; }
+.steps .vis { display: flex; align-items: flex-start; gap: 2px; flex-wrap: nowrap; margin-top: 10px; }
+.g { display: grid; justify-items: center; gap: 5px; width: 66px; }
+.g-c { width: 44px; height: 44px; border-radius: 15px; display: grid; place-items: center; background: rgba(238,237,233,.07); box-shadow: inset 0 0 0 1px rgba(238,237,233,.1); color: var(--ink); }
+.g-c svg { width: 24px; height: 24px; }
+.g-c.app { background: linear-gradient(145deg, #2E2E2B, #141413); color: var(--gold); font-size: 14px; font-weight: 600; letter-spacing: -.03em; box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 0 0 1px rgba(243,112,33,.4); }
+.g small { font-family: var(--font); font-size: 11.5px; line-height: 1.2; text-align: center; color: var(--muted); letter-spacing: 0; }
+.g-arr { width: 14px; flex: none; height: 44px; display: grid; place-items: center; color: var(--faint); }
+.g-arr svg { width: 12px; height: 12px; }
+.photos { padding: 22px 20px 20px; display: grid; gap: 14px; }
+.photos h2 { font-size: 24px; font-weight: 600; letter-spacing: -.035em; line-height: 1.1; }
+.ph-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.ph { position: relative; margin: 0; aspect-ratio: 3 / 4; border-radius: 16px; overflow: hidden; background: #222; cursor: pointer; }
+.ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph figcaption { position: absolute; left: 6px; bottom: 6px; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; background: rgba(11,11,10,.7); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.ev-ph { margin: 0; border-radius: 18px; overflow: hidden; position: relative; }
+.ev-ph img { width: 100%; max-height: 300px; object-fit: cover; display: block; }
+.ev-ph figcaption { position: absolute; left: 10px; bottom: 10px; padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; background: rgba(11,11,10,.72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.acc-b .inner { display: grid; gap: 10px; padding-bottom: 16px; }
+.acc-b .card { background: rgba(238,237,233,.045); box-shadow: inset 0 0 0 1px rgba(238,237,233,.07); border-radius: 20px; }
+.do li { font-size: 18.5px !important; line-height: 1.3; }
+.do .d-ic { width: 44px !important; height: 44px !important; }
+.top b { font-size: 26px; letter-spacing: -.045em; }
+.ask select { width: 100%; height: 56px; font: 600 17px var(--font); color: var(--ink); border: 0; border-radius: 18px; padding: 0 44px 0 16px; -webkit-appearance: none; appearance: none; min-width: 0;
+  background: rgba(238,237,233,.06) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A3A29C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center / 20px;
+  box-shadow: inset 0 0 0 1px rgba(238,237,233,.12); }
+.btn:disabled { opacity: .45; cursor: default; }
+@media (max-width: 439px) {
+  .dock { gap: 6px; padding: 6px; }
+  .dock .tab { font-size: 14.5px; padding: 0 4px; }
+  .dock .write { width: 50px; height: 50px; padding: 0; justify-content: center; gap: 0; }
+  .dock .write > span:first-child { display: none; }
+  .dock .write .b-ic { width: 50px; height: 50px; background: transparent; color: var(--on-gold); }
+  .dock .write .b-ic svg { width: 21px; height: 21px; }
+  .dock .tab, .dock .ind { height: 50px; }
+}
+.dock .tabs[hidden] ~ .write { flex: 1 1 auto; width: auto; height: 54px; justify-content: space-between; padding: 0 6px 0 24px; gap: 12px; }
+.dock .tabs[hidden] ~ .write > span:first-child { display: inline; }
+.dock .tabs[hidden] ~ .write .b-ic { width: 42px; height: 42px; background: #121211; color: var(--gold); }
+.mono { object-fit: cover; box-shadow: 0 0 0 1px rgba(255,255,255,.1); }
+.g-c.app { padding: 0; overflow: hidden; background: none; box-shadow: 0 0 0 1px rgba(255,255,255,.14); }
+.g-c.app img { width: 100%; height: 100%; object-fit: cover; display: block; }
+#view-ask { min-height: calc(100svh - 200px); align-content: stretch; }
+#ask-card { min-height: calc(100svh - 200px); align-content: center; justify-items: stretch; text-align: center; gap: 20px; padding: 28px 22px; }
+.ask-ic { width: 92px; height: 92px; border-radius: 26px; justify-self: center; object-fit: cover; box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 18px 40px -14px rgba(243,112,33,.5); }
+#ask-card h1 { font-size: 44px; }
+#ask-card .hint { font-size: 16.5px; }
+#ask-card select { text-align: left; }
+.ph .trash { position: absolute; top: 6px; right: 6px; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; display: grid; place-items: center; cursor: pointer; color: #fff; background: rgba(11,11,10,.62); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.ph .trash svg { width: 18px; height: 18px; }
+.ask-del { position: absolute; inset: 0; display: grid; align-content: center; justify-items: center; gap: 10px; background: rgba(11,11,10,.82); font-size: 14px; font-weight: 600; }
+.ask-del[hidden] { display: none; }
+.ad-b { display: flex; gap: 6px; }
+.ad-b button { height: 34px; padding: 0 14px; border: 0; border-radius: 999px; font-size: 13.5px; font-weight: 600; cursor: pointer; color: #fff; background: rgba(238,237,233,.16); }
+.ad-b .y { background: #C2362B; }
+.viewer { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; align-content: center; gap: 12px; background: rgba(5,5,4,.99); padding: max(16px, env(safe-area-inset-top, 0px)) 16px max(16px, env(safe-area-inset-bottom, 0px)); }
+.viewer img { max-width: 100%; max-height: calc(100svh - 120px); border-radius: 20px; object-fit: contain; }
+.viewer p { margin: 0; font-size: 14px; color: var(--muted); }
+.v-x { position: absolute; top: max(14px, env(safe-area-inset-top, 0px)); right: 14px; width: 44px; height: 44px; border: 0; border-radius: 50%; display: grid; place-items: center; color: #fff; background: rgba(238,237,233,.14); cursor: pointer; }
+.v-x svg { width: 20px; height: 20px; }
+.ph { cursor: zoom-in; }
+</style>
+
+<style>html{padding-top:env(safe-area-inset-top,0px)}body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<main>
+  <header class="top"><img class="mono" alt="" src="apple-touch-icon.png"><b id="master-top">Памятка по уходу</b></header>
+
+  <button type="button" class="save-strip" id="top-add" hidden>
+    <span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.8" width="11" height="18.4" rx="3"/><path d="M12 9v6M9 12h6"/></svg></span>
+    <span>Добавить на главный экран</span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+
+  <!-- Нет даты: сначала спросить -->
+  <section class="view" id="view-ask" hidden aria-labelledby="ask-title">
+    <div class="card hero ask rv" id="ask-card"><img class="ask-ic" alt="" src="apple-touch-icon.png">
+      <h1 id="ask-title">Когда был сеанс?</h1>
+      <p class="hint">Я посчитаю, какой у тебя день заживления, и подскажу, что делать.</p>
+      <div class="row">
+        <button type="button" class="btn main" id="ask-today">Сегодня</button>
+        <button type="button" class="btn" id="ask-yesterday">Вчера</button>
+      </div>
+      <label for="ask-date"><span class="hint">Или выбери дату сеанса</span><select id="ask-date"></select></label>
+      <button type="button" class="btn" id="ask-go" disabled>Показать памятку</button>
+      <button type="button" class="linkish" id="ask-back" hidden>Оставить прежнюю дату</button>
+    </div>
+  </section>
+
+
+  <!-- Сегодня -->
+  <section class="view" id="view-today" hidden aria-labelledby="hello">
+    <article class="card hero rv">
+      <div class="hello">
+        <h2 id="hello">Привет!</h2>
+        <p class="meta"><span id="meta-what"></span><span id="meta-date">Сеанс был 21 октября</span><span class="sep">·</span><button type="button" class="linkish" id="session-edit">изменить</button></p>
+      </div>
+      <h1 class="day" aria-live="polite"><span class="day-n" id="day-num">5</span><span class="day-w"><b>-й день</b><span id="day-of">из 14 дней заживления</span></span></h1>
+      <div class="path">
+        <div class="track" id="track" role="img" aria-label="День 5 из 14">
+          <span class="fill" id="fill"></span><span class="tick" id="tick"></span><span class="marker" id="marker"></span>
+        </div>
+        <div class="labels" id="labels"></div>
+      </div>
+      <div class="next" id="next"></div>
+    </article>
+
+    <article class="card event rv" id="event" hidden aria-labelledby="event-title">
+      <span class="eyebrow">Важно сегодня</span>
+      <h2 id="event-title"></h2>
+      <p id="event-text"></p>
+      <figure class="ev-ph" id="ev-ph" hidden><img alt="Фото твоей татуировки"><figcaption></figcaption></figure>
+      <ol class="steps" id="event-steps"></ol>
+      <a class="btn main" id="event-btn" href="#" target="_blank" rel="noopener" data-write hidden>Отправить фото Мише</a>
+    </article>
+
+    <article class="card now rv" aria-labelledby="now-title">
+      <span class="eyebrow">Что делать сейчас</span>
+      <div class="now-h"><h2 id="now-title">Носить плёнку</h2><span class="chip" id="now-range">дни 1–5</span></div>
+      <ul class="do" id="now-do"></ul>
+    </article>
+
+    <div class="card acc rv" id="acc">
+      <button type="button" class="acc-h" id="acc-h" aria-expanded="false" aria-controls="acc-b">Как проходит заживление<span class="plus" aria-hidden="true"></span></button>
+      <div class="acc-b" id="acc-b" hidden><ol class="tl" id="tl"></ol></div>
+    </div>
+
+    <div class="card acc rv" id="acc2">
+      <button type="button" class="acc-h" id="acc2-h" aria-expanded="false" aria-controls="acc2-b">Фотодневник татуировки<span class="plus" aria-hidden="true"></span></button>
+      <div class="acc-b" id="acc2-b" hidden><div class="inner">
+    <article class="card photos" id="photos">
+      <h2>Сфотографируй и сохрани</h2>
+      <p class="hint" id="ph-hint">Снимай татуировку в разные дни — через год увидишь, как она заживала. Фото сохраняются в этой памятке и видны только тебе.</p>
+      <div class="ph-grid" id="ph-grid" hidden></div>
+      <button type="button" class="btn" id="ph-add">Добавить фото</button>
+      <input type="file" accept="image/*" id="ph-in" hidden>
+    </article>
+      </div></div>
+    </div>
+
+  </section>
+
+  <!-- Можно ли -->
+  <section class="view" id="view-can" hidden aria-label="Можно ли">
+    <p class="sub rv" id="can-sub">Ответы на 5-й день. Нажми на плитку — расскажу подробнее.</p>
+    <div class="tiles" id="can-tiles"></div>
+  </section>
+
+  <!-- Нормально ли -->
+  <section class="view" id="view-normal" hidden aria-label="Нормально ли">
+    <p class="sub rv">Найди то, что видишь у себя, и нажми. Остальное пропускай.</p>
+    <div class="tiles" id="normal-tiles"></div>
+    <p class="sub rv">Сомневаешься — сфотографируй при дневном свете, без вспышки, и пришли мне.</p>
+  </section>
+</main>
+
+<div class="mwrap" id="mwrap" hidden>
+  <div class="mback" id="mback"></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <div class="m-top"><span id="m-ic"></span><span class="m-st" id="m-st"></span></div>
+    <h2 id="m-title"></h2>
+    <p id="m-text"></p>
+    <div class="m-acts">
+      <a class="btn main" id="m-write" href="#" target="_blank" rel="noopener" data-write hidden>Написать Мише</a>
+      <button type="button" class="btn" id="m-close">Понятно</button>
+    </div>
+  </div>
+</div>
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-label="Фото татуировки">
+  <img alt="Фото татуировки"><p id="v-cap"></p>
+  <button type="button" class="v-x" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+
+<div class="mwrap" id="iwrap" hidden>
+  <div class="mback" id="iback"></div>
+  <div class="modal" id="imodal" role="dialog" aria-modal="true" aria-labelledby="i-title">
+    <h2 id="i-title">Сохрани памятку, чтобы она всегда была под рукой</h2>
+    <p>Откроется одним нажатием, как приложение: что делать сегодня, что можно, что нельзя.</p>
+    <div class="seg" role="group" aria-label="Какой у тебя телефон">
+      <button type="button" data-os="ios" aria-pressed="true">iPhone</button>
+      <button type="button" data-os="android" aria-pressed="false">Android</button>
+    </div>
+    <ol class="steps" id="i-steps"></ol>
+    <div class="m-acts">
+      <button type="button" class="btn main" id="i-ok">Понятно, добавлю</button>
+      <button type="button" class="btn" id="i-later">Не сейчас</button>
+    </div>
+  </div>
+</div>
+
+<div class="mwrap" id="cwrap" hidden>
+  <div class="mback" id="cback"></div>
+  <div class="modal" id="cmodal" role="dialog" aria-modal="true" aria-labelledby="c-title">
+    <h2 id="c-title">Написать Мише</h2>
+    <p>Где тебе удобнее?</p>
+    <div class="m-acts">
+      <a class="btn main" id="c-tg" href="#" target="_blank" rel="noopener">Телеграм</a>
+      <a class="btn" id="c-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" id="c-tel" href="#">Позвонить</a>
+    </div>
+  </div>
+</div>
+
+<div class="dock">
+  <nav class="tabs" id="tabs" aria-label="Разделы памятки" hidden>
+    <span class="ind" id="ind" aria-hidden="true"></span>
+    <button type="button" class="tab" id="tab-today" data-view="today">Сегодня</button>
+    <button type="button" class="tab" id="tab-can" data-view="can">Можно ли?</button>
+    <button type="button" class="tab" id="tab-normal" data-view="normal">Нормально?</button>
+  </nav>
+  <a class="write" aria-label="Написать Мише" id="write" href="#" target="_blank" rel="noopener" data-write>
+    <span>Написать<small id="nick">Телеграм, WhatsApp или звонок</small></span>
+    <span class="b-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14"/><path d="M21 3 14.5 21l-4.5-7-7-4.5z"/></svg></span>
+  </a>
+</div>
+
+<script>
+// Всё, что можно поменять под мастера, — здесь. Копия общей памятки (Проекты/Клиенты/Памятка) для Миши Ру, 27.10.2026.
+const CONFIG = {
+  master: "Миша Ру",
+  to: "Мише",                   // кому: «Написать Мише», «Отправить фото Мише»
+  telegram: "ru_misha",         // ник без @
+  whatsapp: "79221250080",      // номер для WhatsApp — только цифры
+  phone: "+7 922 125-00-80",
+  filmDays: 5,                  // заживляющая плёнка — до 5 дней
+  healDays: 14,                 // верхний слой заживает примерно за 2 недели
+  restDays: 14,                 // баня, бассейн, море, солнце — после 2 недель
+};
+const CREAM = "заживляющий крем";   // уточнить у Миши: даёт ли свой крем (тогда — «крем, который я дал»)
+
+// Значки — обычные линейные пиктограммы
+const ICONS = {
+  film: '<rect x="2.6" y="8.6" width="18.8" height="6.8" rx="3.4" transform="rotate(-45 12 12)"/><path d="M10.6 10.6h2.8v2.8h-2.8z" transform="rotate(-45 12 12)"/>',
+  shower: '<path d="M12 3v3"/><path d="M6 11a6 6 0 0 1 12 0z"/><path d="M8 14.5v1.5M12 14.5v3M16 14.5v1.5M10 19v1.5M14 19v1.5"/>',
+  sport: '<path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/>',
+  sauna: '<path d="M8 4.5a2 2 0 0 1 4 0v9a3.6 3.6 0 1 1-4 0z"/><path d="M10 11v4.5"/><path d="M16 5c1 1 1 2 0 3s-1 2 0 3M19.5 5c1 1 1 2 0 3s-1 2 0 3"/>',
+  pool: '<path d="M8 3.5v11M16 3.5v11M8 7h8M8 11h8"/><path d="M3 18c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1"/>',
+  sea: '<circle cx="12" cy="8" r="3"/><path d="M3 14c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1M3 18.5c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/>',
+  drink: '<path d="M7 3.5h10l-1 5.5a4 4 0 0 1-8 0z"/><path d="M12 13v7M8.5 20.5h7"/>',
+  sleep: '<path d="M3 6v13M3 15h18M21 19v-6a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11.5" r="2"/>',
+  shirt: '<path d="M8.5 3.5 4 6l1.6 4.4 2-.7V20.5h8.8V9.7l2 .7L20 6l-4.5-2.5c-.5 1.5-1.9 2.5-3.5 2.5s-3-1-3.5-2.5z"/>',
+  info: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/>',
+  towel: '<rect x="5.5" y="3.5" width="13" height="17" rx="2.5"/><path d="M5.5 8.5h13M9 13.5h6"/>',
+  cream: '<path d="M9.5 3.5h5v3h-5z"/><path d="M8 6.5h8l.9 12a2 2 0 0 1-2 2.1H9.1a2 2 0 0 1-2-2.1z"/><path d="M10 11.5h4"/>',
+  hand: '<path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V5a1.5 1.5 0 0 1 3 0v6M14 11V6.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-.6a5.4 5.4 0 0 1-4.5-2.4L4 14.6a1.5 1.5 0 0 1 2.4-1.8L8 14.6"/>',
+  sparkle: '<path d="M12 3.5 13.8 10.2 20.5 12 13.8 13.8 12 20.5 10.2 13.8 3.5 12 10.2 10.2z"/>',
+  camera: '<path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8L9.5 4h5l1.2 2h1.8A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.5"/>',
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  check: '<path d="M5 12.5 10 17 19 7"/>',
+  excl: '<path d="M12 6v8M12 18.2h.01"/>',
+  cross: '<path d="M7 7l10 10M17 7 7 17"/>',
+  dots: '<circle cx="5.5" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="18.5" cy="12" r="1.7" fill="currentColor"/>',
+  vdots: '<circle cx="12" cy="5.5" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18.5" r="1.7" fill="currentColor"/>',
+  safari: '<circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5 13.3 13.3 8.5 15.5 10.7 10.7z"/>',
+  chrome: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.2"/><path d="M15.2 12H20M9.6 14.8l-4.1 3.2M13.6 9.1l-3.5-5.4"/>',
+  share: '<path d="M12 15V3.5M8.5 7 12 3.5 15.5 7"/><path d="M7.5 10.5H6a1.5 1.5 0 0 0-1.5 1.5v7A1.5 1.5 0 0 0 6 20.5h12a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-1.5"/>',
+  addhome: '<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.5v7M8.5 12h7"/>',
+  install: '<path d="M12 4v10M8 10.5 12 14.5 16 10.5"/><path d="M5 17.5v1A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5v-1"/>',
+  next: '<path d="M5 12h12M13 8l4 4-4 4"/>',
+  drop: '<path d="M12 3.2c3.6 4.3 6.3 7.4 6.3 10.7a6.3 6.3 0 0 1-12.6 0c0-3.3 2.7-6.4 6.3-10.7z" fill="currentColor"/>',
+};
+const svg = (name, w = 1.7) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
+
+const MONTHS_OF = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+const DAY = 86400000;
+
+// ---------- этапы ----------
+function stages() {
+  const f = CONFIG.filmDays, h = CONFIG.healDays;
+  return [
+    { from: 1, to: f, title: "Носить плёнку", label: "Носим плёнку", short: "Не снимай и не трогай",
+      do: [["film", "Плёнку не снимай и не трогай"], ["shirt", "Носи свободную одежду поверх"], ["shower", "Под душ можно — плёнка защищает от воды"],
+           ["info", "Отклеилась или протекает раньше — сними в душе под тёплой водой"]] },
+    { from: f + 1, to: h, title: "Ухаживать за татуировкой", label: "Заживляем", short: "Мой, мажь кремом, не сдирай корочки",
+      do: [["shower", "Мой 2 раза в день тёплой водой с мылом без запаха"], ["towel", "Промакивай бумажным полотенцем, не три"],
+           ["cream", `Мажь тонким слоем — ${CREAM} — 2–3 раза в день`], ["hand", "Корочки не сдирай и не чеши"]] },
+    { from: h + 1, to: Infinity, title: "Беречь от солнца", label: "Зажила", short: "Татуировка готова. На солнце — только с SPF 50",
+      do: [["cream", "Мажь кремом, если кожа сухая"], ["sun", "На солнце — только с кремом SPF 50"],
+           ["sparkle", "Пару недель может блестеть или быть мутной — это пройдёт само"]] },
+  ];
+}
+
+// ---------- важные дни ----------
+function eventFor(day) {
+  if (day >= 365 && day % 365 < 7) { const y = Math.floor(day / 365);
+    return { title: `Ого, твоей татуировке уже ${y === 1 ? "целый год" : plural(y, "год", "года", "лет")}!`, text: "Как быстро летит время. Не пора ли сделать новую? Напиши — придумаем эскиз.", steps: [], btn: "Обсудить новую татуировку" }; }
+  if (day === CONFIG.filmDays) return {
+    title: "Сегодня снимаем плёнку", text: "Если она не отклеилась раньше. Без спешки, лучше вечером в душе.",
+    steps: [["Встань под тёплый душ", "Вода размягчит клей"], ["Медленно сними плёнку", "Тяни вдоль кожи, по направлению роста волос"],
+            ["Помой татуировку", "Мыло без запаха, потом промокни полотенцем"], ["Нанеси тонкий слой крема", "Того, что я дал"]] };
+  if (day === CONFIG.healDays) return {
+    title: "Пришли мне фото татуировки", text: "Две недели — она уже зажила. Сфотографируй при дневном свете, без вспышки. Мне правда интересно, как она легла.",
+    steps: [], photo: true };
+  if (day === CONFIG.restDays + 1) return {
+    title: "Теперь можно в баню, бассейн и море", text: "Татуировка зажила. А на солнце — только с кремом SPF 50.", steps: [] };
+  return null;
+}
+
+// «Что дальше» — одна строка в карточке дня
+function nextStep(day) {
+  const f = CONFIG.filmDays, h = CONFIG.healDays;
+  const days = n => `${n} ${plural(n, "день", "дня", "дней")}`;
+  if (day < f) return { icon: "film", text: `Плёнку снимаем через ${days(f - day)} — ${human(addDays(session, f - 1))}` };
+  if (day === f) return { icon: "film", text: "Сегодня снимаем плёнку", jump: true };
+  if (day < h) return { icon: "sparkle", text: `До заживления ${days(h - day)}` };
+  if (day === h) return { icon: "camera", text: "Сегодня пришли мне фото", jump: true };
+  return { icon: "sparkle", text: day >= 365 && day % 365 < 7 ? "Годовщина! Пора делать новую?" : "Татуировка зажила. Пора делать новую?", link: true };
+}
+
+// ---------- можно ли: сначала самые частые вопросы ----------
+// status: yes — можно, care — аккуратно, no — пока нельзя (до дня `until`)
+function canList(day) {
+  const f = CONFIG.filmDays, rest = CONFIG.restDays, h = CONFIG.healDays;
+  const no = (until, text) => ({ status: "no", until, text });
+  const list = [];
+  if (day <= f) list.push({ icon: "film", title: "Снять плёнку", ...(day < f
+    ? { status: "care", text: `Лучше носи до ${f} дней. Если отклеилась или протекает — сними раньше, в душе под тёплой водой.` }
+    : { status: "yes", text: "Сегодня пора. Как снять — по шагам на вкладке «Сегодня»." }) });
+  list.push(
+    { icon: "drink", title: "Алкоголь", ...(day <= 2
+      ? no(3, "Разжижает кровь — татуировка дольше сочится и отекает.")
+      : { status: "yes", text: "В меру." }) },
+    { icon: "shower", title: "Душ", ...(day <= f
+      ? { status: "yes", text: "Плёнка защищает от воды. Просто не стой долго под струёй." }
+      : { status: "yes", text: "Быстро, тёплой водой. Без мочалки и скраба на татуировке." }) },
+    { icon: "sport", title: "Спорт", ...(day <= 3
+      ? no(4, "Пот и трение мешают заживлению — пару дней отдохни.")
+      : day <= h
+        ? { status: "care", text: "Без упражнений, где место тянется или трётся. После тренировки — сразу в душ." }
+        : { status: "yes", text: "Как обычно." }) },
+    { icon: "sauna", title: "Баня и сауна", ...(day <= rest
+      ? no(rest + 1, "Пар и жар размягчают кожу — татуировка может поплыть.")
+      : { status: "yes", text: "Татуировка зажила." }) },
+    { icon: "pool", title: "Бассейн и ванна", ...(day <= rest
+      ? no(rest + 1, "Хлорка и долгое лежание в воде вымывают краску. Пока только душ.")
+      : { status: "yes", text: "Татуировка зажила." }) },
+    { icon: "sea", title: "Море и речка", ...(day <= rest
+      ? no(rest + 1, "В открытой воде бактерии, а свежая кожа беззащитна.")
+      : { status: "care", text: "Можно — только с кремом SPF 50 на татуировке." }) },
+    { icon: "sun", title: "Солнце и солярий", ...(day <= rest
+      ? no(rest + 1, "Солнце выжигает свежую краску. Закрывай татуировку одеждой.")
+      : { status: "care", text: "Только с кремом SPF 50 на татуировке, всегда." }) },
+    { icon: "sleep", title: "Спать на ней", ...(day <= f
+      ? { status: "care", text: "Лучше не на татуировке: плёнка может сместиться. Бельё — чистое." }
+      : day <= h
+        ? { status: "care", text: "Можно. Если прилипла к простыне — смочи водой, не отрывай." }
+        : { status: "yes", text: "Как удобно." }) },
+  );
+  return list;
+}
+
+// ---------- нормально ли: самое частое — сверху, тревожное — внизу ----------
+// status: yes — нормально, care — пока нормально (не проходит — пришли фото), alarm — напиши мне
+function normalList(day) {
+  const f = CONFIG.filmDays;
+  const list = [
+    { title: "Чешется", status: "yes", text: "Значит, заживает. Не чеши — похлопай ладонью." },
+    { title: "Шелушится", status: "yes", text: "Как после загара. Мажь кремом и не чеши." },
+    { title: "Корочки", status: "yes", text: "Не сдирай и не размачивай подолгу — сойдут сами за 1–2 недели." },
+    { title: "Кожа вокруг красная", ...(day <= 3
+      ? { status: "yes", text: "Первые 2–3 дня так и должно быть — это реакция на сеанс." }
+      : day <= 7
+        ? { status: "care", text: "Уже должно спадать. Если не спадает или растёт — пришли фото." }
+        : { status: "alarm", text: "Через неделю краснеть уже не должно. Пришли фото — посмотрю." }) },
+    { title: "Отёк", ...(day <= 3
+      ? { status: "yes", text: "Первые дни — нормально, особенно на руках и ногах. Держи место повыше." }
+      : day <= 7
+        ? { status: "care", text: "Должен уходить. Если не уходит — пришли фото." }
+        : { status: "alarm", text: "Отёк больше недели — пришли фото, посмотрю." }) },
+    { title: day <= f ? "Жидкость под плёнкой" : "Сочится, мокнет", ...(day <= f
+      ? { status: "yes", text: "Это лимфа с краской — так и должно быть. Если плёнка протекает — сними её в душе." }
+      : day <= 7
+        ? { status: "care", text: "Промокни чистой салфеткой. Если сочится дольше пары дней — напиши." }
+        : { status: "alarm", text: "Сейчас сочиться уже не должно. Пришли фото." }) },
+    { title: "Мутная, как в молоке", ...(day >= 8
+      ? { status: "yes", text: "Это новая кожа. Через 2–3 недели станет чёткой." }
+      : { status: "care", text: "В первые дни так бывает. Сомневаешься — пришли фото." }) },
+    { title: "Болит", ...(day <= 2
+      ? { status: "yes", text: "Ноет первые пару дней — нормально." }
+      : { status: "care", text: "Если боль сильная или растёт — напиши." }) },
+    { title: "Гной, пузыри, температура", status: "alarm", text: "Напиши сразу и пришли фото — я посмотрю. Если поднялась температура — к врачу." },
+  ];
+  const calm = { yes: 0, care: 1, alarm: 2 };
+  return list.sort((a, b) => calm[a.status] - calm[b.status]);
+}
+
+const WORDS_CAN = { yes: "Можно", care: "Аккуратно", no: "Подождём" };
+const WORDS_NORMAL = { yes: "Нормально", care: "Следим", alarm: "Покажи мне" };
+const BADGE = { yes: "check", care: "excl", no: "cross", alarm: "excl" };
+
+// ---------- даты ----------
+function startOfDay(d) { const x = new Date(d); x.setHours(0, 0, 0, 0); return x; }
+function addDays(d, n) { const x = startOfDay(d); x.setDate(x.getDate() + n); return x; }
+function iso(d) { return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }
+function parseISO(s) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || "");
+  return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null;
+}
+function human(d) { return `${d.getDate()} ${MONTHS_OF[d.getMonth()]}`; }
+function plural(n, one, few, many) {
+  const m10 = n % 10, m100 = n % 100;
+  return m10 === 1 && m100 !== 11 ? one : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? few : many;
+}
+
+// «можно будет завтра / послезавтра / через неделю / через 9 дней»
+function whenIn(d) {
+  const n = Math.round((startOfDay(d) - today) / DAY);
+  if (n <= 0) return "сегодня";
+  if (n === 1) return "завтра";
+  if (n === 2) return "послезавтра";
+  if (n % 7 === 0 && n <= 28) return n === 7 ? "через неделю" : `через ${n / 7} ${plural(n / 7, "неделю", "недели", "недель")}`;
+  return `через ${n} ${plural(n, "день", "дня", "дней")}`;
+}
+
+// ---------- память телефона (может не работать — тогда просто без неё) ----------
+const STORE = "misha:";   // общий адрес parkov-sites.github.io у всех сайтов мастеров — у каждой памятки свои ключи
+function load(key) { try { return localStorage.getItem(STORE + key); } catch { return null; } }
+function save(key, value) { try { localStorage.setItem(STORE + key, value); } catch {} }
+
+// ---------- данные клиента: из личной ссылки (?n=Маша&t=домик&d=2026-10-25) или из памяти телефона ----------
+const params = new URLSearchParams(location.search);
+const today = startOfDay(new Date());
+// дату из ссылки берём один раз: если клиент потом сменил дату сам, значок на экране со старой ссылкой её не перебьёт
+const linkD = params.get("d");
+function seenLinks() { try { return JSON.parse(load("d-links") || "[]"); } catch { return []; } }
+function markSeen(v) { const l = seenLinks(); if (!l.includes(v)) { l.push(v); save("d-links", JSON.stringify(l.slice(-20))); } }
+if (linkD && parseISO(linkD) && !seenLinks().includes(linkD)) { save("session", linkD); markSeen(linkD); }
+for (const [p, key] of [["n", "name"], ["t", "what"]]) if (params.get(p)) save(key, params.get(p));
+let session = parseISO(load("session")) || parseISO(linkD);
+if (session && session > today) session = null;   // дата из будущего — спросим заново
+const name = params.get("n") || load("name") || "";
+const what = params.get("t") || load("what") || "";
+
+const $ = id => document.getElementById(id);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const EASE = "cubic-bezier(.2,.7,.1,1)";
+let dayNo = 1, heroN = 1;
+
+// ---------- движение ----------
+function reveal(root) {
+  if (reduce) return;
+  [...root.querySelectorAll(".rv, .tile")].filter(el => !el.closest("[hidden]")).forEach((el, i) => el.animate(
+    [{ opacity: 0, transform: "translateY(22px) scale(.98)", filter: "blur(8px)" }, { opacity: 1, transform: "none", filter: "blur(0)" }],
+    { duration: 800, delay: 60 + i * 70, easing: EASE, fill: "backwards" }));
+}
+function countUp(el, to) {
+  el.textContent = to;
+  if (reduce || to < 2) return;
+  const t0 = performance.now(), d = 1100;
+  (function f(now) {
+    const p = Math.min(1, (now - t0) / d), e = 1 - Math.pow(1 - p, 4);
+    el.textContent = Math.max(1, Math.round(e * to));
+    if (p < 1) requestAnimationFrame(f);
+  })(t0);
+}
+function growPath(p) {
+  $("fill").style.width = p + "%";
+  $("marker").style.left = p + "%";
+  if (reduce) return;
+  $("fill").animate([{ width: "0%" }, { width: p + "%" }], { duration: 1300, delay: 250, easing: EASE, fill: "backwards" });
+  $("marker").animate([{ left: "0%", opacity: 0 }, { left: p + "%", opacity: 1 }], { duration: 1300, delay: 250, easing: EASE, fill: "backwards" });
+}
+
+function statusEl(status, words, cls) {
+  const s = document.createElement("span");
+  s.className = `${cls} s-${status}`;
+  s.innerHTML = `<span class="badge">${svg(BADGE[status], 2.8)}</span>`;
+  if (cls === "m-st") s.append(words[status]);
+  return s;
+}
+
+function tile(item, words) {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = `tile s-${item.status}` + (item.icon ? "" : " plain");
+  const badge = `<span class="badge">${svg(BADGE[item.status], 2.8)}</span>`;
+  const top = document.createElement("span");
+  top.className = "t-top";
+  top.innerHTML = item.icon ? `<span class="t-ic">${svg(item.icon)}</span>${badge}` : "";
+  const nm = document.createElement("span");
+  nm.className = "t-name"; nm.textContent = item.title;
+  const st = document.createElement("span");
+  st.className = "t-st";
+  st.innerHTML = `<b></b>`;
+  st.firstChild.textContent = words[item.status];
+  if (item.status === "no" && item.until) {
+    const w = document.createElement("span");
+    w.textContent = `можно ${whenIn(addDays(session, item.until - 1))}`;
+    st.append(w);
+  }
+  if (item.icon) b.append(top, nm, st);
+  else {
+    const row = document.createElement("span");
+    row.className = "t-row";
+    row.append(st);
+    row.insertAdjacentHTML("beforeend", badge);
+    b.append(nm, row);
+  }
+  b.addEventListener("click", () => openModal(item, words, b));
+  return b;
+}
+
+// ---------- окно по центру ----------
+let lastTile = null, closing = null;
+function openModal(item, words, from) {
+  lastTile = from;
+  $("m-ic").innerHTML = item.icon ? `<span class="t-ic">${svg(item.icon)}</span>` : "";
+  $("m-st").replaceWith(Object.assign(statusEl(item.status, words, "m-st"), { id: "m-st" }));
+  $("m-title").textContent = item.title;
+  const when = item.status === "no" && item.until ? `Можно будет ${whenIn(addDays(session, item.until - 1))} — ${human(addDays(session, item.until - 1))}.` : "";
+  $("m-text").innerHTML = when ? `<span class="when"></span><br>` : "";
+  if (when) $("m-text").firstChild.textContent = when;
+  $("m-text").append(item.text);
+  $("m-write").hidden = !(item.status === "alarm" || (item.status === "care" && words === WORDS_NORMAL));
+  $("mwrap").hidden = false;
+  if (!reduce) {
+    const r = from.getBoundingClientRect(), m = $("modal").getBoundingClientRect();
+    const dx = r.left + r.width / 2 - (m.left + m.width / 2), dy = r.top + r.height / 2 - (m.top + m.height / 2);
+    $("mback").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, easing: "ease-out" });
+    $("modal").animate([{ opacity: 0, transform: `translate(${dx * .35}px, ${dy * .35}px) scale(.82)` }, { opacity: 1, transform: "none" }],
+      { duration: 560, easing: "cubic-bezier(.22,1.25,.36,1)" });
+  }
+  $("m-close").focus({ preventScroll: true });
+}
+function closeModal() {
+  if ($("mwrap").hidden || closing) return;
+  const done = () => { $("mwrap").hidden = true; closing = null; if (lastTile) lastTile.focus({ preventScroll: true }); };
+  if (reduce) return done();
+  $("mback").animate([{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: "ease-in", fill: "forwards" });
+  closing = $("modal").animate([{ opacity: 1, transform: "none" }, { opacity: 0, transform: "scale(.94)" }], { duration: 200, easing: "ease-in", fill: "forwards" });
+  closing.onfinish = () => { $("mback").getAnimations().forEach(a => a.cancel()); closing.cancel(); done(); };
+}
+$("m-close").addEventListener("click", closeModal);
+$("mback").addEventListener("click", closeModal);
+document.addEventListener("keydown", e => { if (e.key === "Escape") { closeModal(); if (!$("iwrap").hidden) $("i-later").click(); } });
+
+// ---------- плавно ведёт экран к раскрытому окошку ----------
+function followOpen(card, full, headEl) {
+  const view = innerHeight - 130 - 16, finalH = headEl.offsetHeight + full;
+  const y0 = scrollY, top = card.getBoundingClientRect().top + y0;
+  const target = Math.max(0, top - 16 - Math.max(0, (view - finalH) / 2));
+  if (reduce) { scrollTo(0, target); return; }
+  const t0 = performance.now();
+  (function f(now) {
+    const p = Math.min(1, (now - t0) / 650), e = 1 - Math.pow(1 - p, 3);
+    scrollTo(0, y0 + (target - y0) * e);
+    if (p < 1) requestAnimationFrame(f);
+  })(t0);
+}
+
+// ---------- как проходит заживление: плавно раскрывается ----------
+function bindAcc(cardId, hId, bId) {
+  $(hId).addEventListener("click", () => {
+    const h = $(hId), b = $(bId), card = $(cardId), open = h.getAttribute("aria-expanded") === "true";
+    h.setAttribute("aria-expanded", open ? "false" : "true");
+    if (reduce) { b.hidden = open; if (!open) followOpen(card, b.scrollHeight, h); return; }
+    b.getAnimations().forEach(a => a.cancel());
+    if (!open) {
+      b.hidden = false;
+      const full = b.scrollHeight;
+      b.animate([{ height: "0px", opacity: 0 }, { height: full + "px", opacity: 1 }], { duration: 650, easing: EASE });
+      followOpen(card, full, h);
+      [...b.querySelectorAll("li, .card")].forEach((li, i) => li.animate([{ opacity: 0, transform: "translateY(10px)" }, { opacity: 1, transform: "none" }],
+        { duration: 500, delay: 120 + i * 90, easing: EASE, fill: "backwards" }));
+    } else {
+      const a = b.animate([{ height: b.scrollHeight + "px", opacity: 1 }, { height: "0px", opacity: 0 }], { duration: 450, easing: EASE });
+      a.onfinish = () => { b.hidden = true; };
+    }
+  });
+}
+bindAcc("acc", "acc-h", "acc-b");
+bindAcc("acc2", "acc2-h", "acc2-b");
+
+function render() {
+  dayNo = Math.max(1, Math.round((today - startOfDay(session)) / DAY) + 1);
+  const all = stages(), f = CONFIG.filmDays, h = CONFIG.healDays;
+  const stage = all.find(s => dayNo >= s.from && dayNo <= s.to);
+  const ev = eventFor(dayNo);
+
+  // карточка дня
+  const hr = new Date().getHours();
+  const hi = hr >= 5 && hr < 12 ? "Доброе утро" : hr >= 12 && hr < 18 ? "Добрый день" : hr >= 18 && hr < 23 ? "Добрый вечер" : "Доброй ночи";
+  $("hello").textContent = name ? `${hi}, ${name}!` : `${hi}!`;
+  $("meta-what").textContent = what ? `${what[0].toUpperCase()}${what.slice(1)} ·` : "";
+  $("meta-what").hidden = !what;
+  $("meta-date").textContent = `Сеанс был ${human(session)}`;
+  heroN = dayNo >= 365 ? Math.floor(dayNo / 365) : dayNo;
+  $("day-num").textContent = heroN;
+  document.querySelector(".day-w b").textContent = dayNo >= 365 ? plural(heroN, "год", "года", "лет") : "-й день";
+  $("day-of").textContent = dayNo >= 365 ? "Ого, как быстро летит время" : dayNo <= h ? `из ${h} дней заживления` : "татуировка зажила";
+  const p = Math.min(100, dayNo / h * 100);
+  $("track").setAttribute("aria-label", `День ${dayNo} из ${h}`);
+  $("tick").style.left = (f / h * 100) + "%";
+  $("fill").style.width = p + "%";
+  $("marker").style.left = p + "%";
+  $("labels").replaceChildren(...all.map((s, i) => {
+    const l = document.createElement("span");
+    l.textContent = s.label;
+    if (s === stage) l.className = "on";
+    if (i === 0) l.style.left = "0";
+    else if (i === 1) { l.style.left = (f / h * 100) + "%"; l.style.transform = "translateX(-1px)"; l.style.paddingLeft = "8px"; }
+    else l.style.right = "0";
+    return l;
+  }));
+  const nx = nextStep(dayNo), go = nx.jump && ev;
+  const nxEl = document.createElement(nx.link ? "a" : go ? "button" : "div");
+  nxEl.id = "next";
+  nxEl.className = "next" + (go || nx.link ? " go" : "");
+  if (go) nxEl.type = "button";
+  if (nx.link) { nxEl.href = `https://t.me/${CONFIG.telegram}`; nxEl.target = "_blank"; nxEl.rel = "noopener"; nxEl.dataset.write = ""; }
+  nxEl.innerHTML = `<span class="n-ic">${svg(nx.icon)}</span><span></span>` + (go || nx.link ? `<span class="arr">${svg("arrow", 2)}</span>` : "");
+  nxEl.children[1].textContent = nx.text;
+  if (go) nxEl.addEventListener("click", () => $("event").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" }));
+  $("next").replaceWith(nxEl);
+
+  // важный день
+  $("event").hidden = !ev;
+  if (ev) {
+    $("event-title").textContent = ev.title;
+    $("event-text").textContent = ev.text;
+    $("event-steps").hidden = !ev.steps.length;
+    $("event-steps").replaceChildren(...ev.steps.map(([title, small], i) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<b></b><span class="st"><span></span><small></small></span>`;
+      li.querySelector("b").textContent = i + 1;
+      li.querySelector(".st span").textContent = title;
+      li.querySelector("small").textContent = small;
+      return li;
+    }));
+    $("event-btn").textContent = ev.photo ? `Отправить фото ${CONFIG.to}` : ev.btn || "";
+    $("event-btn").hidden = !(ev.photo || ev.btn);
+  }
+
+  // что делать сейчас
+  $("now-title").textContent = stage.title;
+  $("now-range").textContent = stage.to === Infinity ? `с ${stage.from}-го дня` : `дни ${stage.from}–${stage.to}`;
+  $("now-do").replaceChildren(...stage.do.map(([icon, text]) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<span class="d-ic">${svg(icon)}</span><span></span>`;
+    li.lastChild.textContent = text;
+    return li;
+  }));
+
+  // весь путь
+  $("tl").replaceChildren(...all.map(s => {
+    const li = document.createElement("li");
+    li.className = s === stage ? "cur" : dayNo > s.to ? "done" : "";
+    li.innerHTML = `<span class="pt"></span><div><div class="tl-d"></div><div class="tl-t"></div><div class="tl-s"></div></div>`;
+    li.querySelector(".tl-d").textContent = (s.to === Infinity ? `с ${s.from}-го дня` : `дни ${s.from}–${s.to}`) + (s === stage ? " · сейчас" : "");
+    li.querySelector(".tl-t").textContent = s.label;
+    li.querySelector(".tl-s").textContent = s.short;
+    return li;
+  }));
+
+  renderPhotos();
+
+  // плитки
+  $("can-sub").textContent = `Ответы на ${dayNo}-й день. Нажми на плитку — расскажу подробнее.`;
+  $("can-tiles").replaceChildren(...canList(dayNo).map(a => tile(a, WORDS_CAN)));
+  $("normal-tiles").replaceChildren(...normalList(dayNo).map(a => tile(a, WORDS_NORMAL)));
+}
+
+// ---------- «добавь на экран»: два шага для iPhone и Android; в установленном приложении скрыто ----------
+const INSTALL = {
+  ios: [["В Telegram нажми значок Safari", [["safari", "Safari внизу экрана"]]],
+        ["В Safari нажми «···» и «Поделиться»", [["dots", "Меню ···"], ["share", "Поделиться"]]],
+        ["Внизу выбери «На экран „Домой“»", [["addhome", "На экран «Домой»"], ["app", "Моя тату"]]]],
+  android: [["В Telegram: ⋮ → «Открыть в Chrome»", [["vdots", "Меню Telegram"], ["chrome", "Chrome"]]],
+            ["В Chrome: ⋮ → «Установить приложение»", [["vdots", "Меню Chrome"], ["install", "Установить"], ["app", "Моя тату"]]]],
+};
+function showInstall(os) {
+  document.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.os === os ? "true" : "false"));
+  fillSteps($("i-steps"), os);
+}
+document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => showInstall(b.dataset.os)));
+function fillSteps(el, os) {
+  el.replaceChildren(...INSTALL[os].map(([title, chips], i) => {
+    const li = document.createElement("li");
+    const b = document.createElement("b"); b.textContent = i + 1;
+    const st = document.createElement("span"); st.className = "st";
+    const t = document.createElement("span"); t.textContent = title;
+    const vis = document.createElement("span"); vis.className = "vis";
+    chips.forEach(([icon, label], k) => {
+      if (k) vis.insertAdjacentHTML("beforeend", `<span class="g-arr">${svg("next", 2)}</span>`);
+      const g = document.createElement("span"); g.className = "g";
+      g.innerHTML = icon === "app" ? `<span class="g-c app"><img alt="" src="apple-touch-icon.png"></span>` : `<span class="g-c">${svg(icon)}</span>`;
+      const l = document.createElement("small"); l.textContent = label;
+      g.append(l); vis.append(g);
+    });
+    st.append(t, vis);
+    li.append(b, st);
+    return li;
+  }));
+}
+showInstall(/iPhone|iPad|iPod/.test(navigator.userAgent) ? "ios" : /Android/.test(navigator.userAgent) ? "android" : "ios");
+const installed = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+$("top-add").hidden = installed || !session;
+
+// всплывающее окно: не раздражает — один раз через несколько секунд, «Не сейчас» откладывает на 3 дня, показываем не больше двух раз
+let popTimer;
+function openPop() {
+  if (installed || !session || !$("mwrap").hidden) return;
+  $("iwrap").hidden = false;
+  if (!reduce) {
+    $("iback").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300 });
+    $("imodal").animate([{ opacity: 0, transform: "translateY(26px) scale(.9)" }, { opacity: 1, transform: "none" }], { duration: 560, easing: "cubic-bezier(.22,1.25,.36,1)" });
+  }
+  $("i-ok").focus({ preventScroll: true });
+}
+function closePop() {
+  if ($("iwrap").hidden) return;
+  const done = () => { $("iwrap").hidden = true; };
+  if (reduce) return done();
+  $("iback").animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: "forwards" });
+  $("imodal").animate([{ opacity: 1 }, { opacity: 0, transform: "scale(.95)" }], { duration: 200, fill: "forwards" }).onfinish = () => { $("iwrap").getAnimations({ subtree: true }).forEach(a => a.cancel()); done(); };
+}
+$("i-later").addEventListener("click", () => { save("inst-n", String((+load("inst-n") || 0) + 1)); save("inst-t", String(Date.now())); closePop(); });
+$("i-ok").addEventListener("click", () => { save("inst-n", "9"); closePop(); });
+$("iback").addEventListener("click", () => $("i-later").click());
+$("top-add").addEventListener("click", openPop);
+function maybePop() {
+  const n = +load("inst-n") || 0, t = +load("inst-t") || 0;
+  if (installed || !session || n >= 2 || (t && Date.now() - t < 3 * DAY)) return;
+  clearTimeout(popTimer);
+  popTimer = setTimeout(() => { if (current === "today") openPop(); }, 4500);
+}
+
+// ---------- фото татуировки: хранятся только в этом телефоне (IndexedDB), никуда не отправляются ----------
+function phOpen() {
+  return new Promise((res, rej) => {
+    try {
+      const r = indexedDB.open("misha-memo-photos", 1);
+      r.onupgradeneeded = () => r.result.createObjectStore("p", { keyPath: "id", autoIncrement: true });
+      r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error);
+    } catch (e) { rej(e); }
+  });
+}
+async function phTx(mode, fn) {
+  const db = await phOpen();
+  return new Promise((res, rej) => { const tx = db.transaction("p", mode), q = fn(tx.objectStore("p")); tx.oncomplete = () => res(q && q.result); tx.onerror = () => rej(tx.error); });
+}
+async function shrink(file) {
+  let src, w, h;
+  try { src = await createImageBitmap(file, { imageOrientation: "from-image" }); w = src.width; h = src.height; }
+  catch { const url = URL.createObjectURL(file); src = await new Promise((r, j) => { const i = new Image(); i.onload = () => r(i); i.onerror = j; i.src = url; }); w = src.naturalWidth; h = src.naturalHeight; }
+  const k = Math.min(1, 1000 / Math.max(w, h)), c = document.createElement("canvas");
+  c.width = Math.round(w * k); c.height = Math.round(h * k);
+  c.getContext("2d").drawImage(src, 0, 0, c.width, c.height);
+  return c.toDataURL("image/jpeg", .82);
+}
+async function renderPhotos() {
+  // в браузере фото-история закрыта: снимки там могут пропасть, поэтому открывается после добавления на экран
+  $("ph-add").textContent = installed ? "Добавить фото" : "Сохранить как приложение";
+  if (!installed) {
+    $("ph-grid").hidden = true; $("ev-ph").hidden = true;
+    $("ph-hint").textContent = "Снимай татуировку в разные дни — через год увидишь, как она заживала и какой была в самом начале. Откроется, когда сохранишь памятку как приложение.";
+    return;
+  }
+  let list = [];
+  try { list = (await phTx("readonly", st => st.getAll())) || []; } catch { $("photos").hidden = true; return; }
+  list = list.filter(r => r.s === iso(session)).sort((a, b) => a.ts - b.ts);
+  $("ph-grid").hidden = !list.length;
+  $("ph-grid").replaceChildren(...list.map(r => {
+    const f = document.createElement("figure"); f.className = "ph";
+    f.innerHTML = `<img alt=""><figcaption></figcaption>
+      <button type="button" class="trash" aria-label="Удалить фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7h15M9.5 7V4.8h5V7M6.5 7l.8 12a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4l.8-12M10 11v6M14 11v6"/></svg></button>
+      <div class="ask-del" hidden><span>Удалить?</span><span class="ad-b"><button type="button" class="y">Да</button><button type="button" class="n">Нет</button></span></div>`;
+    f.querySelector("img").src = r.d;
+    f.querySelector("figcaption").textContent = `${r.day}-й день`;
+    const ask = f.querySelector(".ask-del");
+    f.addEventListener("click", e => { if (e.target.closest(".trash, .ask-del")) return; openViewer(r); });
+    f.querySelector(".trash").addEventListener("click", () => { ask.hidden = false; });
+    f.querySelector(".n").addEventListener("click", () => { ask.hidden = true; });
+    f.querySelector(".y").addEventListener("click", async () => { await phTx("readwrite", st => st.delete(r.id)); renderPhotos(); });
+    return f;
+  }));
+  $("ph-hint").textContent = list.length ? "Добавляй снимки в разные дни. Они сохраняются в этой памятке и видны только тебе." : "Снимай татуировку в разные дни — через год увидишь, как она заживала. Фото сохраняются в этой памятке и видны только тебе.";
+  const ev = $("ev-ph"), first = list[0];
+  if (first && dayNo >= 365 && !$("event").hidden) {
+    ev.hidden = false; ev.querySelector("img").src = first.d;
+    ev.querySelector("figcaption").textContent = `Так она выглядела на ${first.day}-й день`;
+  } else ev.hidden = true;
+}
+// ---------- просмотр снимка на весь экран ----------
+function openViewer(r) {
+  $("viewer").querySelector("img").src = r.d;
+  $("v-cap").textContent = `${r.day}-й день · ${human(new Date(r.ts))}`;
+  $("viewer").hidden = false;
+  if (!reduce) $("viewer").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250 });
+}
+function closeViewer() { $("viewer").hidden = true; }
+$("viewer").addEventListener("click", closeViewer);
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeViewer(); });
+$("ph-add").addEventListener("click", () => installed ? $("ph-in").click() : openPop());
+$("ph-in").addEventListener("change", async e => {
+  const f = e.target.files[0]; e.target.value = "";
+  if (!f) return;
+  const btn = $("ph-add"); btn.disabled = true; btn.textContent = "Сохраняю…";
+  try {
+    const d = await shrink(f);
+    await phTx("readwrite", st => st.add({ s: iso(session), ts: Date.now(), day: dayNo, d }));
+    await renderPhotos();
+  } catch { $("ph-hint").textContent = "Не получилось сохранить фото. Попробуй ещё раз."; }
+  btn.disabled = false; btn.textContent = "Добавить фото";
+});
+
+// ---------- мастер: «Написать» открывает выбор — Телеграм, WhatsApp или звонок ----------
+for (const id of ["write", "m-write", "event-btn"]) $(id).href = `https://t.me/${CONFIG.telegram}`;
+$("c-tg").href = `https://t.me/${CONFIG.telegram}`;
+$("c-wa").href = `https://wa.me/${CONFIG.whatsapp}`;
+$("c-tel").href = `tel:${CONFIG.phone.replace(/[^\d+]/g, "")}`;
+let writeFrom = null;
+function openWrite(title, from) {
+  writeFrom = from;
+  $("c-title").textContent = title;
+  $("c-tel").hidden = /фото/.test(title);   // фото звонком не отправишь
+  $("cwrap").hidden = false;
+  if (!reduce) {
+    $("cback").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300 });
+    $("cmodal").animate([{ opacity: 0, transform: "translateY(26px) scale(.9)" }, { opacity: 1, transform: "none" }], { duration: 560, easing: "cubic-bezier(.22,1.25,.36,1)" });
+  }
+  $("c-tg").focus({ preventScroll: true });
+}
+function closeWrite() {
+  if ($("cwrap").hidden) return;
+  const done = () => { $("cwrap").hidden = true; if (writeFrom && writeFrom.isConnected) writeFrom.focus({ preventScroll: true }); };
+  if (reduce) return done();
+  $("cback").animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: "forwards" });
+  $("cmodal").animate([{ opacity: 1 }, { opacity: 0, transform: "scale(.95)" }], { duration: 200, fill: "forwards" }).onfinish = () => { $("cwrap").getAnimations({ subtree: true }).forEach(a => a.cancel()); done(); };
+}
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-write]");
+  if (!a) return;
+  e.preventDefault();
+  openWrite(a.id === "event-btn" ? a.textContent : `Написать ${CONFIG.to}`, a);
+});
+for (const id of ["c-tg", "c-wa", "c-tel"]) $(id).addEventListener("click", () => setTimeout(closeWrite, 400));
+$("cback").addEventListener("click", closeWrite);
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeWrite(); });
+
+// ---------- разделы ----------
+const VIEWS = ["today", "can", "normal"];
+let current = null;
+function show(view, scroll) {
+  const asking = !session;
+  if (asking) $("top-add").hidden = true;
+  $("view-ask").hidden = !asking;
+  $("tabs").hidden = asking;
+  if (asking) { VIEWS.forEach(v => { $(`view-${v}`).hidden = true; }); current = null; reveal($("view-ask")); return; }
+  $("top-add").hidden = installed;
+  const next = VIEWS.includes(view) ? view : "today";
+  VIEWS.forEach((v, i) => {
+    $(`view-${v}`).hidden = v !== next;
+    $(`tab-${v}`).setAttribute("aria-current", v === next ? "page" : "false");
+    if (v === next) $("ind").style.transform = `translateX(${i * 100}%)`;
+  });
+  if (next !== current) reveal($(`view-${next}`));
+  if (next === "today" && current !== "today") { countUp($("day-num"), heroN); growPath(Math.min(100, dayNo / CONFIG.healDays * 100)); }
+  current = next;
+  if (scroll) window.scrollTo({ top: 0, behavior: "auto" });
+}
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+  show(t.dataset.view, false);
+  try { history.replaceState(null, "", "#" + t.dataset.view); } catch {}
+}));
+window.addEventListener("hashchange", () => show(location.hash.slice(1), true));
+
+// ---------- дата сеанса ----------
+function dateToUrl(d) {
+  markSeen(iso(d));
+  try { const u = new URL(location.href); u.searchParams.set("d", iso(d)); history.replaceState(null, "", u.pathname + u.search + u.hash); } catch {}
+}
+function setSession(d) {
+  if (!d || d > today) return;
+  session = d;
+  $("ask-back").hidden = true;
+  save("session", iso(d));
+  dateToUrl(d);
+  current = null;
+  render();
+  show("today", true);
+  $("top-add").hidden = installed;
+  maybePop();
+}
+$("ask-today").addEventListener("click", () => setSession(today));
+$("ask-yesterday").addEventListener("click", () => setSession(addDays(today, -1)));
+const WD = ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"];
+{
+  const sel = $("ask-date");
+  sel.append(new Option("Выбрать дату…", ""));
+  for (let i = 0; i <= 240; i++) {
+    const d = addDays(today, -i);
+    sel.append(new Option(i === 0 ? "Сегодня" : i === 1 ? "Вчера" : `${human(d)}${d.getFullYear() !== today.getFullYear() ? " " + d.getFullYear() : ""}, ${WD[d.getDay()]}`, iso(d)));
+  }
+  sel.addEventListener("change", () => { $("ask-go").disabled = !sel.value; });
+  $("ask-go").addEventListener("click", () => setSession(parseISO(sel.value)));
+}
+let prevSession = null;
+$("session-edit").addEventListener("click", () => { prevSession = session; session = null; $("ask-back").hidden = false; show("today", true); });
+$("ask-back").addEventListener("click", () => { if (prevSession) setSession(prevSession); });
+
+if (session) { render(); if (linkD !== iso(session)) dateToUrl(session); }
+show(location.hash.slice(1), false);
+maybePop();
+if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>

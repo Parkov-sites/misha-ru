@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Миша Ру — тату-мастер в Москве: цветной и чёрно-белый реализм · м. Серпуховская</title>
-<meta name="description" content="Тату в Москве у м. Серпуховская: цветной и чёрно-белый реализм, портреты, перекрытие старых татуировок. 12 лет в тату. Сеанс — 40 000 ₽. Запись в Telegram и WhatsApp.">
+<meta name="description" content="Тату в Москве у м. Серпуховская: цветной и чёрно-белый реализм, перекрытие старых татуировок. 12 лет в тату. Сеанс — 40 000 ₽, эскиз бесплатно. Запись в Telegram и WhatsApp.">
 <!-- always the dark theme (no switcher); the intro (preloader) plays once per browser session -->
 <script>(function(){document.documentElement.setAttribute("data-theme","dark");try{if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("misharu-intro")){document.documentElement.classList.add("intro");sessionStorage.setItem("misharu-intro","1");}}catch(e){}})();</script>
 <!-- значок — пантера с оранжевыми глазами (работа mikhail-06) -->
@@ -15,10 +15,10 @@
 <!-- превью ссылки в Телеграме и ВКонтакте; после публикации поставьте полный адрес картинки: https://адрес/img/logo/og.jpg -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Миша Ру — тату-мастер в Москве">
-<meta property="og:description" content="Цветной и чёрно-белый реализм, портреты, перекрытия. Работы, цены, запись.">
+<meta property="og:description" content="Цветной и чёрно-белый реализм, перекрытие старых татуировок. Работы, цены, запись.">
 <meta property="og:image" content="https://parkov-sites.github.io/misha-ru/img/logo/og.jpg">
 <!-- карточка для поисковиков (schema.org); после публикации добавьте "url" -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Миша Ру", "jobTitle": "Тату-мастер", "description": "Цветной и чёрно-белый реализм, портреты, перекрытие старых татуировок. Москва, м. Серпуховская", "image": "img/portrait.webp", "telephone": "+7 922 125-00-80", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}, "sameAs": ["https://t.me/ru_misha", "https://vk.ru/xmisharux_tattoomsk", "https://vk.ru/yav_brand"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Миша Ру", "jobTitle": "Тату-мастер", "description": "Цветной и чёрно-белый реализм, перекрытие старых татуировок. Москва, м. Серпуховская", "image": "img/portrait.webp", "telephone": "+7 922 125-00-80", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}, "sameAs": ["https://t.me/ru_misha", "https://vk.ru/xmisharux_tattoomsk", "https://vk.ru/yav_brand"]}</script>
 <meta name="twitter:card" content="summary_large_image">
 <!-- шрифты лежат рядом с сайтом (папка fonts): Google Fonts из России иногда тормозит; только кириллица и латиница -->
 <link rel="preload" href="fonts/InterTight-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
@@ -784,13 +784,10 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 /* touch screens: small buttons and footer links get a finger-sized hit area */
 @media (pointer:coarse){.chip{height:40px}}
 
-/* ——— finale: footer slides over the contact section ——— */
+/* ——— finale: footer slides over the contact section (the booking card stays bright — no fade, no shrink) ——— */
 .finale{position:relative}
 #contact{position:sticky;z-index:0}
 .foot{position:relative;z-index:1;box-shadow:0 -28px 70px -28px rgba(0,0,0,.32)}
-@media (prefers-reduced-motion:no-preference){
-  #contact{scale:calc(1 - .05 * var(--fp,0));opacity:calc(1 - .5 * var(--fp,0))}
-}
 
 /* ——— button system — the last word on shape, size and colour, so older rules above cannot drift it.
    Three levels: main (solid orange), second (quiet outline on a faint fill), choice (like the second, orange when picked).
@@ -1058,63 +1055,63 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
         <button class="chip" type="button" data-f="bw" aria-pressed="false">Чёрно-белые</button>
       </div>
       <!-- Новая работа: скопируйте любую <figure> и поменяйте data-n (img/имя.webp и img/thumbs/имя.webp, 3:4),
-           data-cat — темы, название (data-t, aria-label, .t) и описание (data-alt, alt).
+           имя в src и srcset (там же ширина большого фото: 853w или 960w — чёткие экраны берут его), data-cat — темы, название (data-t, aria-label, .t) и описание (data-alt, alt).
            Названия работ придумал Claude по фото — Миша может поправить. «Огонь» в названиях не повторяем (27.10.2026), он остаётся только в описаниях -->
       <div class="grid" id="grid">
         <figure class="work" data-rv data-n="mikhail-07" data-cat="color" data-t="Леопард" data-alt="Тату: леопард в огне на плече, цветной реализм">
-          <button type="button" data-open="mikhail-07" aria-label="Открыть: Леопард"><img src="img/thumbs/mikhail-07.webp" alt="Тату: леопард в огне на плече, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-07" aria-label="Открыть: Леопард"><img src="img/thumbs/mikhail-07.webp" srcset="img/thumbs/mikhail-07.webp 520w, img/mikhail-07.webp 853w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: леопард в огне на плече, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Леопард</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-12" data-cat="bw" data-t="Мэрилин" data-alt="Тату: рукав с Мэрилин Монро и игральными картами, чёрно-белый реализм">
-          <button type="button" data-open="mikhail-12" aria-label="Открыть: Мэрилин"><img src="img/thumbs/mikhail-12.webp" alt="Тату: рукав с Мэрилин Монро и игральными картами, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-12" aria-label="Открыть: Мэрилин"><img src="img/thumbs/mikhail-12.webp" srcset="img/thumbs/mikhail-12.webp 520w, img/mikhail-12.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: рукав с Мэрилин Монро и игральными картами, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Мэрилин</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-05" data-cat="color" data-t="Дракон" data-alt="Тату: огненный дракон на предплечье, цветной реализм">
-          <button type="button" data-open="mikhail-05" aria-label="Открыть: Дракон"><img src="img/thumbs/mikhail-05.webp" alt="Тату: огненный дракон на предплечье, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-05" aria-label="Открыть: Дракон"><img src="img/thumbs/mikhail-05.webp" srcset="img/thumbs/mikhail-05.webp 520w, img/mikhail-05.webp 853w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: огненный дракон на предплечье, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Дракон</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-04" data-cat="bw" data-t="Питбуль" data-alt="Тату: питбуль и черепа на плече, чёрно-белый реализм">
-          <button type="button" data-open="mikhail-04" aria-label="Открыть: Питбуль"><img src="img/thumbs/mikhail-04.webp" alt="Тату: питбуль и черепа на плече, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-04" aria-label="Открыть: Питбуль"><img src="img/thumbs/mikhail-04.webp" srcset="img/thumbs/mikhail-04.webp 520w, img/mikhail-04.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: питбуль и черепа на плече, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Питбуль</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-09" data-cat="color" data-t="Волк" data-alt="Тату: рычащий волк в огне на предплечье, цветной реализм">
-          <button type="button" data-open="mikhail-09" aria-label="Открыть: Волк"><img src="img/thumbs/mikhail-09.webp" alt="Тату: рычащий волк в огне на предплечье, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-09" aria-label="Открыть: Волк"><img src="img/thumbs/mikhail-09.webp" srcset="img/thumbs/mikhail-09.webp 520w, img/mikhail-09.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: рычащий волк в огне на предплечье, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Волк</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-11" data-cat="bw" data-t="Ангел" data-alt="Тату: ангел, женский портрет на предплечье, чёрно-белый реализм">
-          <button type="button" data-open="mikhail-11" aria-label="Открыть: Ангел"><img src="img/thumbs/mikhail-11.webp" alt="Тату: ангел, женский портрет на предплечье, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-11" aria-label="Открыть: Ангел"><img src="img/thumbs/mikhail-11.webp" srcset="img/thumbs/mikhail-11.webp 520w, img/mikhail-11.webp 853w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: ангел, женский портрет на предплечье, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Ангел</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-02" data-cat="color" data-t="Панда-самурай" data-alt="Тату: панда-самурай и пагода на голени, цветной реализм">
-          <button type="button" data-open="mikhail-02" aria-label="Открыть: Панда-самурай"><img src="img/thumbs/mikhail-02.webp" alt="Тату: панда-самурай и пагода на голени, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-02" aria-label="Открыть: Панда-самурай"><img src="img/thumbs/mikhail-02.webp" srcset="img/thumbs/mikhail-02.webp 520w, img/mikhail-02.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: панда-самурай и пагода на голени, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Панда-самурай</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-13" data-cat="bw" data-t="Японский рукав" data-alt="Тату: японский рукав со змеем и волнами, чёрно-белый">
-          <button type="button" data-open="mikhail-13" aria-label="Открыть: Японский рукав"><img src="img/thumbs/mikhail-13.webp" alt="Тату: японский рукав со змеем и волнами, чёрно-белый" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-13" aria-label="Открыть: Японский рукав"><img src="img/thumbs/mikhail-13.webp" srcset="img/thumbs/mikhail-13.webp 520w, img/mikhail-13.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: японский рукав со змеем и волнами, чёрно-белый" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Японский рукав</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-06" data-cat="color" data-t="Пантера" data-alt="Тату: пантера с оранжевыми глазами на предплечье, цветной реализм">
-          <button type="button" data-open="mikhail-06" aria-label="Открыть: Пантера"><img src="img/thumbs/mikhail-06.webp" alt="Тату: пантера с оранжевыми глазами на предплечье, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-06" aria-label="Открыть: Пантера"><img src="img/thumbs/mikhail-06.webp" srcset="img/thumbs/mikhail-06.webp 520w, img/mikhail-06.webp 853w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: пантера с оранжевыми глазами на предплечье, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Пантера</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-08" data-cat="bw" data-t="Козерог" data-alt="Тату: козерог, часы и всевидящее око на предплечье, чёрно-белый реализм">
-          <button type="button" data-open="mikhail-08" aria-label="Открыть: Козерог"><img src="img/thumbs/mikhail-08.webp" alt="Тату: козерог, часы и всевидящее око на предплечье, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-08" aria-label="Открыть: Козерог"><img src="img/thumbs/mikhail-08.webp" srcset="img/thumbs/mikhail-08.webp 520w, img/mikhail-08.webp 853w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: козерог, часы и всевидящее око на предплечье, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Козерог</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-10" data-cat="color" data-t="Череп" data-alt="Тату: огненный череп на предплечье, цветной реализм">
-          <button type="button" data-open="mikhail-10" aria-label="Открыть: Череп"><img src="img/thumbs/mikhail-10.webp" alt="Тату: огненный череп на предплечье, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-10" aria-label="Открыть: Череп"><img src="img/thumbs/mikhail-10.webp" srcset="img/thumbs/mikhail-10.webp 520w, img/mikhail-10.webp 853w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: огненный череп на предплечье, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Череп</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-16" data-cat="bw" data-t="Мэрилин, крупно" data-alt="Тату: портрет Мэрилин Монро крупным планом, чёрно-белый реализм">
-          <button type="button" data-open="mikhail-16" aria-label="Открыть: Мэрилин, крупно"><img src="img/thumbs/mikhail-16.webp" alt="Тату: портрет Мэрилин Монро крупным планом, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-16" aria-label="Открыть: Мэрилин, крупно"><img src="img/thumbs/mikhail-16.webp" srcset="img/thumbs/mikhail-16.webp 520w, img/mikhail-16.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: портрет Мэрилин Монро крупным планом, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Мэрилин, крупно</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-01" data-cat="color" data-t="Тигр" data-alt="Тату: крадущийся тигр на груди, цветной реализм">
-          <button type="button" data-open="mikhail-01" aria-label="Открыть: Тигр"><img src="img/thumbs/mikhail-01.webp" alt="Тату: крадущийся тигр на груди, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-01" aria-label="Открыть: Тигр"><img src="img/thumbs/mikhail-01.webp" srcset="img/thumbs/mikhail-01.webp 520w, img/mikhail-01.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: крадущийся тигр на груди, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Тигр</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-14" data-cat="bw" data-t="Подпись" data-alt="Тату: подпись Мэрилин Монро и дым на рукаве">
-          <button type="button" data-open="mikhail-14" aria-label="Открыть: Подпись"><img src="img/thumbs/mikhail-14.webp" alt="Тату: подпись Мэрилин Монро и дым на рукаве" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="mikhail-14" aria-label="Открыть: Подпись"><img src="img/thumbs/mikhail-14.webp" srcset="img/thumbs/mikhail-14.webp 520w, img/mikhail-14.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: подпись Мэрилин Монро и дым на рукаве" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Подпись</span></figcaption>
         </figure>
         <figure class="work vid" data-rv data-n="v-mikhail-12" data-v data-t="Череп" data-alt="Видео: огненный череп рядом с эскизом">
@@ -1188,9 +1185,9 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
            Пока у каждой карточки один пример (data-ex — номера работ через пробел, первое — главное фото; Миша пришлёт ещё): пантера, леопард, рукав с Мэрилин.
            Панда-самурай — два сеанса (со слов Миши, 27.10.2026); под карточками — что бесплатно, с точками, как на сайте студии -->
       <div class="why-grid" data-rv-stagger>
-        <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="mikhail-06" aria-label="Пример за один сеанс"><img src="img/thumbs/mikhail-06.webp" alt="" width="520" height="693" loading="lazy" decoding="async"></button><h3>1 сеанс<span class="pr">40&nbsp;000&nbsp;₽</span></h3><p>Средняя работа: один образ и&nbsp;фон</p></div>
-        <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="mikhail-07" aria-label="Пример за два сеанса"><img src="img/thumbs/mikhail-07.webp" alt="" width="520" height="693" loading="lazy" decoding="async"></button><h3>2 сеанса<span class="pr">80&nbsp;000&nbsp;₽</span></h3><p>Крупная работа с&nbsp;фоном и&nbsp;деталями</p></div>
-        <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="mikhail-12" aria-label="Пример большого проекта"><img src="img/thumbs/mikhail-12.webp" alt="" width="520" height="693" loading="lazy" decoding="async"></button><h3>3 сеанса и&nbsp;больше<span class="pr">от&nbsp;120&nbsp;000&nbsp;₽</span></h3><p>Большой проект: рукав, спина или грудь</p></div>
+        <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="mikhail-06" aria-label="Пример за один сеанс"><img src="img/thumbs/mikhail-06.webp" srcset="img/thumbs/mikhail-06.webp 520w, img/mikhail-06.webp 853w" sizes="25vw" alt="" width="520" height="693" loading="lazy" decoding="async"></button><h3>1 сеанс<span class="pr">40&nbsp;000&nbsp;₽</span></h3><p>Средняя работа: один образ и&nbsp;фон</p></div>
+        <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="mikhail-07" aria-label="Пример за два сеанса"><img src="img/thumbs/mikhail-07.webp" srcset="img/thumbs/mikhail-07.webp 520w, img/mikhail-07.webp 853w" sizes="25vw" alt="" width="520" height="693" loading="lazy" decoding="async"></button><h3>2 сеанса<span class="pr">80&nbsp;000&nbsp;₽</span></h3><p>Крупная работа с&nbsp;фоном и&nbsp;деталями</p></div>
+        <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="mikhail-12" aria-label="Пример большого проекта"><img src="img/thumbs/mikhail-12.webp" srcset="img/thumbs/mikhail-12.webp 520w, img/mikhail-12.webp 960w" sizes="25vw" alt="" width="520" height="693" loading="lazy" decoding="async"></button><h3>3 сеанса и&nbsp;больше<span class="pr">от&nbsp;120&nbsp;000&nbsp;₽</span></h3><p>Большой проект: рукав, спина или грудь</p></div>
       </div>
       <div class="pr-free" data-rv><h3>До&nbsp;сеанса</h3><ul><li><span>Консультация</span><span class="pf-dots" aria-hidden="true"></span><b>бесплатно</b></li><li><span>Эскиз</span><span class="pf-dots" aria-hidden="true"></span><b>бесплатно</b></li></ul></div>
     </div>
@@ -1238,27 +1235,27 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
       </ul>
       <!-- «Мои картины» — картины Миши в рамах на стене (макеты Владимира из Gemini, 27.10.2026). Обрезка 3:4, картина ~76% ширины кадра — все одного размера.
            Круглые и прямоугольные через одну. Открываются крупно, как работы; стрелки листают только картины.
-           Новая картина: img/art-NN.webp (768×1024) и img/thumbs/art-NN.webp (520×693), скопировать <figure>, поменять data-n, название и описание -->
+           Новая картина: img/art-NN.webp (768×1024) и img/thumbs/art-NN.webp (520×693), скопировать <figure>, поменять data-n, имя в src и srcset, название и описание -->
       <p class="eyebrow ab-why" data-rv>Мои картины</p>
       <div class="art" id="art" data-rv>
         <figure class="work" data-n="art-01" data-t="Бабушка" data-alt="Картина: бабушка в очках с репликой про наколки, круглый холст">
-          <button type="button" data-open="art-01" aria-label="Открыть: Бабушка"><img src="img/thumbs/art-01.webp" alt="Картина: бабушка в очках с репликой про наколки, круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="art-01" aria-label="Открыть: Бабушка"><img src="img/thumbs/art-01.webp" srcset="img/thumbs/art-01.webp 520w, img/art-01.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: бабушка в очках с репликой про наколки, круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Бабушка</span></figcaption>
         </figure>
         <figure class="work" data-n="art-02" data-t="Леденец" data-alt="Картина: девушка в розовых очках с леденцом на ярком фоне">
-          <button type="button" data-open="art-02" aria-label="Открыть: Леденец"><img src="img/thumbs/art-02.webp" alt="Картина: девушка в розовых очках с леденцом на ярком фоне" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="art-02" aria-label="Открыть: Леденец"><img src="img/thumbs/art-02.webp" srcset="img/thumbs/art-02.webp 520w, img/art-02.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: девушка в розовых очках с леденцом на ярком фоне" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Леденец</span></figcaption>
         </figure>
         <figure class="work" data-n="art-03" data-t="Ворона и сыр" data-alt="Картина: ворона с сыром в клюве, круглый холст">
-          <button type="button" data-open="art-03" aria-label="Открыть: Ворона и сыр"><img src="img/thumbs/art-03.webp" alt="Картина: ворона с сыром в клюве, круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="art-03" aria-label="Открыть: Ворона и сыр"><img src="img/thumbs/art-03.webp" srcset="img/thumbs/art-03.webp 520w, img/art-03.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: ворона с сыром в клюве, круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Ворона и сыр</span></figcaption>
         </figure>
         <figure class="work" data-n="art-04" data-t="Тайлер Дёрден" data-alt="Картина: Тайлер Дёрден из «Бойцовского клуба», чёрно-белая">
-          <button type="button" data-open="art-04" aria-label="Открыть: Тайлер Дёрден"><img src="img/thumbs/art-04.webp" alt="Картина: Тайлер Дёрден из «Бойцовского клуба», чёрно-белая" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="art-04" aria-label="Открыть: Тайлер Дёрден"><img src="img/thumbs/art-04.webp" srcset="img/thumbs/art-04.webp 520w, img/art-04.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: Тайлер Дёрден из «Бойцовского клуба», чёрно-белая" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Тайлер Дёрден</span></figcaption>
         </figure>
         <figure class="work" data-n="art-05" data-t="Всё будет в шоколаде" data-alt="Картина: девочка в платке с пистолетами и надписью «Всё будет в шоколаде», круглый холст">
-          <button type="button" data-open="art-05" aria-label="Открыть: Всё будет в шоколаде"><img src="img/thumbs/art-05.webp" alt="Картина: девочка в платке с пистолетами и надписью «Всё будет в шоколаде», круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
+          <button type="button" data-open="art-05" aria-label="Открыть: Всё будет в шоколаде"><img src="img/thumbs/art-05.webp" srcset="img/thumbs/art-05.webp 520w, img/art-05.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: девочка в платке с пистолетами и надписью «Всё будет в шоколаде», круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Всё будет в шоколаде</span></figcaption>
         </figure>
       </div>
@@ -1291,9 +1288,9 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
             <p>В Москве, в&nbsp;тату-студии у&nbsp;метро Серпуховская. Точный адрес пришлю, когда договоримся о&nbsp;дате.</p></details>
           <details class="qa-more"><summary>Как подготовиться к&nbsp;сеансу?</summary>
             <p>Выспитесь и&nbsp;плотно поешьте за&nbsp;час-два до&nbsp;сеанса, возьмите с&nbsp;собой воду и&nbsp;перекус. За&nbsp;сутки — без алкоголя: он разжижает кровь, и&nbsp;краска ложится хуже. Наденьте удобную одежду, которая открывает место татуировки.</p></details>
-          <!-- памятка — пока Владимира (theparkov.github.io/uhod), заглушка: переделать под Мишу и поменять ссылку -->
+          <!-- памятка Миши — папка uhod (копия общей памятки: его имя, значок-пантера, «Написать» — Телеграм, WhatsApp, звонок) -->
           <details class="qa-more"><summary>Как ухаживать за&nbsp;татуировкой?</summary>
-            <p>Заживает около двух недель. Не&nbsp;снимайте плёнку раньше срока, мойте тату тёплой водой и&nbsp;мажьте кремом, без бани, бассейна и&nbsp;солнца. Всё по&nbsp;дням — в&nbsp;<a href="https://theparkov.github.io/uhod/" target="_blank" rel="noopener">памятке по&nbsp;уходу</a>.</p></details>
+            <p>Заживает около двух недель. Не&nbsp;снимайте плёнку раньше срока, мойте тату тёплой водой и&nbsp;мажьте кремом, без бани, бассейна и&nbsp;солнца. Всё по&nbsp;дням — в&nbsp;<a href="uhod/" target="_blank" rel="noopener">памятке по&nbsp;уходу</a>.</p></details>
           <details class="qa-more"><summary>Можно принести свой эскиз или референс?</summary>
             <p>Да, референсы помогают понять настроение и&nbsp;детали. А&nbsp;эскиз я нарисую сам — под вашу идею и&nbsp;место на&nbsp;теле.</p></details>
           <details class="qa-more"><summary>Можно заказать картину или портрет?</summary>
@@ -1538,24 +1535,13 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
     req();
   })();
 
-  /* ——— finale: the contact section holds still and recedes while the footer slides over it ——— */
+  /* ——— finale: the contact section holds still while the footer slides over it ——— */
   (function(){
     var sec = document.getElementById("contact"), foot = document.querySelector(".foot");
     if (!sec || !foot) return;
     function pin(){ sec.style.top = Math.min(0, window.innerHeight - sec.offsetHeight) + "px"; }
     pin(); window.addEventListener("resize", pin);
     if ("ResizeObserver" in window) new ResizeObserver(pin).observe(sec);
-    if (reduce) return;
-    var busy = false;
-    function frame(){
-      busy = false; if (locked) return;
-      var vh = window.innerHeight, t = foot.getBoundingClientRect().top;
-      var p = Math.max(0, Math.min(1, (vh - t) / Math.min(vh, foot.offsetHeight)));
-      sec.style.setProperty("--fp", p.toFixed(4));
-      sec.style.transformOrigin = "50% " + Math.round(sec.offsetHeight - vh / 2) + "px";
-    }
-    function req(){ if (!busy){ busy = true; requestAnimationFrame(frame); } }
-    window.addEventListener("scroll", req, {passive:true}); window.addEventListener("resize", req); req();
   })();
 
   /* ——— bottom-edge blur fades out at the very end of the page ——— */
