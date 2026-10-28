@@ -387,6 +387,7 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 .qz-o small{font-size:13px;font-weight:400;color:var(--muted)}
 .qz-o.on{background:var(--gold);color:var(--on-gold)}.qz-o.on small{color:color-mix(in srgb,var(--on-gold) 70%,transparent)}
 .qz-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.qz-grid .qz-o:last-child:nth-child(odd){grid-column:1/-1}
 .qz-grid .qz-o{flex-direction:column;gap:2px}
 /* masters are cards with a portrait, so their text starts at the photo */
 .qz-m{justify-content:flex-start;text-align:left;gap:12px;padding:10px 12px}
@@ -889,20 +890,21 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
     -webkit-mask-image:linear-gradient(180deg,#000 38%,transparent 84%);mask-image:linear-gradient(180deg,#000 38%,transparent 84%)}
   .ab-body{grid-area:2/1;width:auto;margin-top:-34%;padding:0 20px 24px}
 }
-/* «Почему меня выбирают» — пять отдельных плашек одной высоты: сверху крупное оранжевое слово, под ним пояснение в одну строку.
-   Три в ряд и под ними две пошире (сетка на 6 колонок) — оба ряда полные; уже 760 px — одна под другой */
+/* «Почему меня выбирают» — четыре плитки одной высоты, как на сайте Владимира (28.10.2026): крупное оранжевое слово сверху, пояснение внизу,
+   из левого верхнего угла — тёплый отсвет акцента. На компьютере четыре в ряд, уже 1180 px — 2 × 2 (и на телефоне) */
 .ab-why{margin:clamp(28px,2.6vw,40px) 0 12px}
-.ab-plates{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:0;padding:0;list-style:none}
-.ab-plates li{grid-column:span 2;display:flex;flex-direction:column;gap:12px;padding:clamp(20px,2.2vw,30px);border-radius:16px;
-  background:var(--surface);box-shadow:inset 0 1px 0 var(--edge),var(--drop);--rv-y:22px}
-.ab-plates li:nth-child(n+4){grid-column:span 3}
-.ab-plates b{font-size:clamp(24px,2.2vw,38px);font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--gold);white-space:nowrap}
+.ab-plates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:8px;margin:0;padding:0;list-style:none}
+.ab-plates li{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(20px,2.4vw,36px);min-height:clamp(150px,12vw,190px);padding:clamp(20px,2vw,28px);border-radius:16px;
+  background:radial-gradient(120% 100% at 0 0,color-mix(in srgb,var(--gold) 9%,transparent),transparent 62%),var(--surface);box-shadow:inset 0 1px 0 var(--edge),var(--drop);--rv-y:22px}
+.ab-plates b{font-size:clamp(36px,3.4vw,54px);font-weight:600;letter-spacing:-.045em;line-height:1;color:var(--gold);white-space:nowrap}
+.ab-plates b .odo{color:inherit}
 .ab-plates li>span{font-size:clamp(15px,1.2vw,17px);line-height:1.35;color:var(--muted)}
+@media (max-width:1180px){.ab-plates{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:760px){
-  .ab-plates{grid-template-columns:minmax(0,1fr);gap:6px}
-  .ab-plates li,.ab-plates li:nth-child(n+4){grid-column:auto;gap:8px;padding:16px 18px}
-  .ab-plates b{font-size:26px}
-  .ab-plates li>span{font-size:15px}
+  .ab-plates{gap:6px}
+  .ab-plates li{min-height:128px;padding:16px}
+  .ab-plates b{font-size:clamp(26px,8vw,34px)}
+  .ab-plates li>span{font-size:14.5px}
 }
 /* «Мои картины» — те же карточки, что у работ, и тот же крупный просмотр. На компьютере пять в ряд;
    уже 1200 px (в ряд выходят мельче 180 px) — лента до краёв экрана, листается пальцем вбок (последняя карточка видна наполовину — подсказка, что лента едет) */
@@ -1069,9 +1071,9 @@ a[href^="#"]{-webkit-touch-callout:none}
         <a class="nav-i" href="#home" data-spy><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg><span>Главная</span></a>
         <a class="nav-i" href="#works" data-spy><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Работы</span></a>
         <a class="nav-i" href="#covers" data-spy><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M12 2.5v19M8.5 10 6.5 12l2 2M15.5 10l2 2-2 2"/></svg><span>Перекрытия</span></a>
+        <a class="nav-i" href="#about" data-spy><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.5c0-4.1 3.3-6.8 7.5-6.8s7.5 2.7 7.5 6.8"/></svg><span>Обо мне</span></a>
         <a class="nav-i" href="#prices" data-spy><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20V4h4.5a4 4 0 0 1 0 8H6.5M6.5 16h7"/></svg><span>Цены</span></a>
         <a class="nav-i" href="#reviews" data-spy><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1-4.4A8.5 8.5 0 1 1 20.5 12z"/></svg><span>Отзывы</span></a>
-        <a class="nav-i" href="#about" data-spy><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.5c0-4.1 3.3-6.8 7.5-6.8s7.5 2.7 7.5 6.8"/></svg><span>Обо мне</span></a>
         <a class="nav-i" href="#faq" data-spy><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.6a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.4"/><path d="M12 16.8h.01"/></svg><span>Вопросы</span></a>
       </div>
     </nav>
@@ -1079,11 +1081,11 @@ a[href^="#"]{-webkit-touch-callout:none}
       <div class="grp-l">Связь</div>
       <div class="grp-in">
         <span class="ind" aria-hidden="true"></span>
-        <a class="nav-i" href="#contact" data-spy><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5h8.5"/><path d="M16.5 3.8a2 2 0 0 1 2.8 2.8L7.5 18.4l-3.8.9.9-3.8z"/></svg><span>Заявка</span></a>
         <a class="nav-i" href="https://t.me/ru_misha" target="_blank" rel="noopener"><svg class="ic ic-b" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Телеграм</span><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></a>
         <!-- WhatsApp — на номер с буклета; проверить у Миши -->
         <a class="nav-i" href="https://wa.me/79221250080" target="_blank" rel="noopener"><svg class="ic ic-b" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg><span>WhatsApp</span><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></a>
         <a class="nav-i" href="tel:+79221250080"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3.5h3l1.6 4.2-2.1 1.3a11 11 0 0 0 5 5l1.3-2.1 4.2 1.6v3a2 2 0 0 1-2 2A15 15 0 0 1 3.5 5.5a2 2 0 0 1 2-2z"/></svg><span>Позвонить</span></a>
+        <a class="nav-i" href="https://vk.ru/xmisharux_tattoomsk" target="_blank" rel="noopener"><svg class="ic ic-b" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.576-1.496c.588-.19 1.341 1.26 2.14 1.818.605.422 1.064.33 1.064.33l2.137-.03s1.117-.071.587-.964c-.043-.073-.308-.661-1.588-1.87-1.34-1.264-1.16-1.059.453-3.246.983-1.332 1.376-2.145 1.253-2.493-.117-.332-.84-.244-.84-.244l-2.406.015s-.178-.025-.31.056c-.13.079-.212.262-.212.262s-.382 1.03-.89 1.907c-1.07 1.85-1.499 1.948-1.674 1.832-.407-.267-.305-1.075-.305-1.648 0-1.793.267-2.54-.521-2.733-.262-.065-.454-.107-1.123-.114-.858-.009-1.585.003-1.996.208-.274.136-.485.44-.356.457.159.022.519.099.71.363.246.341.237 1.107.237 1.107s.142 2.11-.33 2.371c-.325.18-.77-.187-1.725-1.865-.489-.859-.859-1.81-.859-1.81s-.07-.176-.198-.272c-.154-.115-.37-.151-.37-.151l-2.286.015s-.343.01-.469.161C3.94 7.721 4.043 8 4.043 8s1.79 4.258 3.817 6.403c1.858 1.967 3.968 1.838 3.968 1.838h.957z"/></svg><span>ВКонтакте</span><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></a>
       </div>
     </div>
     <div class="grp grp-bottom">
@@ -1345,6 +1347,61 @@ a[href^="#"]{-webkit-touch-callout:none}
     </div>
   </section>
 
+  <section class="sec" id="about" style="padding-top:0">
+    <div class="wrap">
+      <!-- «Обо мне» — рассказ прямо на фото (из буклета Миши, «Буклет.md», сжат): на компьютере портрет справа растворяется в тёмном фоне карточки,
+           текст слева; на телефоне фото сверху, текст на его нижней части. Ниже — «Почему меня выбирают» полосой.
+           Текст — из рассказа Миши о себе (27.10.2026), сокращён; цифры (лет, работ) — в плашках ниже, в тексте не повторяем -->
+      <header class="sh sh-row" data-rv>
+        <h2>Обо мне</h2><span class="sh-sl" aria-hidden="true"></span>
+        <p class="sh-lede">Кто я и&nbsp;как работаю</p>
+      </header>
+      <article class="ab-card" data-rv>
+        <img class="ab-ph" src="img/portrait.webp" alt="Миша Ру, тату-мастер" width="600" height="800" loading="lazy" decoding="async">
+        <div class="ab-body">
+          <p class="ab-text">Тату-мастер и&nbsp;художник, работаю в&nbsp;реализме (ч/б и&nbsp;цвет) — портреты, животные, перекрытия. Эскиз разрабатываю под каждого клиента — с&nbsp;учётом его пожеланий и&nbsp;анатомии. Беру уникальные проекты, пишу маслом и&nbsp;рисую портреты.</p>
+        </div>
+      </article>
+      <!-- «Почему меня выбирают» — четыре плитки, сначала цифры, «Эскиз» — последним (как на сайте Владимира, 28.10.2026).
+           12 лет — с сайта студии (так везде на сайте); 1000+ работ — пост Миши ВК (16.08.2026); 5 звёзд — все 14 отзывов ниже; эскиз — слова Миши (27.10.2026).
+           Убраны (Владимир 28.10.2026): «Перекрытия» — уже в шапке, в тексте выше и отдельным разделом; «Образование» — Миша просил убрать «художник по образованию»;
+           «Свой эскиз — рисую с нуля» — Миша просил «под каждого клиента», «с нуля» — неудачная формулировка -->
+      <p class="eyebrow ab-why" data-rv>Почему меня выбирают</p>
+      <ul class="ab-plates" data-rv-stagger>
+        <li data-rv><b>12&nbsp;лет</b><span>в&nbsp;тату</span></li>
+        <li data-rv><b><span class="odo" data-to="1000" data-suffix="+">1000+</span></b><span>готовых работ</span></li>
+        <li data-rv><b>5&nbsp;звёзд</b><span>на&nbsp;всех отзывах</span></li>
+        <li data-rv><b>Эскиз</b><span>под ваши пожелания и&nbsp;анатомию</span></li>
+      </ul>
+      <!-- «Мои картины» — картины Миши в рамах на стене (макеты Владимира из Gemini, 27.10.2026). Обрезка 3:4, картина ~76% ширины кадра — все одного размера.
+           Круглые и прямоугольные через одну. Открываются крупно, как работы; стрелки листают только картины.
+           Новая картина: img/art-NN.webp (768×1024) и img/thumbs/art-NN.webp (520×693), скопировать <figure>, поменять data-n, имя в src и srcset, название и описание -->
+      <p class="eyebrow ab-why" data-rv>Мои картины</p>
+      <div class="art" id="art" data-rv>
+        <figure class="work" data-n="art-01" data-t="Бабушка" data-alt="Картина: бабушка в очках с репликой про наколки, круглый холст">
+          <button type="button" data-open="art-01" aria-label="Открыть: Бабушка"><img src="img/thumbs/art-01.webp" srcset="img/thumbs/art-01.webp 520w, img/art-01.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: бабушка в очках с репликой про наколки, круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Бабушка</span></figcaption>
+        </figure>
+        <figure class="work" data-n="art-02" data-t="Леденец" data-alt="Картина: девушка в розовых очках с леденцом на ярком фоне">
+          <button type="button" data-open="art-02" aria-label="Открыть: Леденец"><img src="img/thumbs/art-02.webp" srcset="img/thumbs/art-02.webp 520w, img/art-02.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: девушка в розовых очках с леденцом на ярком фоне" width="520" height="693" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Леденец</span></figcaption>
+        </figure>
+        <figure class="work" data-n="art-03" data-t="Ворона и сыр" data-alt="Картина: ворона с сыром в клюве, круглый холст">
+          <button type="button" data-open="art-03" aria-label="Открыть: Ворона и сыр"><img src="img/thumbs/art-03.webp" srcset="img/thumbs/art-03.webp 520w, img/art-03.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: ворона с сыром в клюве, круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Ворона и сыр</span></figcaption>
+        </figure>
+        <figure class="work" data-n="art-04" data-t="Тайлер Дёрден" data-alt="Картина: Тайлер Дёрден из «Бойцовского клуба», чёрно-белая">
+          <button type="button" data-open="art-04" aria-label="Открыть: Тайлер Дёрден"><img src="img/thumbs/art-04.webp" srcset="img/thumbs/art-04.webp 520w, img/art-04.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: Тайлер Дёрден из «Бойцовского клуба», чёрно-белая" width="520" height="693" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Тайлер Дёрден</span></figcaption>
+        </figure>
+        <figure class="work" data-n="art-05" data-t="Всё будет в шоколаде" data-alt="Картина: девочка в платке с пистолетами и надписью «Всё будет в шоколаде», круглый холст">
+          <button type="button" data-open="art-05" aria-label="Открыть: Всё будет в шоколаде"><img src="img/thumbs/art-05.webp" srcset="img/thumbs/art-05.webp 520w, img/art-05.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: девочка в платке с пистолетами и надписью «Всё будет в шоколаде», круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Всё будет в шоколаде</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section class="sec" id="prices" style="padding-top:0">
     <div class="wrap">
       <header class="sh sh-row" data-rv>
@@ -1395,60 +1452,6 @@ a[href^="#"]{-webkit-touch-callout:none}
     </div>
   </section>
 
-  <section class="sec" id="about" style="padding-top:0">
-    <div class="wrap">
-      <!-- «Обо мне» — рассказ прямо на фото (из буклета Миши, «Буклет.md», сжат): на компьютере портрет справа растворяется в тёмном фоне карточки,
-           текст слева; на телефоне фото сверху, текст на его нижней части. Ниже — «Почему меня выбирают» полосой.
-           Текст — из рассказа Миши о себе (27.10.2026), сокращён; цифры (лет, работ) — в плашках ниже, в тексте не повторяем -->
-      <header class="sh sh-row" data-rv>
-        <h2>Обо мне</h2><span class="sh-sl" aria-hidden="true"></span>
-        <p class="sh-lede">Кто я и&nbsp;как работаю</p>
-      </header>
-      <article class="ab-card" data-rv>
-        <img class="ab-ph" src="img/portrait.webp" alt="Миша Ру, тату-мастер" width="600" height="800" loading="lazy" decoding="async">
-        <div class="ab-body">
-          <p class="ab-text">Тату-мастер и&nbsp;художник, работаю в&nbsp;реализме (ч/б и&nbsp;цвет) — портреты, животные, перекрытия. Эскиз разрабатываю под каждого клиента — с&nbsp;учётом его пожеланий и&nbsp;анатомии. Беру уникальные проекты, пишу маслом и&nbsp;рисую портреты.</p>
-        </div>
-      </article>
-      <!-- «Почему меня выбирают» — пять отдельных плашек: крупное слово и пояснение в одну строку, без образов.
-           12 лет — с сайта студии (так везде на сайте); 1000+ работ — пост Миши ВК (16.08.2026); образование, эскиз и перекрытия — слова Миши (27.10.2026) -->
-      <p class="eyebrow ab-why" data-rv>Почему меня выбирают</p>
-      <ul class="ab-plates" data-rv-stagger>
-        <li data-rv><b>12&nbsp;лет</b><span>опыта в&nbsp;татуировке</span></li>
-        <li data-rv><b><span class="odo" data-to="1000" data-suffix="+">1000+</span></b><span>готовых работ</span></li>
-        <li data-rv><b>Образование</b><span>художественное</span></li>
-        <li data-rv><b>Свой эскиз</b><span>рисую с&nbsp;нуля под вашу идею</span></li>
-        <li data-rv><b>Перекрытия</b><span>исправляю старые и&nbsp;неудачные тату</span></li>
-      </ul>
-      <!-- «Мои картины» — картины Миши в рамах на стене (макеты Владимира из Gemini, 27.10.2026). Обрезка 3:4, картина ~76% ширины кадра — все одного размера.
-           Круглые и прямоугольные через одну. Открываются крупно, как работы; стрелки листают только картины.
-           Новая картина: img/art-NN.webp (768×1024) и img/thumbs/art-NN.webp (520×693), скопировать <figure>, поменять data-n, имя в src и srcset, название и описание -->
-      <p class="eyebrow ab-why" data-rv>Мои картины</p>
-      <div class="art" id="art" data-rv>
-        <figure class="work" data-n="art-01" data-t="Бабушка" data-alt="Картина: бабушка в очках с репликой про наколки, круглый холст">
-          <button type="button" data-open="art-01" aria-label="Открыть: Бабушка"><img src="img/thumbs/art-01.webp" srcset="img/thumbs/art-01.webp 520w, img/art-01.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: бабушка в очках с репликой про наколки, круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
-          <figcaption><span class="t">Бабушка</span></figcaption>
-        </figure>
-        <figure class="work" data-n="art-02" data-t="Леденец" data-alt="Картина: девушка в розовых очках с леденцом на ярком фоне">
-          <button type="button" data-open="art-02" aria-label="Открыть: Леденец"><img src="img/thumbs/art-02.webp" srcset="img/thumbs/art-02.webp 520w, img/art-02.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: девушка в розовых очках с леденцом на ярком фоне" width="520" height="693" loading="lazy" decoding="async"></button>
-          <figcaption><span class="t">Леденец</span></figcaption>
-        </figure>
-        <figure class="work" data-n="art-03" data-t="Ворона и сыр" data-alt="Картина: ворона с сыром в клюве, круглый холст">
-          <button type="button" data-open="art-03" aria-label="Открыть: Ворона и сыр"><img src="img/thumbs/art-03.webp" srcset="img/thumbs/art-03.webp 520w, img/art-03.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: ворона с сыром в клюве, круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
-          <figcaption><span class="t">Ворона и сыр</span></figcaption>
-        </figure>
-        <figure class="work" data-n="art-04" data-t="Тайлер Дёрден" data-alt="Картина: Тайлер Дёрден из «Бойцовского клуба», чёрно-белая">
-          <button type="button" data-open="art-04" aria-label="Открыть: Тайлер Дёрден"><img src="img/thumbs/art-04.webp" srcset="img/thumbs/art-04.webp 520w, img/art-04.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: Тайлер Дёрден из «Бойцовского клуба», чёрно-белая" width="520" height="693" loading="lazy" decoding="async"></button>
-          <figcaption><span class="t">Тайлер Дёрден</span></figcaption>
-        </figure>
-        <figure class="work" data-n="art-05" data-t="Всё будет в шоколаде" data-alt="Картина: девочка в платке с пистолетами и надписью «Всё будет в шоколаде», круглый холст">
-          <button type="button" data-open="art-05" aria-label="Открыть: Всё будет в шоколаде"><img src="img/thumbs/art-05.webp" srcset="img/thumbs/art-05.webp 520w, img/art-05.webp 768w" sizes="(max-width: 1199px) 250px, 16vw" alt="Картина: девочка в платке с пистолетами и надписью «Всё будет в шоколаде», круглый холст" width="520" height="693" loading="lazy" decoding="async"></button>
-          <figcaption><span class="t">Всё будет в шоколаде</span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
   <section class="sec" id="faq" style="padding-top:0">
     <div class="wrap">
       <header class="sh sh-row" data-rv>
@@ -1466,7 +1469,7 @@ a[href^="#"]{-webkit-touch-callout:none}
           <details><summary>Больно ли это?</summary>
             <p>Зависит от места и вашей чувствительности. Предплечье и плечо обычно переносятся легче, чем рёбра, ключицы или кисти. Можно делать перерывы.</p></details>
           <details><summary>Как записаться?</summary>
-            <p>Напишите мне в&nbsp;<a href="https://t.me/ru_misha" target="_blank" rel="noopener">Телеграм</a>, в&nbsp;<a href="https://wa.me/79221250080" target="_blank" rel="noopener">WhatsApp</a> или позвоните: <a href="tel:+79221250080">+7&nbsp;922&nbsp;125-00-80</a>. Пришлите идею, фото места на&nbsp;теле и&nbsp;пару референсов — предложу, как лучше это сделать.</p></details>
+            <p>Оставьте <a href="#contact">заявку</a> — это займёт минуту. Или напишите мне в&nbsp;<a href="https://t.me/ru_misha" target="_blank" rel="noopener">Телеграм</a>, в&nbsp;<a href="https://wa.me/79221250080" target="_blank" rel="noopener">WhatsApp</a> или позвоните: <a href="tel:+79221250080">+7&nbsp;922&nbsp;125-00-80</a>. Пришлите идею, фото места на&nbsp;теле и&nbsp;пару референсов — предложу, как лучше это сделать.</p></details>
           <details><summary>Можно перекрыть старую татуировку?</summary>
             <p>Да. Пришлите фото старой работы — скажу, что можно сделать.</p></details>
         </div>
@@ -2204,7 +2207,8 @@ a[href^="#"]{-webkit-touch-callout:none}
     try { var saved = JSON.parse(sessionStorage.getItem(KEY) || "null"); if (saved){ ans = saved.ans || {}; hist = saved.hist || []; step = saved.step || "idea"; } } catch (e) {}
     var save = function(){ try { sessionStorage.setItem(KEY, JSON.stringify({ ans: ans, hist: hist, step: step })); } catch (e) {} };
     var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
-    var SIZES = [["Один сеанс", "40 000 ₽"], ["Несколько сеансов", "рукав, спина"], ["Перекрытие", "пришлю фото"], ["Не знаю", "подскажу"]];
+    /* the same as the price cards: 1 session, 2 sessions, a sleeve (Vladimir 28.10.2026) */
+    var SIZES = [["1 сеанс", "40 000 ₽"], ["2 сеанса", "80 000 ₽"], ["Рукав", "4–5 сеансов"], ["Перекрытие", "пришлю фото"], ["Не знаю", "подскажу"]];
     var PLACES = ["Предплечье", "Плечо", "Спина", "Грудь", "Бедро", "Другое"];
     var WHEN = ["Как можно скорее", "В ближайшие 2 недели", "Позже, обсудим"];
     function flow(){ return ["idea", "place", "when", "name"]; }
@@ -2221,10 +2225,9 @@ a[href^="#"]{-webkit-touch-callout:none}
     var SEND_IC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.5 2.5-11 11"/><path d="m21.5 2.5-7 19-4-8-8-4z"/></svg>';
     var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
     function html(s){
-      if (s === "idea") return '<h2 id="qz-h">Что хотите набить?</h2><p class="qz-sub">Пару слов об\u00a0идее, фото места на\u00a0теле и\u00a0референсы, если есть. В\u00a0конце заявка уйдёт мне в\u00a0Телеграм</p><textarea id="qz-idea" placeholder="Например: волк в\u00a0огне на\u00a0предплечье или\u00a0как работа «Пантера»" aria-label="Идея">' + esc(ans.idea || "") + '</textarea>' +
+      if (s === "idea") return '<h2 id="qz-h">Что хотите набить?</h2><p class="qz-sub">Пару слов об\u00a0идее, фото места на\u00a0теле и\u00a0референсы, если есть. В\u00a0конце заявка уйдёт мне в\u00a0Телеграм</p><textarea id="qz-idea" placeholder="Ваша идея" aria-label="Идея">' + esc(ans.idea || "") + '</textarea>' +
         '<label class="qz-att"><input type="file" id="qz-files" accept="image/*" multiple><span class="qz-att-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="m20.5 16-4.5-4.5L7 19"/></svg>Прикрепить фото или референсы</span></label>' +
         '<div class="qz-thumbs" id="qz-thumbs">' + thumbs() + "</div>" +
-        '<div class="qz-chips">' + ["Портрет", "Зверь", "В цвете", "Чёрно-белое", "Перекрытие", "Как в работах"].map(function(c){ return '<button type="button" class="qz-c" data-add="' + c + '">' + c + "</button>"; }).join("") + "</div>" +
         '<div class="qz-act"><button type="button" class="qz-go" data-next>Дальше' + ARROW + '</button><button type="button" class="qz-alt" data-noidea>Пока без идеи</button></div>';
       if (s === "place") return '<h2 id="qz-h">Где и\u00a0какого размера?</h2><p class="qz-lab">Место на\u00a0теле</p><div class="qz-chips" style="margin-top:8px">' + PLACES.map(function(p){ return '<button type="button" class="qz-c' + (ans.place === p ? " on" : "") + '" data-k="place" data-v="' + p + '">' + p + "</button>"; }).join("") + "</div>" +
         '<p class="qz-lab">Размер</p><div style="margin-top:8px">' + opts(SIZES.map(function(x){ return [x[0], x[0], x[1]]; }), "size", true) + '</div><div class="qz-act"><button type="button" class="qz-go" data-next>Дальше' + ARROW + "</button></div>";
@@ -2267,7 +2270,7 @@ a[href^="#"]{-webkit-touch-callout:none}
     function next(){ var f = flow(), i = f.indexOf(step); hist.push(step); show(i >= 0 && i < f.length - 1 ? f[i + 1] : "review", 1); }
     back.addEventListener("click", function(){ if (hist.length) show(hist.pop(), -1); });
     body.addEventListener("click", function(e){
-      var o = e.target.closest(".qz-o, .qz-c[data-k]"), add = e.target.closest("[data-add]");
+      var o = e.target.closest(".qz-o, .qz-c[data-k]");
       if (o){
         var k = o.dataset.k, v = o.dataset.v;
         ans[k] = v; o.parentNode.querySelectorAll(".on").forEach(function(x){ x.classList.remove("on"); }); o.classList.add("on"); save();
@@ -2275,7 +2278,6 @@ a[href^="#"]{-webkit-touch-callout:none}
         if (k !== "place" && k !== "size") setTimeout(next, reduce ? 0 : 220);
         return;
       }
-      if (add){ var ta = document.getElementById("qz-idea"); ta.value = (ta.value.trim() ? ta.value.trim() + ", " : "") + add.dataset.add.toLowerCase(); ans.idea = ta.value; ta.focus(); save(); return; }
       if (e.target.closest("[data-noidea]")){ ans.idea = ""; next(); return; }
       if (e.target.closest("[data-next]")){
         if (step === "idea") ans.idea = document.getElementById("qz-idea").value.trim();
