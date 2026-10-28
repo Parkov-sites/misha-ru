@@ -971,6 +971,12 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   .cv-list::-webkit-scrollbar{display:none}
   .cv-pick{flex:none}
 }
+/* «Ещё перекрытия» — квадратные коллажи Миши под ползунком: четыре в ряд, на телефоне два. Без приближения и параллакса, как у картин */
+.cvg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.cvg .work button{aspect-ratio:1/1}
+.cvg .work img{scale:1;translate:none}
+@media (hover:hover) and (pointer:fine){.cvg .work button:hover img{scale:1.04}}
+@media (max-width:639px){.cvg{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ——— сайт Миши: что отличается от личного сайта Владимира ——— */
 /* подвал без имени: отступы сверху и снизу от кнопок контактов одинаковые */
@@ -1136,6 +1142,11 @@ a[href^="#"]{-webkit-touch-callout:none}
            имя в src и srcset (там же ширина большого фото: 853w или 960w — чёткие экраны берут его), data-cat — темы, название (data-t, aria-label, .t) и описание (data-alt, alt).
            Названия работ придумал Claude по фото — Миша может поправить. «Огонь» в названиях не повторяем (27.10.2026), он остаётся только в описаниях -->
       <div class="grid" id="grid">
+        <!-- Спина — 6 сеансов (Миша, Telegram 28.10.2026), первой в «Работах» -->
+        <figure class="work" data-rv data-n="mikhail-41" data-cat="bw" data-t="Дракон в цепях" data-alt="Тату: дракон в цепях и готические окна на всю спину, чёрно-белый реализм">
+          <button type="button" data-open="mikhail-41" aria-label="Открыть: Дракон в цепях"><img src="img/thumbs/mikhail-41.webp" srcset="img/thumbs/mikhail-41.webp 520w, img/mikhail-41.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: дракон в цепях и готические окна на всю спину, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Дракон в цепях</span></figcaption>
+        </figure>
         <figure class="work" data-rv data-n="mikhail-07" data-cat="color" data-t="Леопард" data-alt="Тату: леопард в огне на плече, цветной реализм">
           <button type="button" data-open="mikhail-07" aria-label="Открыть: Леопард"><img src="img/thumbs/mikhail-07.webp" srcset="img/thumbs/mikhail-07.webp 520w, img/mikhail-07.webp 853w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: леопард в огне на плече, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Леопард</span></figcaption>
@@ -1313,7 +1324,7 @@ a[href^="#"]{-webkit-touch-callout:none}
     </div>
   </section>
 
-  <!-- «Перекрытия» — до и после с ползунком (фото Владимира, 27.10.2026). Пример «Леопард» — та же работа, что первая в «Работах».
+  <!-- «Перекрытия» — до и после с ползунком (фото Владимира, 27.10.2026). Пример «Леопард» — та же работа, что вторая в «Работах».
        Новый пример: img/cover-NN-before.webp и img/cover-NN.webp (один кадр, 3:4) + img/thumbs/cover-NN.webp (180×240) —
        скопировать <li> в .cv-list, поменять data-n, название и описания. Пока пример один, список под текстом скрыт -->
   <section class="sec" id="covers" style="padding-top:0">
@@ -1343,6 +1354,45 @@ a[href^="#"]{-webkit-touch-callout:none}
             <a class="m-btn m-main cv-go" href="https://t.me/ru_misha" target="_blank" rel="noopener">Прислать фото в&nbsp;Телеграм</a>
           </div>
         </div>
+      </div>
+      <!-- «Ещё перекрытия» — коллажи Миши «после | до» (Telegram, 28.10.2026, «От Миши/Новые 28.10»; у «Девушки с розами» «до» слева).
+           Ползунок — только у «Леопарда»: его фото сняты специально под сравнение (Владимир, 28.10.2026). С «Работами» повторяются — Миша: «пусть повторяются».
+           Открываются крупно, стрелки листают только коллажи. Новый коллаж: img/thumbs/cvg-NN.webp (520×520) и img/cvg-NN.webp
+           (960×1280: коллаж 960×960 по центру на фоне #1B1B19, как квадратные примеры в «Ценах»), скопировать <figure> -->
+      <p class="eyebrow ab-why" data-rv>Ещё перекрытия</p>
+      <div class="cvg" id="cvg" data-rv-stagger>
+        <figure class="work" data-rv data-n="cvg-01" data-t="Дракон" data-alt="Перекрытие: огненный дракон на предплечье поверх старой татуировки — до и после">
+          <button type="button" data-open="cvg-01" aria-label="Открыть: Дракон"><img src="img/thumbs/cvg-01.webp" alt="Перекрытие: огненный дракон на предплечье поверх старой татуировки — до и после" width="520" height="520" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Дракон</span></figcaption>
+        </figure>
+        <figure class="work" data-rv data-n="cvg-02" data-t="Монахиня" data-alt="Перекрытие: монахиня с черепом поверх старой татуировки — до и после">
+          <button type="button" data-open="cvg-02" aria-label="Открыть: Монахиня"><img src="img/thumbs/cvg-02.webp" alt="Перекрытие: монахиня с черепом поверх старой татуировки — до и после" width="520" height="520" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Монахиня</span></figcaption>
+        </figure>
+        <figure class="work" data-rv data-n="cvg-03" data-t="Солдат" data-alt="Перекрытие: солдат в шлеме на плече поверх старого контура — до и после">
+          <button type="button" data-open="cvg-03" aria-label="Открыть: Солдат"><img src="img/thumbs/cvg-03.webp" alt="Перекрытие: солдат в шлеме на плече поверх старого контура — до и после" width="520" height="520" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Солдат</span></figcaption>
+        </figure>
+        <figure class="work" data-rv data-n="cvg-04" data-t="Орёл" data-alt="Перекрытие: орёл с раскрытыми крыльями на плече поверх старой тёмной татуировки — до и после">
+          <button type="button" data-open="cvg-04" aria-label="Открыть: Орёл"><img src="img/thumbs/cvg-04.webp" alt="Перекрытие: орёл с раскрытыми крыльями на плече поверх старой тёмной татуировки — до и после" width="520" height="520" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Орёл</span></figcaption>
+        </figure>
+        <figure class="work" data-rv data-n="cvg-05" data-t="Святая" data-alt="Перекрытие: святая с кувшином на плече поверх старой татуировки — до и после">
+          <button type="button" data-open="cvg-05" aria-label="Открыть: Святая"><img src="img/thumbs/cvg-05.webp" alt="Перекрытие: святая с кувшином на плече поверх старой татуировки — до и после" width="520" height="520" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Святая</span></figcaption>
+        </figure>
+        <figure class="work" data-rv data-n="cvg-06" data-t="Анубис" data-alt="Перекрытие: Анубис на голени поверх старой татуировки с топором — до и после">
+          <button type="button" data-open="cvg-06" aria-label="Открыть: Анубис"><img src="img/thumbs/cvg-06.webp" alt="Перекрытие: Анубис на голени поверх старой татуировки с топором — до и после" width="520" height="520" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Анубис</span></figcaption>
+        </figure>
+        <figure class="work" data-rv data-n="cvg-07" data-t="Девушка с розами" data-alt="Перекрытие: женский портрет с розами на плече поверх пятна на коже — до и после">
+          <button type="button" data-open="cvg-07" aria-label="Открыть: Девушка с розами"><img src="img/thumbs/cvg-07.webp" alt="Перекрытие: женский портрет с розами на плече поверх пятна на коже — до и после" width="520" height="520" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Девушка с розами</span></figcaption>
+        </figure>
+        <figure class="work" data-rv data-n="cvg-08" data-t="Леопард" data-alt="Перекрытие: леопард в огне на плече поверх старой выцветшей татуировки — до и после">
+          <button type="button" data-open="cvg-08" aria-label="Открыть: Леопард"><img src="img/thumbs/cvg-08.webp" alt="Перекрытие: леопард в огне на плече поверх старой выцветшей татуировки — до и после" width="520" height="520" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Леопард</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -1412,11 +1462,13 @@ a[href^="#"]{-webkit-touch-callout:none}
            Примеры — фото Миши из Telegram (27.10.2026, «От Миши/Примеры по сеансам»): «эти за один сеанс» — 19, «два сеанса» и слон — 6, «рукав 4–5 сеансов» — 10.
            Лежат в img/ex/ (s1-, s2-, rk-; 960×1280, квадратные и широкие вписаны целиком на тёмный фон), в «Работах» их нет.
            data-ex — фото через пробел, первое — на карточке (превью img/thumbs/ex-…); data-ex-t — подпись в просмотре.
-           Новое фото: img/ex/s1-20.webp и дописать ex/s1-20 в data-ex, поправить число на плашке и в aria-label -->
+           Новое фото: img/ex/s1-20.webp и дописать ex/s1-20 в data-ex, поправить число на плашке и в aria-label.
+           Рукав (28.10.2026, вечер): вместо 10 отдельных фото — 5: коллажи Миши rk-c1 (Мэрилин), rk-c2 (око, облака, часы), rk-c3 (замок),
+           архангел rk-04 — фото Владимира, «где нет стула» (второе фото архангела убрано — Миша), Иисус rk-02. На карточке по-прежнему Мэрилин (rk-01) -->
       <div class="why-grid" data-rv-stagger>
         <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="ex/s1-01 ex/s1-02 ex/s1-03 ex/s1-04 ex/s1-05 ex/s1-06 ex/s1-07 ex/s1-08 ex/s1-09 ex/s1-10 ex/s1-11 ex/s1-12 ex/s1-13 ex/s1-14 ex/s1-15 ex/s1-16 ex/s1-17 ex/s1-18 ex/s1-19" data-ex-t="1 сеанс — 40 000 ₽" aria-label="Примеры работ за один сеанс: 19 фото"><img src="img/thumbs/ex-s1-01.webp" srcset="img/thumbs/ex-s1-01.webp 520w, img/ex/s1-01.webp 960w" sizes="25vw" alt="" width="520" height="693" loading="lazy" decoding="async"><span class="pr-n" aria-hidden="true">19 работ</span></button><h3>1 сеанс<span class="pr">40&nbsp;000&nbsp;₽</span></h3><p>Предплечье, голень или плечо: один образ с&nbsp;фоном</p></div>
         <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="ex/s2-01 ex/s2-02 ex/s2-03 ex/s2-04 ex/s2-05 ex/s2-06" data-ex-t="2 сеанса — 80 000 ₽" aria-label="Примеры работ за два сеанса: 6 фото"><img src="img/thumbs/ex-s2-01.webp" srcset="img/thumbs/ex-s2-01.webp 520w, img/ex/s2-01.webp 960w" sizes="25vw" alt="" width="520" height="693" loading="lazy" decoding="async"><span class="pr-n" aria-hidden="true">6 работ</span></button><h3>2 сеанса<span class="pr">80&nbsp;000&nbsp;₽</span></h3><p>Крупная работа на&nbsp;плече или голени, перекрытие</p></div>
-        <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="ex/rk-01 ex/rk-02 ex/rk-03 ex/rk-04 ex/rk-05 ex/rk-06 ex/rk-07 ex/rk-08 ex/rk-09 ex/rk-10" data-ex-t="Рукав, 4–5 сеансов — 160–200 тыс. ₽" aria-label="Примеры рукавов: 10 фото"><img src="img/thumbs/ex-rk-01.webp" srcset="img/thumbs/ex-rk-01.webp 520w, img/ex/rk-01.webp 960w" sizes="25vw" alt="" width="520" height="693" loading="lazy" decoding="async"><span class="pr-n" aria-hidden="true">10 работ</span></button><h3>Рукав — <span class="nw">4–5&nbsp;сеансов</span><span class="pr">160–200&nbsp;тыс.&nbsp;₽</span></h3><p>Рукав целиком — от&nbsp;плеча до&nbsp;запястья</p></div>
+        <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="ex/rk-c1 ex/rk-04 ex/rk-c2 ex/rk-c3 ex/rk-02" data-ex-t="Рукав, 4–5 сеансов — 160–200 тыс. ₽" aria-label="Примеры рукавов: 5 фото"><img src="img/thumbs/ex-rk-01.webp" srcset="img/thumbs/ex-rk-01.webp 520w, img/ex/rk-01.webp 960w" sizes="25vw" alt="" width="520" height="693" loading="lazy" decoding="async"><span class="pr-n" aria-hidden="true">5 работ</span></button><h3>Рукав — <span class="nw">4–5&nbsp;сеансов</span><span class="pr">160–200&nbsp;тыс.&nbsp;₽</span></h3><p>Рукав целиком — от&nbsp;плеча до&nbsp;запястья</p></div>
       </div>
       <div class="pr-free" data-rv><h3>До&nbsp;сеанса</h3><ul><li><span>Консультация</span><span class="pf-dots" aria-hidden="true"></span><b>бесплатно</b></li><li><span>Эскиз</span><span class="pf-dots" aria-hidden="true"></span><b>бесплатно</b></li></ul></div>
     </div>
@@ -1866,6 +1918,9 @@ a[href^="#"]{-webkit-touch-callout:none}
   /* paintings («Мои картины» in «Обо мне») open the same way; prev/next walk through the paintings only */
   var art = document.getElementById("art");
   if (art){ var arts = Array.prototype.slice.call(art.querySelectorAll(".work")); art.addEventListener("click", function(e){ var b = e.target.closest("button[data-open]"); if (b) open(b.dataset.open, arts); }); }
+  /* collages «Ещё перекрытия» too; prev/next walk through the collages only */
+  var cvg = document.getElementById("cvg");
+  if (cvg){ var cvgs = Array.prototype.slice.call(cvg.querySelectorAll(".work")); cvg.addEventListener("click", function(e){ var b = e.target.closest("button[data-open]"); if (b) open(b.dataset.open, cvgs); }); }
 
   /* ——— paintings on a phone or a tablet drift left on their own, endlessly, so it is plain there are more.
      A finger (or a mouse) stops the strip and leafs it by hand, with a fling; 3 s after letting go it drifts again.
