@@ -844,8 +844,10 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 .hero-in{justify-content:space-between}
 .h-title{max-width:7.2em}
 .h-foot .h-sub{margin-top:0}
-/* подпись — три строки с переносом вручную (Владимир, 28.10.2026): «Привет, я Михаил» / «12 лет … реализм» / «и перекрываю старые тату» */
-.h-sub{max-width:34em}
+/* подпись — переносы вручную (Владимир, 28.10.2026): на компьютере две строки «Привет, я Михаил. 12 лет … реализм» / «и перекрываю старые тату»,
+   на телефоне и планшете приветствие — отдельной строкой сверху (.h-br). text-wrap:wrap — Safari с «pretty» сам укорачивал первую строку */
+.h-sub{max-width:34em;text-wrap:wrap}
+@media (min-width:901px){.h-sub .h-br{display:none}}
 /* цена и метро — две стеклянные плашки, как кнопка «Задать вопрос»; у метро — значок-метка вместо оранжевой точки */
 .h-facts{gap:8px;margin-top:18px;font-size:15px;font-weight:500}
 .h-facts span{gap:7px;height:36px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.08);
@@ -1102,7 +1104,7 @@ a[href^="#"]{-webkit-touch-callout:none}
     <div class="hero-in">
       <h1 class="h-title">Тату-мастер из&nbsp;Москвы</h1>
       <div class="h-foot">
-        <p class="h-sub">Привет, я Михаил<br>12&nbsp;лет делаю татуировки в&nbsp;стиле реализм<br>и&nbsp;перекрываю старые тату</p>
+        <p class="h-sub">Привет, я Михаил.<br class="h-br"> 12&nbsp;лет делаю татуировки в&nbsp;стиле реализм<br>и&nbsp;перекрываю старые тату</p>
         <p class="h-facts"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>м.&nbsp;Серпуховская</span></p>
         <div class="h-cta">
           <a class="h-btn h-go" href="#contact"><span class="h-bl"><b>Оставить заявку</b></span><span class="b-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
@@ -1189,8 +1191,8 @@ a[href^="#"]{-webkit-touch-callout:none}
           <figcaption><span class="t">Подпись</span></figcaption>
         </figure>
         <!-- работы 17–40 — фото Миши из Telegram (27.10.2026, «От Миши/Примеры по сеансам»), обрезка 3:4.
-             Пары «до/после» (Святая, Солдат, Волк под кожей) и два ракурса (Гладиатор, Крест, Портрет девушки) — левая половина, «стало».
-             Не добавлены — уже есть выше: волк, Мэрилин (рукав и крупно), тигр, пантера, леопард, череп, дракон, панда-самурай; замок — один ракурс из трёх -->
+             Пары «до/после» (Святая, Солдат, Анубис) и два ракурса (Гладиатор, Крест, Портрет девушки) — левая половина, «стало».
+             Не добавлены — уже есть выше: волк, Мэрилин (рукав и крупно), тигр, пантера, леопард, череп, дракон, панда-самурай; замок — один ракурс из трёх; архангел — одно фото из двух (Владимир, 28.10.2026: «Ангел-хранитель» и «Архангел» — одна работа). Названия Анубис, Архангел, Стихия — от Владимира -->
         <figure class="work" data-rv data-n="mikhail-17" data-cat="bw" data-t="Слон" data-alt="Тату: слон с бивнями на плече, чёрно-белый реализм">
           <button type="button" data-open="mikhail-17" aria-label="Открыть: Слон"><img src="img/thumbs/mikhail-17.webp" srcset="img/thumbs/mikhail-17.webp 520w, img/mikhail-17.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: слон с бивнями на плече, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Слон</span></figcaption>
@@ -1210,10 +1212,6 @@ a[href^="#"]{-webkit-touch-callout:none}
         <figure class="work" data-rv data-n="mikhail-21" data-cat="color" data-t="Скорпион" data-alt="Тату: Скорпион из Mortal Kombat в огне на предплечье, цветной реализм">
           <button type="button" data-open="mikhail-21" aria-label="Открыть: Скорпион"><img src="img/thumbs/mikhail-21.webp" srcset="img/thumbs/mikhail-21.webp 520w, img/mikhail-21.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: Скорпион из Mortal Kombat в огне на предплечье, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Скорпион</span></figcaption>
-        </figure>
-        <figure class="work" data-rv data-n="mikhail-22" data-cat="bw" data-t="Архангел" data-alt="Тату: рукав с архангелом и копьём, чёрно-белый реализм">
-          <button type="button" data-open="mikhail-22" aria-label="Открыть: Архангел"><img src="img/thumbs/mikhail-22.webp" srcset="img/thumbs/mikhail-22.webp 520w, img/mikhail-22.webp 718w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: рукав с архангелом и копьём, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
-          <figcaption><span class="t">Архангел</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-23" data-cat="bw" data-t="Солдат" data-alt="Тату: солдат в шлеме на плече, перекрытие старой татуировки, чёрно-белый реализм">
           <button type="button" data-open="mikhail-23" aria-label="Открыть: Солдат"><img src="img/thumbs/mikhail-23.webp" srcset="img/thumbs/mikhail-23.webp 520w, img/mikhail-23.webp 556w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: солдат в шлеме на плече, перекрытие старой татуировки, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
@@ -1239,17 +1237,17 @@ a[href^="#"]{-webkit-touch-callout:none}
           <button type="button" data-open="mikhail-28" aria-label="Открыть: Доспех"><img src="img/thumbs/mikhail-28.webp" srcset="img/thumbs/mikhail-28.webp 520w, img/mikhail-28.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: доспех с короной и кольчугой на плече, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Доспех</span></figcaption>
         </figure>
-        <figure class="work" data-rv data-n="mikhail-29" data-cat="bw" data-t="Волк под кожей" data-alt="Тату: волк в разрыве кожи на голени, перекрытие старой татуировки, чёрно-белый реализм">
-          <button type="button" data-open="mikhail-29" aria-label="Открыть: Волк под кожей"><img src="img/thumbs/mikhail-29.webp" srcset="img/thumbs/mikhail-29.webp 520w, img/mikhail-29.webp 554w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: волк в разрыве кожи на голени, перекрытие старой татуировки, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
-          <figcaption><span class="t">Волк под кожей</span></figcaption>
+        <figure class="work" data-rv data-n="mikhail-29" data-cat="bw" data-t="Анубис" data-alt="Тату: Анубис в разрыве кожи на голени, перекрытие старой татуировки, чёрно-белый реализм">
+          <button type="button" data-open="mikhail-29" aria-label="Открыть: Анубис"><img src="img/thumbs/mikhail-29.webp" srcset="img/thumbs/mikhail-29.webp 520w, img/mikhail-29.webp 554w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: Анубис в разрыве кожи на голени, перекрытие старой татуировки, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Анубис</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-30" data-cat="color" data-t="Гладиатор" data-alt="Тату: гладиатор в шлеме на огненном фоне, предплечье, цветной реализм">
           <button type="button" data-open="mikhail-30" aria-label="Открыть: Гладиатор"><img src="img/thumbs/mikhail-30.webp" srcset="img/thumbs/mikhail-30.webp 520w, img/mikhail-30.webp 552w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: гладиатор в шлеме на огненном фоне, предплечье, цветной реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Гладиатор</span></figcaption>
         </figure>
-        <figure class="work" data-rv data-n="mikhail-31" data-cat="bw" data-t="Ангел-хранитель" data-alt="Тату: рукав с ангелом в сиянии, чёрно-белый реализм">
-          <button type="button" data-open="mikhail-31" aria-label="Открыть: Ангел-хранитель"><img src="img/thumbs/mikhail-31.webp" srcset="img/thumbs/mikhail-31.webp 520w, img/mikhail-31.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: рукав с ангелом в сиянии, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
-          <figcaption><span class="t">Ангел-хранитель</span></figcaption>
+        <figure class="work" data-rv data-n="mikhail-31" data-cat="bw" data-t="Архангел" data-alt="Тату: рукав с архангелом в сиянии, чёрно-белый реализм">
+          <button type="button" data-open="mikhail-31" aria-label="Открыть: Архангел"><img src="img/thumbs/mikhail-31.webp" srcset="img/thumbs/mikhail-31.webp 520w, img/mikhail-31.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: рукав с архангелом в сиянии, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Архангел</span></figcaption>
         </figure>
         <figure class="work" data-rv data-n="mikhail-32" data-cat="bw" data-t="Портрет девушки" data-alt="Тату: женский портрет на предплечье, чёрно-белый реализм">
           <button type="button" data-open="mikhail-32" aria-label="Открыть: Портрет девушки"><img src="img/thumbs/mikhail-32.webp" srcset="img/thumbs/mikhail-32.webp 520w, img/mikhail-32.webp 558w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: женский портрет на предплечье, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
@@ -1283,9 +1281,9 @@ a[href^="#"]{-webkit-touch-callout:none}
           <button type="button" data-open="mikhail-39" aria-label="Открыть: Ангел с кувшином"><img src="img/thumbs/mikhail-39.webp" srcset="img/thumbs/mikhail-39.webp 520w, img/mikhail-39.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: ангел льёт воду из кувшина, предплечье, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Ангел с кувшином</span></figcaption>
         </figure>
-        <figure class="work" data-rv data-n="mikhail-40" data-cat="bw" data-t="Облака" data-alt="Тату: рукав с облаками и небом, чёрно-белый реализм">
-          <button type="button" data-open="mikhail-40" aria-label="Открыть: Облака"><img src="img/thumbs/mikhail-40.webp" srcset="img/thumbs/mikhail-40.webp 520w, img/mikhail-40.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: рукав с облаками и небом, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
-          <figcaption><span class="t">Облака</span></figcaption>
+        <figure class="work" data-rv data-n="mikhail-40" data-cat="bw" data-t="Стихия" data-alt="Тату: рукав «Стихия» — облака и небо, чёрно-белый реализм">
+          <button type="button" data-open="mikhail-40" aria-label="Открыть: Стихия"><img src="img/thumbs/mikhail-40.webp" srcset="img/thumbs/mikhail-40.webp 520w, img/mikhail-40.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: рукав «Стихия» — облака и небо, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
+          <figcaption><span class="t">Стихия</span></figcaption>
         </figure>
         <figure class="work vid" data-rv data-n="v-mikhail-12" data-v data-t="Череп" data-alt="Видео: огненный череп рядом с эскизом">
           <button type="button" data-open="v-mikhail-12" aria-label="Смотреть видео: Череп"><video muted loop playsinline preload="none" data-poster="video/v-mikhail-12.webp" data-src="video/v-mikhail-12.mp4" aria-hidden="true"></video><span class="v-badge">видео</span></button>
