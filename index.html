@@ -6,21 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Миша Ру — тату-мастер в Москве: цветной и чёрно-белый реализм · м. Серпуховская</title>
 <meta name="description" content="Тату в Москве у м. Серпуховская: цветной и чёрно-белый реализм, перекрытие старых татуировок. 12 лет в тату. Эскиз бесплатно. Запись в Telegram и WhatsApp.">
-<!-- always the dark theme (no switcher); the intro (preloader) plays once per browser session -->
 <script>(function(){document.documentElement.setAttribute("data-theme","dark");try{if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("misharu-intro")){document.documentElement.classList.add("intro");sessionStorage.setItem("misharu-intro","1");}}catch(e){}})();</script>
-<!-- значок — пантера с оранжевыми глазами (работа mikhail-06) -->
 <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32.png">
 <link rel="apple-touch-icon" href="img/logo/apple-touch-icon.png">
 <meta name="theme-color" content="#121211">
-<!-- превью ссылки в Телеграме и ВКонтакте; после публикации поставьте полный адрес картинки: https://адрес/img/logo/og.jpg -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Миша Ру — тату-мастер в Москве">
 <meta property="og:description" content="Цветной и чёрно-белый реализм, перекрытие старых татуировок. Работы, цены, запись.">
 <meta property="og:image" content="https://parkov-sites.github.io/misha-ru/img/logo/og.jpg">
-<!-- карточка для поисковиков (schema.org); после публикации добавьте "url" -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Миша Ру", "jobTitle": "Тату-мастер", "description": "Цветной и чёрно-белый реализм, перекрытие старых татуировок. Москва, м. Серпуховская", "image": "img/portrait.webp", "telephone": "+7 922 125-00-80", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}, "sameAs": ["https://t.me/ru_misha", "https://vk.ru/xmisharux_tattoomsk", "https://vk.ru/yav_brand"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Миша Ру", "jobTitle": "Тату-мастер", "description": "Цветной и чёрно-белый реализм, перекрытие старых татуировок. Москва, м. Серпуховская", "image": "img/portrait.webp", "telephone": "+7 922 125-00-80", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}, "sameAs": ["https://t.me/ru_misha", "https://vk.ru/xmisharux_tattoomsk"]}</script>
 <meta name="twitter:card" content="summary_large_image">
-<!-- шрифты лежат рядом с сайтом (папка fonts): Google Fonts из России иногда тормозит; только кириллица и латиница -->
 <link rel="preload" href="fonts/InterTight-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/InterTight-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -34,9 +29,7 @@
 @font-face{font-family:"Literata";font-style:normal;font-weight:400 500;font-display:swap;src:url(fonts/Literata-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 </style>
 <style>
-/* Layout: Fabrica-style page with a Sidefolio-style left sidebar. Dark rounded hero card with a dim
-   slideshow of works; light sections with oversized titles; a dark grain card for the footer with a
-   Motion: preloader curtain, hero rise, fade-up reveals, bottom-edge blur, film grain. */
+
 :root{
   --bg:#EFEFEC;
   --surface:#FAFAF8;
@@ -98,15 +91,15 @@ ul,ol{padding:0;list-style:none}
   padding-right:max(var(--gut),env(safe-area-inset-right,0px))}
 .num{font-variant-numeric:tabular-nums}
 
-/* dark context: remaps tokens so every component inside just works */
+
 .dark{--ink:var(--on-band);--muted:var(--band-muted);--line:var(--band-line);--surface:rgba(238,237,233,.07);--bg:var(--band);
   background:var(--band);color:var(--on-band)}
 .dcard{position:relative;overflow:hidden;isolation:isolate;border-radius:20px;margin-inline:6px}
-/* film grain: a canvas per dark card, redrawn with fresh noise ~24 times a second */
+
 .grain-cv{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;opacity:.1}
 .dcard>.wrap,.dcard>.hero-in{position:relative;z-index:3}
 
-/* ——— preloader + intro (only when html.intro is set by the inline script) ——— */
+
 .pre{display:none}
 .intro .pre{display:grid;place-items:center;position:fixed;inset:0;z-index:200;background:#121211;color:#EEEDE9;pointer-events:none;
   animation:preOut .95s var(--ease-io) 1.05s forwards}
@@ -119,17 +112,17 @@ ul,ol{padding:0;list-style:none}
 @keyframes heroIn{from{opacity:0;transform:translateY(90px)}}
 @keyframes fadeIn{from{opacity:0}}
 
-/* ——— scroll reveal ——— */
+
 .rv{opacity:0;transform:translate3d(0,var(--rv-y,18px),0)}
 .rv.in{opacity:1;transform:none;transition:opacity 1.1s var(--ease) var(--d,0ms),transform 1.3s var(--ease) var(--d,0ms)}
 
-/* ——— bottom-edge blur ——— */
+
 .edge{position:fixed;left:0;right:0;bottom:0;height:calc(90px + env(safe-area-inset-bottom,0px));z-index:30;pointer-events:none;
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
   -webkit-mask-image:linear-gradient(to top,#000 20%,transparent);mask-image:linear-gradient(to top,#000 20%,transparent);transition:opacity .5s}
 .edge.off{opacity:0}
 
-/* ——— menu button (shown on phones by .side .menu-btn) ——— */
+
 .menu-btn{background:none;border:0;width:44px;height:44px;padding:0;cursor:pointer;position:relative}
 .menu-btn::before,.menu-btn::after{content:"";position:absolute;left:6px;right:6px;height:1.5px;background:currentColor;transition:transform .35s var(--ease)}
 .menu-btn::before{top:17px}.menu-btn::after{top:25px}
@@ -137,13 +130,13 @@ ul,ol{padding:0;list-style:none}
 .menu-btn[aria-expanded="true"]::after{transform:translateY(-4px) rotate(-45deg)}
 
 
-/* ——— hero card ——— */
+
 .hero-card{display:flex;flex-direction:column;min-height:min(880px,calc(100svh - 74px));margin-top:8px;z-index:2}
 .hero-bg{position:absolute;inset:0;z-index:0}
-/* the black-and-white reel fills the whole card; the type sits on it like on a poster */
+
 .hero-card .hero-bg{position:absolute;inset:0;z-index:0;background:#0D0D0C}
 .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.8) contrast(1.06)}
-/* shade where the text is: from the left on wide screens, from the bottom on phones */
+
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,12,.66),rgba(13,13,12,.2) 50%,rgba(13,13,12,0)),linear-gradient(0deg,rgba(13,13,12,.5),transparent 45%)}
 .hero-in{position:relative;flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding:clamp(24px,3.4vw,52px)}
 .h-rate{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;height:38px;padding:0 15px;border-radius:999px;
@@ -155,13 +148,13 @@ ul,ol{padding:0;list-style:none}
 .h-foot{display:flex;flex-direction:column;align-items:flex-start}
 .h-title{font-size:clamp(44px,6.2vw,104px);font-weight:600;line-height:1;letter-spacing:-.045em;max-width:10.5em;text-wrap:balance}
 .h-sub{margin-top:22px;font-size:clamp(17px,1.4vw,21px);line-height:1.45;max-width:30em;color:color-mix(in srgb,var(--ink) 84%,transparent);text-wrap:pretty}
-/* two facts a newcomer looks for first: the lowest price and the free sketch, an orange dot between */
+
 .h-facts{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:14px;font-size:clamp(15px,1.1vw,17px);font-weight:600;letter-spacing:-.01em}
 .h-facts span{display:inline-flex;align-items:center;gap:14px}
 .h-facts span+span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
 @media (max-width:349px){.h-facts{font-size:14px;column-gap:10px}.h-facts span{gap:10px}}
 .h-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:34px}
-/* pill buttons with the icon in a circle on the right: the main one orange, the second one glass with a thin light edge */
+
 .h-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 8px 0 28px;border-radius:999px;
   color:var(--ink);text-decoration:none;font-size:17px;font-weight:600;letter-spacing:-.01em;transition:background .25s,transform .3s var(--ease),box-shadow .3s}
 .h-btn:active{transform:scale(.98)}
@@ -180,29 +173,29 @@ ul,ol{padding:0;list-style:none}
 @media (max-width:900px){
   .hero-bg::after{background:linear-gradient(0deg,rgba(13,13,12,.88),rgba(13,13,12,.3) 50%,rgba(13,13,12,.04))}
   .hero-in{gap:24px;padding:18px max(var(--gut),env(safe-area-inset-left,0px)) var(--gut)}
-  /* the full-width pills (radius 32) sit one gutter from the bottom and the sides, so the card's lower corners are 32 + gutter */
+  
   .hero-card{border-bottom-left-radius:calc(32px + var(--gut));border-bottom-right-radius:calc(32px + var(--gut))}
   .h-title{font-size:clamp(38px,11.4vw,60px);line-height:1.02}
   .h-sub{margin-top:16px;font-size:16.5px}
   .h-cta{flex-direction:column;align-items:stretch;width:100%;margin-top:26px}
-  /* full width: an empty slot on the left as wide as the icon keeps the label in the middle */
+  
   .h-btn{width:100%;padding-left:8px}
   .h-btn::before{content:"";flex:none;width:48px}
 }
 
-/* ——— techniques row (like a client-logo row) ——— */
+
 .rowhead{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:14px}
 .rh-hint{font-size:13px;color:var(--muted)}
 @media (max-width:600px){.rowhead{flex-direction:column;align-items:flex-start;gap:4px}}
 .rh-touch{display:none}
 @media (hover:none){.rh-mouse{display:none}.rh-touch{display:inline}}
-/* room above the row is set by the fan: the top row opens its three works under the hero without touching it */
+
 .tech{padding-block:clamp(80px,6.4vw,96px) 0;position:relative;z-index:0;translate:0 var(--ty,0px);will-change:translate}
-/* eight low plaques: one row on wide screens, two rows of four on laptops, two per row on phones */
+
 .tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
 .tile{background:var(--surface);border-radius:14px;height:56px;position:relative;transition:background .3s}
 .tile-btn{position:absolute;inset:0;z-index:1;display:grid;place-items:center;width:100%;padding:12px;border:0;border-radius:inherit;background:none;text-align:center;cursor:pointer}
-/* style fan: three works rise out of the tile on hover (tap on phones); the hovered tile sits above its neighbours */
+
 .tile:hover,.tile:has(:focus-visible),.tile.open{z-index:3}
 .tile:has(:focus-visible),.tile.open{background:var(--grp)}
 @media (hover:hover){.tile:hover{background:var(--grp)}}
@@ -227,14 +220,14 @@ ul,ol{padding:0;list-style:none}
 @media (max-width:860px){.tech{padding-top:60px}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.tile{height:52px}.tile b{font-size:16px}.fan{bottom:calc(100% - 10px)}.fan-card{width:60px;border-width:2px;border-radius:11px}.fan-card:nth-child(1){--x:-40px}.fan-card:nth-child(3){--x:40px}.fan-card:nth-child(2){--y:-10px}}
 @media (max-width:600px){.tech{padding-top:44px}}
 
-/* ——— sections ——— */
+
 .sec{padding-block:clamp(80px,10vw,160px)}
-/* the works follow the hero directly and slide out from under it while the page scrolls (--ty from the scroll scenes) */
+
 #works{padding-top:clamp(56px,7vw,110px);position:relative;z-index:0;translate:0 var(--ty,0px)}
 
-/* ——— masters: person cards built like the hero profile (outer 20 = inner 14 + inset 6) ——— */
+
 .team{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
-/* 8 masters + the «not sure» card: it takes a whole row in 2 columns and one cell in 3, so rows are always full */
+
 @media (min-width:720px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}.m-cta{grid-column:span 2}}
 @media (min-width:1340px){.team{grid-template-columns:repeat(3,minmax(0,1fr))}.m-cta{grid-column:auto}}
 .mcard{display:grid;grid-template-columns:120px minmax(0,1fr);gap:6px;padding:6px;border-radius:28px;background:var(--surface);color:var(--ink);
@@ -253,9 +246,9 @@ ul,ol{padding:0;list-style:none}
 .m-btn:active{transform:scale(.98)}
 .m-btn.m-main{background:var(--gold);color:var(--on-gold)}
 @media (hover:hover) and (pointer:fine){.m-btn.m-main:hover{background:color-mix(in srgb,var(--gold) 85%,#fff)}}
-/* stacked buttons keep their full height instead of sharing the card's */
+
 @container (max-width:340px){.m-act{flex-direction:column}.m-act .m-btn{flex:none}}
-/* the last card: "not sure who to go to" */
+
 .m-cta{display:flex;flex-direction:column;justify-content:space-between;gap:16px;background:var(--ink);color:var(--bg)}
 .mc-t{display:block;padding:14px 12px 0;font-size:clamp(22px,1.9vw,28px);font-weight:500;letter-spacing:-.035em;line-height:1.08;text-wrap:balance}
 .mc-d{display:block;padding:8px 12px 0;font-family:var(--serif);font-size:14.5px;line-height:1.5;color:color-mix(in srgb,var(--bg) 62%,transparent);max-width:30ch}
@@ -266,7 +259,7 @@ ul,ol{padding:0;list-style:none}
 .m-cta:hover .m-btn .roll span{transform:translateY(-100%)}
 @media (max-width:480px){.mcard{grid-template-columns:112px minmax(0,1fr)}.m-name{padding:10px 8px 0}.m-name h3{font-size:20px}}
 
-/* ——— works ——— */
+
 .w-note{margin:-2px 0 12px;font-size:14px;color:var(--muted)}
 .w-note b{color:var(--ink);font-weight:600}
 .w-note button{padding:0;border:0;background:none;color:var(--gold);font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
@@ -280,29 +273,29 @@ ul,ol{padding:0;list-style:none}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 @media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .work{position:relative;min-width:0;display:flex;flex-direction:column;--rv-y:22px}
-/* the caption lies on the photo: a dark fade at the bottom keeps it readable on any picture, in both themes */
+
 .work figcaption{position:absolute;inset:auto 0 0;z-index:1;display:flex;align-items:baseline;gap:8px;min-width:0;padding:36px 14px 12px;border-radius:0 0 14px 14px;
   background:linear-gradient(to top,rgba(10,10,9,.72),rgba(10,10,9,.4) 55%,rgba(10,10,9,0));color:#FAFAF8;text-shadow:0 1px 2px rgba(0,0,0,.3);pointer-events:none}
 .work .t{font-weight:600;font-size:clamp(15px,1.2vw,17px);letter-spacing:-.025em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .work button{display:block;width:100%;padding:0;border:0;background:var(--surface);border-radius:14px;overflow:hidden;cursor:zoom-in;aspect-ratio:4/5}
 .work img,.work video{display:block;width:100%;height:100%;object-fit:cover}
 @media (max-width:520px){.work figcaption{padding:30px 11px 10px}}
-/* a master without photos yet */
+
 .w-empty{grid-column:1/-1;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:clamp(24px,3vw,44px);border-radius:14px;background:var(--surface)}
 .w-empty .we-t{font-size:clamp(26px,2.6vw,40px);font-weight:500;letter-spacing:-.035em;line-height:1.05}
 .w-empty .we-d{font-family:var(--serif);font-size:15.5px;line-height:1.55;color:var(--muted);max-width:40ch}
 .w-empty .m-btn{flex:none;margin-top:10px;padding:0 22px}
-/* «Показать ещё» and «Все фото пирсинга»: a full-width plaque, built like the captions under the works */
+
 .more{margin-top:8px}
 .wide-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:52px;padding:0 16px;border:0;border-radius:14px;
   background:var(--surface);color:var(--ink);font-size:15px;font-weight:500;letter-spacing:-.01em;cursor:pointer;transition:background .25s}
 .wide-btn sup{font-size:13px;line-height:1;color:var(--muted);font-variant-numeric:tabular-nums}
 @media (hover:hover) and (pointer:fine){.wide-btn:hover{background:color-mix(in srgb,var(--ink) 8%,var(--surface))}}
 
-/* ——— piercing: the same section as the works, Rem's card beside the heading ——— */
+
 .p-head{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(320px,1fr);gap:clamp(20px,3vw,40px);align-items:end;margin-bottom:clamp(28px,3vw,44px)}
 .p-head .sh{margin-bottom:0}
-/* Rem's card carries his services, so the photo stretches to the card's height */
+
 .m-svc{margin-top:10px;font-size:13.5px;line-height:1.45;color:var(--ink)}
 .p-head .mcard .ph{aspect-ratio:auto;height:100%;min-height:160px}
 .p-head .mcard .ph img{height:100%}
@@ -312,14 +305,14 @@ ul,ol{padding:0;list-style:none}
 @media (max-width:980px){.p-shots{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){.p-head{grid-template-columns:minmax(0,1fr)}}
 
-/* ——— why: six equal cards in a 3 × 2 grid — heading on top, the point below; the figures roll inside their headings ——— */
+
 .why-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 @media (max-width:1199px){.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .why-c{display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:clamp(200px,16vw,240px);
   padding:clamp(22px,2.2vw,32px);border-radius:16px;background:var(--surface);--rv-y:22px}
 .why-c h3{font-size:clamp(23px,2vw,30px);font-weight:600;letter-spacing:-.025em;line-height:1.08;text-wrap:balance}
 .why-c p{font-family:var(--serif);font-size:clamp(16px,1.1vw,16.5px);line-height:1.55;color:var(--muted);max-width:34ch;text-wrap:pretty}
-/* counter: every digit is a drum one line tall that rolls up to its number; the right-hand ones turn more, like a real counter */
+
 .odo{display:inline-flex;vertical-align:top;font-variant-numeric:tabular-nums;color:var(--gold)}
 .odo-c{display:block;height:1.08em;overflow:hidden;
   -webkit-mask-image:linear-gradient(transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(transparent,#000 18%,#000 82%,transparent)}
@@ -330,8 +323,7 @@ ul,ol{padding:0;list-style:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media (max-width:600px){.why-grid{grid-template-columns:minmax(0,1fr)}.why-c{min-height:0;gap:20px}}
 
-/* ——— depth: a faint light along the top edge, soft shadow under cards, buttons with a quiet glow.
-   Kept low on purpose: the works carry the colour, the page only gives them weight ——— */
+
 :root{--edge:rgba(255,255,255,.75);--drop:0 14px 32px -22px rgba(18,18,17,.22);--glow:.28}
 :root[data-theme="dark"]{--edge:rgba(255,255,255,.055);--drop:0 18px 40px -26px rgba(0,0,0,.85);--glow:.4}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--edge:rgba(255,255,255,.055);--drop:0 18px 40px -26px rgba(0,0,0,.85);--glow:.4}}
@@ -341,7 +333,7 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 
 .qa details p a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
 
-/* ——— why: the four numbers in one strip, read in a second; the reasons as short cards below ——— */
+
 .wq-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-radius:16px;background:var(--surface);box-shadow:inset 0 1px 0 var(--edge),var(--drop);--rv-y:22px}
 .wq-stats>div{display:flex;flex-direction:column;gap:8px;padding:clamp(20px,2.2vw,30px)}
 .wq-stats>div+div{border-left:1px solid var(--line)}
@@ -356,7 +348,7 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
   .wq-stats>div:nth-child(3){border-left:0}.wq-stats>div:nth-child(n+3){border-top:1px solid var(--line)}
   .wq-stats>div,.wq-list>div{padding:18px 16px}.wq-list h3{font-size:18px}.wq-list p{font-size:14.5px}}
 
-/* ——— booking: the questionnaire as a window (computer) or a sheet from below (phone) ——— */
+
 .qz-dim{position:fixed;inset:0;z-index:140;background:rgba(8,8,7,.42);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:0;transition:opacity .35s var(--ease)}
 .qz{position:fixed;z-index:141;left:50%;top:50%;width:min(500px,calc(100vw - 32px));max-height:min(720px,calc(100svh - 48px));display:flex;flex-direction:column;
   padding:20px 22px 24px;border-radius:24px;background:var(--surface);color:var(--ink);box-shadow:0 40px 90px -30px rgba(0,0,0,.75),inset 0 1px 0 var(--edge);
@@ -389,7 +381,7 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 .qz-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .qz-grid .qz-o:last-child:nth-child(odd){grid-column:1/-1}
 .qz-grid .qz-o{flex-direction:column;gap:2px}
-/* masters are cards with a portrait, so their text starts at the photo */
+
 .qz-m{justify-content:flex-start;text-align:left;gap:12px;padding:10px 12px}
 .qz-m .av{flex:none;width:44px;height:58px;border-radius:10px;background:var(--surface) center/cover}
 .qz-m span:last-child{display:flex;flex-direction:column;gap:2px}
@@ -403,12 +395,12 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 .qz input+input{margin-top:8px}
 .qz textarea:focus,.qz input:focus{box-shadow:inset 0 0 0 1.5px var(--gold)}
 .qz-err{margin-top:8px;font-size:13.5px;color:var(--gold)}
-/* consent before sending: the box starts unticked, the send button waits for it */
+
 .qz-agree{display:flex;align-items:flex-start;gap:10px;margin-top:18px;font-size:14px;line-height:1.45;color:var(--muted);cursor:pointer}
 .qz-agree input{flex:none;width:20px;height:20px;margin:0;accent-color:var(--gold);cursor:pointer}
 .qz-agree a{color:var(--ink);text-underline-offset:3px}
 .qz-go[aria-disabled="true"]{opacity:.45}
-/* references: a dashed tile opens the gallery, the picked photos show as small squares */
+
 .qz-att{display:block;margin-top:10px;cursor:pointer}
 .qz-att input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
 .qz-att-b{display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border-radius:16px;border:1.5px dashed color-mix(in srgb,var(--ink) 22%,transparent);color:var(--ink);font-size:15px;font-weight:500;transition:background .2s,border-color .2s}
@@ -425,6 +417,7 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 .qz-go svg{width:18px;height:18px}
 .qz-alt{height:48px;border:0;border-radius:14px;background:var(--bg);color:var(--ink);font-size:15px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;text-decoration:none}
 .qz-note{display:flex;align-items:center;justify-content:center;gap:var(--lamp-gap);margin-top:12px;font-size:13px;color:var(--muted)}
+.qz-priv{margin:6px auto 0;max-width:290px;text-align:center;font-size:12px;line-height:1.4;color:color-mix(in srgb,var(--muted) 80%,transparent)}
 .qz-sum{margin-top:18px;border-radius:16px;background:var(--bg);padding:6px 16px}
 .qz-sum div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
 .qz-sum div:last-child{border-bottom:0}
@@ -440,8 +433,7 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
   .qz h2{font-size:28px}
 }
 
-/* ——— one button standard: pills; the main action solid orange, the second a quiet outline on a faint fill;
-   no gradients and no glow, so nothing shouts. Answer cards in the questionnaire stay soft rectangles ——— */
+
 .m-btn,.side-cta,.dock-b,.wide-btn,.chip,.qz-go,.qz-alt{border-radius:999px}
 .qz-x{border-radius:50%}
 .m-btn:not(.m-main),.dock-b:not(.dock-main),.qz-alt,.wide-btn,.chip:not([aria-pressed="true"]),.h-ask{
@@ -451,13 +443,13 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 .m-btn.m-main,.side-cta,.h-go,.dock-main,.qz-go,.chip[aria-pressed="true"]{background:var(--gold);color:var(--on-gold);box-shadow:none;background-image:none}
 @media (hover:hover) and (pointer:fine){.m-btn.m-main:hover,.side-cta:hover,.h-go:hover,.dock-main:hover,.qz-go:hover{background:color-mix(in srgb,var(--gold) 90%,#fff)}}
 
-/* ——— the booking card: on the left the heading and the start button; on the right the messengers and the phone ——— */
+
 .q-card{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:center;gap:28px clamp(32px,5vw,80px);
   padding:clamp(32px,4.4vw,64px) clamp(20px,3vw,48px);border-radius:24px;background:var(--surface);box-shadow:inset 0 1px 0 var(--edge),var(--drop)}
 .q-h{font-size:clamp(34px,3.4vw,56px);font-weight:600;letter-spacing:-.045em;line-height:1}
 .q-main>p{margin-top:14px;font-family:var(--serif);font-size:clamp(16px,1.2vw,18px);line-height:1.5;color:var(--muted);max-width:30em}
 .q-card .q-go{margin-top:26px;min-width:280px}
-/* the other ways to reach me: three quiet buttons on the right, so «Начать» stays the only orange action */
+
 .q-alt{display:flex;flex-direction:column;gap:12px;padding-left:clamp(24px,3vw,48px);border-left:1px solid var(--line)}
 .q-alt-l{font-size:15px;font-weight:500;color:var(--muted)}
 .q-links{display:grid;gap:8px}
@@ -466,7 +458,7 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 @media (max-width:900px){.q-card{grid-template-columns:minmax(0,1fr)}.q-alt{padding:24px 0 0;border-left:0;border-top:1px solid var(--line)}}
 @media (max-width:600px){.q-card .q-go{min-width:0;width:100%}}
 
-/* ——— socials: three counters, then four reels that lead to the profile ——— */
+
 .so-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .so-c{display:flex;flex-direction:column;gap:4px;min-width:0;padding:clamp(20px,2.2vw,30px);border-radius:16px;background:var(--surface);color:var(--ink);text-decoration:none;
   box-shadow:inset 0 1px 0 var(--edge),var(--drop);transition:background .25s;--rv-y:22px}
@@ -476,7 +468,7 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 .so-c b{margin-top:14px;font-size:clamp(30px,3vw,48px);font-weight:600;letter-spacing:-.04em;line-height:1}
 .so-d{font-size:15px;color:var(--muted);white-space:nowrap}
 .so-go{margin-top:auto;padding-top:18px;font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-/* two narrow columns on phones: «Группа» goes, the smallest phones get a smaller number */
+
 @media (max-width:700px){.so-kx{display:none}}
 @media (max-width:380px){.so-c{padding:16px}.so-c b{font-size:26px}.so-go{font-size:13px}}
 .so-reels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
@@ -488,21 +480,21 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 @media (max-width:700px){.so-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.so-main{grid-column:1/-1}.so-reels{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:349px){.so-grid{grid-template-columns:minmax(0,1fr)}}
 
-/* ——— prices: the same cards as «Почему нас выбирают», the sum in gold under the name ——— */
+
 .pr-c h3 .pr{display:block;margin-top:6px;color:var(--gold)}
-/* an example of that size: one photo like the works (4:5), a click opens it large */
+
 .why-c.pr-c{justify-content:flex-start;gap:18px}
 .pr-c p{margin-top:auto}
 .pr-ph{display:block;width:100%;aspect-ratio:4/5;padding:0;border:0;border-radius:12px;overflow:hidden;background:var(--surface);cursor:zoom-in;box-shadow:var(--drop)}
 .pr-ph img{display:block;width:100%;height:100%;object-fit:cover;transition:scale .9s var(--ease)}
 .pr-ph:focus-visible img{scale:1.05}
 @media (hover:hover) and (pointer:fine){.pr-ph:hover img{scale:1.05}}
-/* how many examples open from the card — a small glass tag on the photo */
+
 .pr-ph{position:relative}
 .pr-n{position:absolute;left:8px;bottom:8px;height:28px;padding:0 11px;border-radius:10px;display:inline-flex;align-items:center;background:rgba(13,13,12,.6);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#EEEDE9;font-size:13px;font-weight:500;pointer-events:none}
 @media (max-width:600px){.pr-n{left:5px;bottom:5px;height:22px;padding:0 7px;border-radius:7px;font-size:11px}}
-/* what the price already includes: a price-list card — the name on the left, «item …… 0 ₽» on the right */
+
 .pr-free{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);align-items:center;gap:14px clamp(24px,4vw,64px);margin-top:8px;padding:clamp(22px,2.2vw,32px);border-radius:16px;background:var(--surface);--rv-y:22px}
 .pr-free h3{font-size:clamp(23px,2vw,30px);font-weight:600;letter-spacing:-.025em;line-height:1.08}
 .pr-free h3 small{display:block;margin-top:6px;font-family:var(--serif);font-size:15px;font-weight:400;letter-spacing:0;line-height:1.4;color:var(--muted)}
@@ -511,12 +503,12 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 .pf-dots{flex:1;min-width:24px;border-bottom:2px dotted color-mix(in srgb,var(--ink) 25%,transparent);translate:0 -4px}
 .pr-free li b{color:var(--gold);font-weight:600;white-space:nowrap}
 @media (max-width:600px){.pr-free{grid-template-columns:minmax(0,1fr);padding:16px 14px}.pr-free h3{font-size:20px}.pr-free li{font-size:16px}}
-/* phones: smaller type in the price cards */
+
 @media (max-width:600px){
   .why-c.pr-c{padding:12px 12px 16px;gap:12px}
   .pr-c h3{font-size:19px}.pr-c h3 .pr{font-size:18px}.pr-c p{font-size:14px;line-height:1.45}}
 
-/* ——— reviews: the Yandex score opens the grid, then short quotes; one surface, one type ——— */
+
 .rv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .rv-c{display:flex;flex-direction:column;gap:18px;margin:0;padding:clamp(22px,2.2vw,30px);border-radius:16px;background:var(--surface);--rv-y:22px}
 .rv-c .stars{color:var(--gold);font-size:15px;letter-spacing:.12em;line-height:1}
@@ -531,20 +523,20 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 .rv-cnt{font-size:15px;line-height:1.45;color:var(--muted)}
 .rv-go{font-size:14px;font-weight:500;color:var(--gold)}
 @media (max-width:900px){.rv-grid{grid-template-columns:minmax(0,1fr)}}
-/* the total is not a link here: no hover; under the button — .rv-m everywhere, .rv-p on phones and tablets too */
+
 div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(--surface)}
-/* «4–5 сеансов» не рвётся на «4–» и «5» */
+
 .nw{white-space:nowrap}
 .rv-grid:not(.all) .rv-m{display:none}
 @media (max-width:900px){.rv-grid:not(.all) .rv-p{display:none}}
 .rv-grid.all + .more{display:none}
 @media (max-width:600px){.rv-grid{grid-template-columns:minmax(0,1fr)}}
 
-/* ——— faq ——— */
+
 .qa{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,3vw,48px)}
 .qa-col{border-top:1px solid var(--line);min-width:0}
 .qa .qa-all{display:none}
-/* phones and tablets: one column, the four less frequent questions under a button */
+
 @media (max-width:980px){.qa{grid-template-columns:minmax(0,1fr)}.qa-col+.qa-col{border-top:0}
   .qa:not(.all) .qa-more{display:none}.qa:not(.all) .qa-all{display:flex;margin-top:12px}.qa.all .qa-all{display:none}}
 .qa details{border-bottom:1px solid var(--line)}
@@ -556,9 +548,9 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 .qa details.moving{overflow:hidden}
 .qa details p{padding-bottom:22px;font-family:var(--serif);font-size:16.5px;color:var(--muted);max-width:62ch;line-height:1.6}
 
-/* ——— footer (dark card) ——— */
+
 .foot{margin-bottom:6px;padding-top:clamp(24px,3vw,40px)}
-/* footer: who we are · ways to reach us as quiet pills · the address and hours; one thin line at the bottom */
+
 .foot-grid{display:grid;gap:28px clamp(24px,3vw,48px);padding-block:clamp(28px,3.4vw,48px);grid-template-columns:minmax(0,1fr);align-items:center}
 .ft-id .wm{width:min(240px,100%);color:var(--ink)}
 .ft-id p{margin-top:12px;font-size:14.5px;line-height:1.4;color:var(--muted)}
@@ -569,7 +561,7 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   background:color-mix(in srgb,var(--ink) 5%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 16%,transparent);transition:background .25s,transform .25s var(--ease)}
 @media (hover:hover) and (pointer:fine){.ft-links a:hover,.ft-route:hover{background:color-mix(in srgb,var(--ink) 10%,transparent)}}
 .ft-links a:active,.ft-route:active{transform:scale(.98)}
-/* five links in two columns: the last one takes the whole row */
+
 .ft-links a:last-child:nth-child(odd){grid-column:1/-1}
 .ft-links svg,.ft-route svg{width:16px;height:16px;flex:none}
 .ft-tiles{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:6px}
@@ -581,10 +573,10 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 .foot-bottom a{text-decoration:none}
 .foot-note{font-size:11px;line-height:1.4;color:var(--muted);opacity:.8;text-align:center;max-width:46em}
 .foot-bottom .foot-note a{text-decoration:underline;text-underline-offset:2px}
-/* below 1400 px (with the side menu the footer is narrow) the identity takes a row, contacts and address share the next */
+
 @media (max-width:600px){.foot-grid{grid-template-columns:minmax(0,1fr);gap:24px}.ft-id .wm{width:200px}}
 
-/* ——— lightbox backdrop ——— */
+
 .dock{display:none}
 @media (max-width:1023px){
   .dock{display:flex;gap:6px;position:fixed;z-index:60;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));
@@ -599,12 +591,12 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
   animation:fadeIn .25s ease}
 
-/* ——— reduced motion ——— */
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
 
-/* ——— left sidebar navigation (Sidefolio structure, this site's style) ——— */
+
 .page{min-width:0}
 .side{position:sticky;top:calc(8px + env(safe-area-inset-top,0px));z-index:40;display:flex;flex-direction:column;gap:8px;
   margin:8px max(8px,env(safe-area-inset-right,0px)) 0 max(8px,env(safe-area-inset-left,0px))}
@@ -619,7 +611,7 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 .side.open .side-body{display:flex;animation:fadeIn .3s ease}
 .nav-i{position:relative;z-index:1;display:flex;align-items:center;gap:11px;height:38px;padding:0 12px;border-radius:999px;
   text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);transition:color .3s,background .25s}
-/* short laptop screens: rows a little tighter so the booking button at the bottom stays in view */
+
 @media (min-width:1024px) and (max-height:1000px){.nav-i{height:33px}}
 .nav-i .ic{width:17px;height:17px;flex:none}
 .nav-i .ic-b{width:16px;height:16px}
@@ -640,7 +632,7 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 [id]{scroll-margin-top:96px}
 @media (max-width:1023px){
   .side.open .side-body,.side.closing .side-body{background:var(--bg);border-radius:24px;padding:4px 0 8px;box-shadow:0 24px 48px -12px rgba(0,0,0,.35);animation:menuIn .25s var(--ease)}
-  /* phones: the header is a solid bar pinned to the top edge, nothing shows through above or beside it */
+  
   .side{top:0;margin:0}
   .grp-me{border-radius:0;padding:env(safe-area-inset-top,0px) 0 0;background:var(--surface);border-bottom:1px solid var(--line)}
   .grp-me .grp-in.me-row{border-radius:0;padding:8px max(10px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px))}
@@ -652,7 +644,7 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   .side::-webkit-scrollbar{display:none}
   .side .menu-btn{display:none}
   .side-body{display:flex;flex:1;max-height:none;overflow:visible;padding-bottom:0}
-  .grp-bottom{margin-top:auto;position:sticky;bottom:0;z-index:2;box-shadow:0 -12px 18px -6px var(--bg)} /* on short screens the menu scrolls under it */
+  .grp-bottom{margin-top:auto;position:sticky;bottom:0;z-index:2;box-shadow:0 -12px 18px -6px var(--bg)} 
   .page{padding-left:calc(288px + env(safe-area-inset-left,0px))}
   .page .dcard{margin-left:0;margin-right:12px}
   .page .hero-card{margin-top:12px;min-height:calc(100svh - 24px)}
@@ -661,29 +653,28 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   [id]{scroll-margin-top:16px}
 }
 
-/* ——— status lamp ——— */
+
 .lamp{flex:none;border-radius:50%;background:var(--live);animation:lamp 2.8s ease-in-out 3;width:6px;height:6px}
-/* outside 11:00–21:00 Moscow time the lamp rests */
+
 .closed .lamp{background:var(--muted);animation:none;opacity:.6}
 @keyframes lamp{0%,100%{opacity:1;box-shadow:0 0 0 0 color-mix(in srgb,var(--live) 65%,transparent)}50%{opacity:.55;box-shadow:0 0 0 3px transparent}}
 
-/* ——— logo: the crowned mark and the wordmark are white PNG shapes coloured by CSS, so they follow the theme ——— */
+
 .wm{display:block;font-weight:600;letter-spacing:-.045em;line-height:.95;white-space:nowrap}
 
-/* ——— portrait placeholder (3:4) ——— */
+
 .ph{display:block;overflow:hidden;aspect-ratio:3/4;background:var(--ph-bg,var(--grp));color:var(--ph-fg,var(--muted))}
 .ph svg,.ph img{display:block;width:100%;height:100%;object-fit:cover}
 .ph svg{opacity:.45}
 
-/* ——— section headings ——— */
+
 .eyebrow{display:block;font-size:13px;font-weight:500;color:var(--gold);letter-spacing:.01em}
 .sh{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(14px,1.5vw,22px);margin-bottom:clamp(40px,4.6vw,72px)}
 .sh h2{font-size:clamp(52px,7.2vw,124px);font-weight:600;letter-spacing:-.045em;line-height:.9;margin-left:-.045em;white-space:normal}
 .sh h2.split .hw{display:inline-block;overflow:hidden;vertical-align:top;padding:.12em .06em .3em 0;margin:-.12em -.06em -.3em 0}
 .sh h2.split .hw>span{display:inline-block;transform:translateY(108%);transition:transform 1.2s var(--ease) calc(var(--i) * 60ms)}
 .sh h2.split.up .hw>span{transform:none}
-/* wide screens: the heading, a slash typed in the heading's own face (same size and weight, muted), and the lede beside it,
-   all centred on the heading's capitals; the air on both sides of the slash is set by eye-equal ink gaps (--sl-l, --sl-r) */
+
 .sh-sl{display:none}
 @media (min-width:1200px){
   .sh.sh-row{flex-direction:row;flex-wrap:nowrap;align-items:center;gap:0}
@@ -696,37 +687,37 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 .sh-lede{font-family:var(--serif);font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--muted);max-width:40ch;text-wrap:pretty}
 
 
-/* ——— sidebar profile on the computer: the full logotype across the plaque, the place and the hours under it ——— */
+
 .grp-me .grp-in{padding:20px 18px 18px}
 .grp-me .me{padding:0;flex-direction:column;align-items:stretch;gap:0}
 .grp-me .me-t{display:flex;flex-direction:column;gap:0;min-width:0}
 .grp-me .me-id .wm{width:100%}
 .grp-me .me-id .role{display:block;margin-top:14px;font-size:13.5px;line-height:1.3;color:var(--muted)}
 .grp-me .live-m{display:flex;align-items:center;margin-top:6px;font-size:13px;line-height:1.3;color:var(--muted);gap:var(--lamp-gap)}
-/* short laptop screens: a tighter plaque leaves more of the menu in view */
+
 @media (min-width:1024px) and (max-height:820px){.grp-me .grp-in{padding:14px 18px 12px}.grp-me .me-id .role{margin-top:10px}.grp-me .live-m{margin-top:4px}}
 .me-sl{display:none}
 @media (max-width:1023px){
   .grp-me .grp-in{padding:4px}
   .grp-me .me{flex-direction:row;gap:12px;align-items:center;padding:0}
   .grp-me .me-t{justify-content:center;gap:5px;padding:0}
-  /* the logotype on the left, a tall slash, and two lines after it: the place and the hours with the lamp */
+  
   .grp-me .me-t{display:grid;grid-template-columns:auto auto minmax(0,1fr);grid-template-rows:auto auto;align-items:center;column-gap:10px;row-gap:5px}
   .grp-me .me-id{display:contents}
-  /* the logotype takes whatever the two lines leave: about 148 px on a 390 px phone */
+  
   .grp-me .me-id .wm{grid-column:1;grid-row:1/3;width:clamp(96px,calc(100vw - 242px),160px)}
   .me-sl{display:block;grid-column:2;grid-row:1/3;width:1.5px;height:30px;background:color-mix(in srgb,var(--ink) 32%,transparent);transform:skewX(-18deg)}
   .grp-me .me-id .role{grid-column:3;grid-row:1;align-self:end;display:block;margin:0;font-size:12.5px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .grp-me .live-m{grid-column:3;grid-row:2;align-self:start;margin:0;font-size:12px;line-height:1.1}
   .grp-me .live-m .os-t{white-space:nowrap}
 }
-/* the narrowest phones drop «Москва» — the metro already says where */
+
 @media (max-width:349px){.grp-me .me-id .wm{width:calc(100vw - 210px)}.r-city{display:none}
 }
 
-/* ——— works CTA: built like a work card, the caption lies inside the panel ——— */
+
 .work-cta{position:relative;min-width:0;text-decoration:none;display:flex;flex-direction:column;color:inherit}
-/* an empty «work»: a dashed frame like an empty ad space, and the same caption bar as the works */
+
 .wc-panel{position:relative;display:grid;place-items:center;place-content:center;aspect-ratio:4/5;padding:clamp(22px,2.4vw,36px);border-radius:14px;background:var(--surface);text-align:center;transition:background .3s}
 .wc-panel::before{content:"";position:absolute;inset:6px;border-radius:8px;border:1.5px dashed color-mix(in srgb,var(--ink) 20%,transparent);transition:border-color .3s}
 .wc-t{display:block;color:var(--muted);transition:color .3s}
@@ -734,7 +725,7 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 @media (max-width:980px){.work-cta .wc-t{font-size:clamp(17px,4vw,24px)}}
 .wc-cap{position:absolute;inset:auto 0 0;display:flex;gap:8px;padding:12px 14px 14px;min-width:0}
 .wc-cap .t{font-weight:600;font-size:clamp(15px,1.2vw,17px);letter-spacing:-.025em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
-/* the caption stays a caption; a small orange circle with an arrow says it can be pressed */
+
 .wc-cap{align-items:center;font-size:clamp(15px,1.2vw,17px)}
 .wc-go{margin-left:auto;flex:none;width:1.5em;height:1.5em;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--on-gold)}
 .wc-go svg{width:.8em;height:.8em}
@@ -742,11 +733,11 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 .work-cta:hover .wc-panel::before{border-color:color-mix(in srgb,var(--ink) 38%,transparent)}
 .work-cta:hover .wc-t{color:var(--ink)}}
 @media (max-width:520px){.wc-cap{padding:10px 11px 12px}.wc-panel{padding:16px}}
-/* последняя карточка — всегда в конце и того же размера, что фото (4:5): «место для вашей татуировки» в ряду работ */
 
-/* ——— lamp follows its label, one optical gap everywhere ——— */
 
-/* ——— phone menu opens over the page ——— */
+
+
+
 .scrim{position:fixed;inset:0;z-index:39;background:rgba(8,8,7,.42);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);animation:fadeIn .3s ease}
 @keyframes menuIn{from{opacity:0;transform:translateY(-8px)}}
 @media (max-width:1023px){
@@ -754,7 +745,7 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 }
 @media (min-width:1024px){.scrim{display:none!important}}
 
-/* ——— lightbox: everything lives inside the photo; the title sits on a soft shade ——— */
+
 .lb-box{position:relative;margin:0;border-radius:24px;overflow:hidden;background:#1B1B19;touch-action:pan-y;
   box-shadow:0 40px 90px -30px rgba(0,0,0,.65);animation:lbIn .3s var(--ease)}
 @keyframes lbIn{from{opacity:0;transform:scale(.97)}}
@@ -784,12 +775,12 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   text-shadow:0 1px 12px rgba(0,0,0,.25)}
 @media (max-width:480px){.lb-box{border-radius:20px}.lb-cap{padding:56px 18px 16px}.lb-cap strong{font-size:18px}}
 
-/* ——— scroll scenes ——— */
+
 .over{position:relative;z-index:1;background:var(--bg)}
 .dcard:not(.hero-card){scale:var(--gs,1);transform-origin:50% 0}
 .work img,.work video{scale:1.14;translate:0 var(--py,0%);transition:scale .9s var(--ease)}
 @media (hover:hover) and (pointer:fine){.work button:hover img,.work button:hover video{scale:1.19}}
-/* a process video sits in the grid like a photo; a small mark says it moves */
+
 .work button{position:relative}
 .v-badge{position:absolute;left:6px;top:6px;display:flex;align-items:center;gap:6px;height:24px;padding:0 9px;border-radius:8px;background:rgba(10,10,9,.5);color:#FAFAF8;font-size:12px;font-weight:500;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);pointer-events:none}
 .v-badge::before{content:"";width:0;height:0;border-left:7px solid currentColor;border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
@@ -797,18 +788,15 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 @media (prefers-reduced-motion:reduce){.work img,.work video{scale:1;translate:none}.dcard{scale:none}}
 
 
-/* touch screens: small buttons and footer links get a finger-sized hit area */
+
 @media (pointer:coarse){.chip{height:40px}}
 
-/* ——— finale: footer slides over the contact section (the booking card stays bright — no fade, no shrink) ——— */
+
 .finale{position:relative}
 #contact{position:sticky;z-index:0}
 .foot{position:relative;z-index:1;box-shadow:0 -28px 70px -28px rgba(0,0,0,.32)}
 
-/* ——— button system — the last word on shape, size and colour, so older rules above cannot drift it.
-   Three levels: main (solid orange), second (quiet outline on a faint fill), choice (like the second, orange when picked).
-   Three sizes: L 64 px / 17 px (first screen, «Начать»), M 52 px / 15 px (section buttons, questionnaire, phone bar),
-   S 44 px / 15 px (master cards, side menu, filters, questionnaire chips). One motion: lighter on hover, a slight press. ——— */
+
 .h-btn,.wide-btn,.qz-go,.qz-alt,.dock-b,.m-btn,.side-cta,.chip,.qz-c{
   border-radius:999px;border:0;box-shadow:none;background-image:none;text-decoration:none;cursor:pointer;
   transition:background .25s,box-shadow .25s,color .25s,transform .16s var(--ease)}
@@ -817,22 +805,22 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 .wide-btn,.qz-go,.qz-alt,.dock-b{height:52px;padding:0 22px;font-size:15px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px}
 .m-btn,.side-cta,.chip,.qz-c{height:44px;font-size:15px;font-weight:500}
 .m-btn{padding:0 10px}.chip{padding:0 8px}.qz-c{padding:0 6px}.dock-b{padding:0 14px}
-/* main */
+
 .h-go,.qz-go,.dock-main,.m-btn.m-main,.side-cta,.chip[aria-pressed="true"],.qz-c.on,.qz-o.on{background:var(--gold);color:var(--on-gold);box-shadow:none}
 @media (hover:hover) and (pointer:fine){.h-go:hover,.qz-go:hover,.dock-main:hover,.m-btn.m-main:hover,.side-cta:hover{background:color-mix(in srgb,var(--gold) 90%,#fff)}}
-/* second and choice */
+
 .h-ask,.wide-btn,.qz-alt,.dock-b:not(.dock-main),.m-btn:not(.m-main),.chip:not([aria-pressed="true"]),.qz-c:not(.on),.qz-o:not(.on){
   background:color-mix(in srgb,var(--ink) 5%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 16%,transparent);color:var(--ink)}
 @media (hover:hover) and (pointer:fine){.h-ask:hover,.wide-btn:hover,.qz-alt:hover,.dock-b:not(.dock-main):hover,.m-btn:not(.m-main):hover,.chip:not([aria-pressed="true"]):hover,.qz-c:not(.on):hover,.qz-o:not(.on):hover{
   background:color-mix(in srgb,var(--ink) 10%,transparent)}}
-/* the «not sure» card is light, so its button takes the card's ink */
+
 .m-cta .m-btn{background:var(--paper-ink);color:var(--paper);box-shadow:none}
 @media (hover:hover) and (pointer:fine){.m-cta .m-btn:hover{background:color-mix(in srgb,var(--paper-ink) 85%,var(--paper))}}
-/* the phone bar sits on blur, so its second button keeps a solid ground to stay readable */
+
 .dock-b:not(.dock-main){background:var(--bg)}
 
-/* ——— личный сайт: что отличается от сайта студии ——— */
-/* имя вместо логотипа: в меню на компьютере одной строкой, на телефоне — в две, слева от косой черты */
+
+
 .grp-me .me-id .wm{font-size:26.5px}
 .ft-id .wm{font-size:clamp(30px,2.6vw,38px);width:auto}
 @media (max-width:1023px){
@@ -840,16 +828,14 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   .grp-me .me-id .wm span{display:block}
 }
 @media (max-width:349px){.grp-me .me-id .wm{width:auto;font-size:15.5px}}
-/* первый экран: заголовок «Тату-мастер / из Москвы» наверху, под видео — подзаголовок и кнопки внизу (больше места ролику);
-   подзаголовок — две строки (кто я и что делаю), на компьютере каждая в одну строку; сверху лёгкая тень, чтобы заголовок читался */
+
 .hero-in{justify-content:space-between}
 .h-title{max-width:7.2em}
 .h-foot .h-sub{margin-top:0}
-/* подпись — переносы вручную (Владимир, 28.10.2026): на компьютере две строки «Привет, я Михаил. 12 лет … реализм» / «и перекрываю старые тату»,
-   на телефоне и планшете приветствие — отдельной строкой сверху (.h-br). text-wrap:wrap — Safari с «pretty» сам укорачивал первую строку */
+
 .h-sub{max-width:34em;text-wrap:wrap}
 @media (min-width:901px){.h-sub .h-br{display:none}}
-/* цена и метро — две стеклянные плашки, как кнопка «Задать вопрос»; у метро — значок-метка вместо оранжевой точки */
+
 .h-facts{gap:8px;margin-top:18px;font-size:15px;font-weight:500}
 .h-facts span{gap:7px;height:36px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.08);
   -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
@@ -857,8 +843,7 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
 .h-facts svg{width:16px;height:16px;flex:none;color:var(--gold);margin-left:-3px}
 @media (max-width:900px){.h-facts{margin-top:14px;font-size:14px}.h-facts span{height:34px;padding:0 12px}}
 .hero-card .hero-bg::before{content:"";position:absolute;inset:0 0 auto;height:40%;z-index:1;background:linear-gradient(180deg,rgba(13,13,12,.55),rgba(13,13,12,0))}
-/* три цены в ряд (1, 2 и 3+ сеанса), под ними — что бесплатно, с точками, как на сайте студии;
-   на телефоне карточки одна под другой: фото слева, текст справа */
+
 #prices .why-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:600px){
   #prices .why-grid{grid-template-columns:minmax(0,1fr)}
@@ -867,31 +852,29 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   #prices .pr-c h3{align-self:end}
   #prices .pr-c p{align-self:start;margin-top:0}
 }
-/* «Или напишите сами»: Телеграм и WhatsApp в один ряд, телефон под ними во всю ширину */
+
 .q-links{grid-template-columns:repeat(2,minmax(0,1fr))}
 .q-links .q-tel{grid-column:1/-1}
 
-/* три вкладки над работами: всегда в один ряд, даже на телефоне */
+
 .filters{grid-template-columns:repeat(3,minmax(0,1fr))}
-/* «Обо мне»: абзацы рассказа */
+
 .ab-text{font-family:var(--serif);font-size:clamp(16px,1.25vw,19px);line-height:1.6;color:color-mix(in srgb,var(--ink) 82%,transparent);max-width:34em;text-wrap:pretty}
 .ab-text+.ab-text{margin-top:12px}
-/* «Обо мне»: рассказ прямо на фото. Фон карточки — цвет стены со снимка, портрет справа растворяется в нём, текст слева.
-   Портрет всего 600 px в ширину — поэтому не шире 600 px, иначе размоется */
+
 .ab-card{position:relative;overflow:hidden;display:flex;align-items:center;min-height:clamp(440px,38vw,580px);border-radius:28px;
   background:#17100B;box-shadow:inset 0 1px 0 var(--edge),var(--drop);--rv-y:22px}
 .ab-ph{position:absolute;top:0;right:0;width:min(56%,600px);height:100%;object-fit:cover;object-position:50% 4%;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 45%);mask-image:linear-gradient(90deg,transparent,#000 45%)}
 .ab-body{position:relative;z-index:1;width:min(36em,60%);padding:clamp(28px,3.6vw,56px)}
-/* телефон и узкий планшет: фото сверху, к низу темнеет, текст начинается на рубашке и продолжается под фото */
+
 @media (max-width:760px){
   .ab-card{display:grid;align-items:start;min-height:0}
   .ab-ph{position:relative;grid-area:1/1;width:100%;height:auto;aspect-ratio:3/4;object-position:50% 0;
     -webkit-mask-image:linear-gradient(180deg,#000 38%,transparent 84%);mask-image:linear-gradient(180deg,#000 38%,transparent 84%)}
   .ab-body{grid-area:2/1;width:auto;margin-top:-34%;padding:0 20px 24px}
 }
-/* «Почему меня выбирают» — четыре плитки одной высоты, как на сайте Владимира (28.10.2026): крупное оранжевое слово сверху, пояснение внизу,
-   из левого верхнего угла — тёплый отсвет акцента. На компьютере четыре в ряд, уже 1180 px — 2 × 2 (и на телефоне) */
+
 .ab-why{margin:clamp(28px,2.6vw,40px) 0 12px}
 .ab-plates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:8px;margin:0;padding:0;list-style:none}
 .ab-plates li{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(20px,2.4vw,36px);min-height:clamp(150px,12vw,190px);padding:clamp(20px,2vw,28px);border-radius:16px;
@@ -906,10 +889,9 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   .ab-plates b{font-size:clamp(26px,8vw,34px)}
   .ab-plates li>span{font-size:14.5px}
 }
-/* «Мои картины» — те же карточки, что у работ, и тот же крупный просмотр. На компьютере пять в ряд;
-   уже 1200 px (в ряд выходят мельче 180 px) — лента до краёв экрана, листается пальцем вбок (последняя карточка видна наполовину — подсказка, что лента едет) */
+
 .art{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
-/* карточка — в формат кадра (3:4) и без приближения и параллакса, как у работ: иначе высокая рама упирается в края */
+
 .art .work button{aspect-ratio:3/4}
 .art .work img{scale:1;translate:none}
 @media (hover:hover) and (pointer:fine){.art .work button:hover img{scale:1.04}}
@@ -919,8 +901,7 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   .art::-webkit-scrollbar{display:none}
   .art .work{scroll-snap-align:start}
 }
-/* лента едет сама (скрипт кладёт карточки в .art-track и повторяет их ещё дважды — data-clone). На компьютере дорожки нет: пять в ряд, копии скрыты.
-   Если в телефоне выключены анимации — скрипт ничего не делает, остаётся лента выше, которая листается пальцем */
+
 .art-track{display:contents}
 @media (min-width:1200px){.art [data-clone]{display:none}}
 @media (max-width:1199px){
@@ -931,14 +912,14 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   .art.belt.drag,.art.belt.drag button{cursor:grabbing}
 }
 
-/* ——— перекрытия: большое фото «до / после» с ползунком, рядом (на телефоне — под ним) текст, примеры и кнопка ——— */
-/* фото — не выше экрана; колонка с текстом не уже 280 px (на 1024 боковое меню забирает место — тогда сжимается фото) */
+
+
 .cv{display:grid;grid-template-columns:minmax(0,min(540px,calc((100svh - 160px) * .75))) minmax(280px,1fr);gap:8px}
 @media (max-width:639px){.cv{grid-template-columns:minmax(0,1fr)}}
 .cv-stage{--p:50%;position:relative;overflow:hidden;aspect-ratio:3/4;border-radius:16px;background:var(--surface);touch-action:pan-y;cursor:ew-resize;
   -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
 .cv-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
-/* «до» лежит поверх «после» и видно его только слева от линии */
+
 .cv-before{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
 .cv-stage.ld img{opacity:.5;transition:opacity .25s}
 .cv-line{position:absolute;top:0;bottom:0;left:var(--p);z-index:1;width:2px;margin-left:-1px;background:#FAFAF8;box-shadow:0 0 14px rgba(0,0,0,.4);pointer-events:none}
@@ -971,36 +952,35 @@ div.rv-sum{justify-content:flex-start;gap:14px}div.rv-sum:hover{background:var(-
   .cv-list::-webkit-scrollbar{display:none}
   .cv-pick{flex:none}
 }
-/* «Ещё перекрытия» — квадратные коллажи Миши под ползунком: четыре в ряд, на телефоне два. Без приближения и параллакса, как у картин */
+
 .cvg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .cvg .work button{aspect-ratio:1/1}
 .cvg .work img{scale:1;translate:none}
 @media (hover:hover) and (pointer:fine){.cvg .work button:hover img{scale:1.04}}
 @media (max-width:639px){.cvg{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-/* ——— сайт Миши: что отличается от личного сайта Владимира ——— */
-/* подвал без имени: отступы сверху и снизу от кнопок контактов одинаковые */
+
+
 .foot{padding-top:0}
 .grp-me .me-id .wm{font-size:30px}
 @media (max-width:1023px){.grp-me .me-id .wm{font-size:17px}}
-/* заглушка: оранжевый пунктир под словами — заполнить, когда Миша пришлёт данные (перед публикацией убрать класс) */
+
 .stub{text-decoration:underline dashed var(--gold);text-decoration-thickness:1.5px;text-underline-offset:.22em}
 .stub-tag{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;letter-spacing:.02em;
   color:var(--gold);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--gold) 55%,transparent);white-space:nowrap;vertical-align:middle}
-/* перекрытия: пока без фото — пустая плашка с кнопкой */
+
 .w-empty .stub-tag{margin-bottom:4px;white-space:normal;height:auto;min-height:24px}
 .w-empty .m-btn{text-decoration:none}
-/* подготовка и уход: две группы карточек, как «Почему я» */
+
 .pc-l{display:flex;align-items:center;gap:12px;margin:0 0 12px}
 .pc-l+.wq-list{margin-top:0}
 .wq-list+.pc-l{margin-top:clamp(28px,3vw,44px)}
-/* отзывы: пока примеры */
+
 .rv-c.rv-stub blockquote{color:var(--muted)}
 .rv-c .stub-tag{align-self:flex-start}
 
-/* ——— прогон скиллами (27.10.2026): телефон, худшие данные, движение ——— */
-/* телефон: без серой вспышки и задержки касания; долгое нажатие не выделяет подписи кнопок
-   и не открывает меню у ссылок внутри страницы; нажатие видно сразу — кнопки чуть сжимаются, строки тускнеют */
+
+
 html{-webkit-tap-highlight-color:transparent}
 a,button,summary,label,[role="slider"]{touch-action:manipulation}
 button,summary,.m-btn,.h-btn,.dock-b,.nav-i,.side-cta,.ft-links a,.work-cta,.foot-bottom a,.qz-att{-webkit-user-select:none;user-select:none}
@@ -1016,17 +996,17 @@ a[href^="#"]{-webkit-touch-callout:none}
 .qa summary:active,.qz-back:active,.foot-bottom a:active{opacity:.6}
 .qz-att:active .qz-att-b{background:color-mix(in srgb,var(--ink) 8%,transparent)}
 .lb-nav:active svg{transform:scale(.88)}
-/* маленькие кнопки — палец попадает и рядом: крестик анкеты 36 → 44 px, «убрать фото» 24 → 44 px */
+
 .qz-x{position:relative}
 .qz-x::after{content:"";position:absolute;inset:-4px}
 .qz-th button::after{content:"";position:absolute;inset:-10px}
-/* «Уменьшить прозрачность» в настройках телефона: нижняя панель и фон под окнами — без размытия */
+
 @media (prefers-reduced-transparency:reduce){
   .dock{background:var(--surface);-webkit-backdrop-filter:none;backdrop-filter:none}
   .qz-dim,.scrim{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(8,8,7,.72)}
   .edge{display:none}
 }
-/* меню на телефоне и крупный просмотр уходят так же плавно, как появились (раньше исчезали рывком) */
+
 @keyframes fadeOut{to{opacity:0}}
 @keyframes menuOut{to{opacity:0;transform:translateY(-8px)}}
 @keyframes lbOut{to{opacity:0;transform:scale(.97)}}
@@ -1035,23 +1015,22 @@ a[href^="#"]{-webkit-touch-callout:none}
 .lb.out{animation:fadeOut .2s ease forwards;pointer-events:none}
 .lb.out .lb-box{animation:lbOut .2s var(--ease) forwards}
 
-/* худшие данные: анкета — ссылка на референс или длинная идея переносится, а не уезжает за край */
+
 .qz-sum dt{flex:none}
 .qz-sum dd{min-width:0;overflow-wrap:anywhere}
-/* «Или напишите сами» и контакты в подвале: кнопка не уже своей надписи; не влезают в ряд — переходят на следующий
-   (на узком телефоне и на ноутбуке надписи вылезали за кнопки, номер ломался на две строки) */
+
 .q-links{display:flex;flex-wrap:wrap}
 .q-links .m-btn{flex:1 1 0;min-width:max-content}
 .q-links .q-tel{flex-basis:100%}
 .ft-links{display:flex;flex-wrap:wrap}
 .ft-links a{flex:1 1 0;min-width:max-content;white-space:nowrap}
-/* подписи в одну строку: нижняя панель; самые узкие телефоны (320–359) — плотнее «Задать вопрос» */
+
 .dock-b{white-space:nowrap}
 @media (max-width:359px){.dock-b{padding:0 8px;gap:6px;font-size:14px}.h-btn{gap:8px}}
-/* «Обсудить идею» и длинные названия в крупном просмотре — в две строки вместо многоточия */
+
 .wc-cap .t{white-space:normal;line-height:1.15}
 .lb-cap strong{white-space:normal;text-wrap:balance}
-/* на будущее (сайты других мастеров по этому образцу): длинное имя в меню и на заставке переносится */
+
 @media (min-width:1024px){.grp-me .me-id .wm{white-space:normal;text-wrap:balance}}
 .pre-wm{white-space:normal;text-align:center;text-wrap:balance;padding-inline:16px}
 </style>
@@ -1104,9 +1083,6 @@ a[href^="#"]{-webkit-touch-callout:none}
 <div class="page">
 <main id="home">
   <section class="hero-card dcard dark grain" aria-label="Миша Ру, тату-мастер">
-    <!-- фон — ч/б нарезка роликов Миши без звука (заставки — .jpg с тем же именем);
-         вертикальный hero-reel.mp4 для телефона (по 3 с: тигр, череп, дракон, пантера), горизонтальный hero-reel-wide.mp4 для компьютера (рядом: тигр, дракон, череп).
-         Ролик «За работой» убран (27.10.2026): на нём не Миша. Владимир доснимет Мишу за работой — тогда пересобрать -->
     <div class="hero-bg" aria-hidden="true"><video class="hero-vid" data-tall="video/hero-reel.mp4" data-wide="video/hero-reel-wide.mp4" muted loop playsinline autoplay preload="auto"></video></div>
     <div class="hero-in">
       <h1 class="h-title">Тату-мастер из&nbsp;Москвы</h1>
@@ -1129,19 +1105,12 @@ a[href^="#"]{-webkit-touch-callout:none}
         <h2>Работы</h2><span class="sh-sl" aria-hidden="true"></span>
         <p class="sh-lede">Фото и&nbsp;видео с&nbsp;моих сеансов — нажмите, чтобы рассмотреть крупно</p>
       </header>
-      <!-- фильтр: тема работы — в data-cat (color, bw); ролики — только в «Все».
-           Перекрытия — не здесь, а отдельным разделом «Перекрытия» ниже, с ползунком до/после (27.10.2026).
-           Картины — не здесь, а в «Обо мне» (полоса «Мои картины», 27.10.2026); одежды «Явь» на сайте нет: Миша — «сконцентрироваться только на татухах» (27.10.2026) -->
       <div class="filters" role="group" aria-label="Какие работы показать" data-rv>
         <button class="chip" type="button" data-f="all" aria-pressed="true">Все</button>
         <button class="chip" type="button" data-f="color" aria-pressed="false">Цветные</button>
         <button class="chip" type="button" data-f="bw" aria-pressed="false">Чёрно-белые</button>
       </div>
-      <!-- Новая работа: скопируйте любую <figure> и поменяйте data-n (img/имя.webp и img/thumbs/имя.webp, 3:4),
-           имя в src и srcset (там же ширина большого фото: 853w или 960w — чёткие экраны берут его), data-cat — темы, название (data-t, aria-label, .t) и описание (data-alt, alt).
-           Названия работ придумал Claude по фото — Миша может поправить. «Огонь» в названиях не повторяем (27.10.2026), он остаётся только в описаниях -->
       <div class="grid" id="grid">
-        <!-- Спина — 6 сеансов (Миша, Telegram 28.10.2026), первой в «Работах» -->
         <figure class="work" data-rv data-n="mikhail-41" data-cat="bw" data-t="Дракон в цепях" data-alt="Тату: дракон в цепях и готические окна на всю спину, чёрно-белый реализм">
           <button type="button" data-open="mikhail-41" aria-label="Открыть: Дракон в цепях"><img src="img/thumbs/mikhail-41.webp" srcset="img/thumbs/mikhail-41.webp 520w, img/mikhail-41.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: дракон в цепях и готические окна на всю спину, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Дракон в цепях</span></figcaption>
@@ -1202,9 +1171,6 @@ a[href^="#"]{-webkit-touch-callout:none}
           <button type="button" data-open="mikhail-14" aria-label="Открыть: Подпись"><img src="img/thumbs/mikhail-14.webp" srcset="img/thumbs/mikhail-14.webp 520w, img/mikhail-14.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: подпись Мэрилин Монро и дым на рукаве" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Подпись</span></figcaption>
         </figure>
-        <!-- работы 17–40 — фото Миши из Telegram (27.10.2026, «От Миши/Примеры по сеансам»), обрезка 3:4.
-             Пары «до/после» (Святая, Солдат, Анубис) и два ракурса (Гладиатор, Крест, Портрет девушки) — левая половина, «стало».
-             Не добавлены — уже есть выше: волк, Мэрилин (рукав и крупно), тигр, пантера, леопард, череп, дракон, панда-самурай; замок — один ракурс из трёх; архангел — одно фото из двух (Владимир, 28.10.2026: «Ангел-хранитель» и «Архангел» — одна работа). Названия Анубис, Архангел, Стихия — от Владимира -->
         <figure class="work" data-rv data-n="mikhail-17" data-cat="bw" data-t="Слон" data-alt="Тату: слон с бивнями на плече, чёрно-белый реализм">
           <button type="button" data-open="mikhail-17" aria-label="Открыть: Слон"><img src="img/thumbs/mikhail-17.webp" srcset="img/thumbs/mikhail-17.webp 520w, img/mikhail-17.webp 960w" sizes="(max-width: 980px) 50vw, 33vw" alt="Тату: слон с бивнями на плече, чёрно-белый реализм" width="520" height="693" loading="lazy" decoding="async"></button>
           <figcaption><span class="t">Слон</span></figcaption>
@@ -1314,7 +1280,6 @@ a[href^="#"]{-webkit-touch-callout:none}
           <figcaption><span class="t">Леопард</span></figcaption>
         </figure>
         <a class="work-cta" href="#contact" data-rv>
-          <!-- шутка в духе «место для вашей рекламы»: пустая «работа» с подписью, как у остальных -->
           <span class="wc-panel"><span class="wc-t">Место для вашей будущей татуировки</span></span>
           <span class="wc-cap"><span class="t">Обсудить идею</span><span class="wc-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
@@ -1323,9 +1288,6 @@ a[href^="#"]{-webkit-touch-callout:none}
     </div>
   </section>
 
-  <!-- «Перекрытия» — до и после с ползунком (фото Владимира, 27.10.2026). Пример «Леопард» — та же работа, что вторая в «Работах».
-       Новый пример: img/cover-NN-before.webp и img/cover-NN.webp (один кадр, 3:4) + img/thumbs/cover-NN.webp (180×240) —
-       скопировать <li> в .cv-list, поменять data-n, название и описания. Пока пример один, список под текстом скрыт -->
   <section class="sec" id="covers" style="padding-top:0">
     <div class="wrap">
       <header class="sh sh-row" data-rv>
@@ -1354,10 +1316,6 @@ a[href^="#"]{-webkit-touch-callout:none}
           </div>
         </div>
       </div>
-      <!-- «Ещё перекрытия» — коллажи Миши «после | до» (Telegram, 28.10.2026, «От Миши/Новые 28.10»; у «Девушки с розами» «до» слева).
-           Ползунок — только у «Леопарда»: его фото сняты специально под сравнение (Владимир, 28.10.2026). С «Работами» повторяются — Миша: «пусть повторяются».
-           Открываются крупно, стрелки листают только коллажи. Новый коллаж: img/thumbs/cvg-NN.webp (520×520) и img/cvg-NN.webp
-           (1080×1080, квадрат без полос — data-r="1" открывает его в квадратной рамке), скопировать <figure> -->
       <p class="eyebrow ab-why" data-rv>Ещё перекрытия</p>
       <div class="cvg" id="cvg" data-rv-stagger>
         <figure class="work" data-rv data-r="1" data-n="cvg-01" data-t="Дракон" data-alt="Перекрытие: огненный дракон на предплечье поверх старой татуировки — до и после">
@@ -1398,9 +1356,6 @@ a[href^="#"]{-webkit-touch-callout:none}
 
   <section class="sec" id="about" style="padding-top:0">
     <div class="wrap">
-      <!-- «Обо мне» — рассказ прямо на фото (из буклета Миши, «Буклет.md», сжат): на компьютере портрет справа растворяется в тёмном фоне карточки,
-           текст слева; на телефоне фото сверху, текст на его нижней части. Ниже — «Почему меня выбирают» полосой.
-           Текст — из рассказа Миши о себе (27.10.2026), сокращён; цифры (лет, работ) — в плашках ниже, в тексте не повторяем -->
       <header class="sh sh-row" data-rv>
         <h2>Обо мне</h2><span class="sh-sl" aria-hidden="true"></span>
         <p class="sh-lede">Кто я и&nbsp;как работаю</p>
@@ -1411,10 +1366,6 @@ a[href^="#"]{-webkit-touch-callout:none}
           <p class="ab-text">Тату-мастер и&nbsp;художник, работаю в&nbsp;реализме (ч/б и&nbsp;цвет) — портреты, животные, перекрытия. Эскиз разрабатываю под каждого клиента — с&nbsp;учётом его пожеланий и&nbsp;анатомии. Беру уникальные проекты, пишу маслом и&nbsp;рисую портреты.</p>
         </div>
       </article>
-      <!-- «Почему меня выбирают» — четыре плитки, сначала цифры, «Эскиз» — последним (как на сайте Владимира, 28.10.2026).
-           12 лет — с сайта студии (так везде на сайте); 1000+ работ — пост Миши ВК (16.08.2026); 5 звёзд — все 14 отзывов ниже; эскиз — слова Миши (27.10.2026).
-           Убраны (Владимир 28.10.2026): «Перекрытия» — уже в шапке, в тексте выше и отдельным разделом; «Образование» — Миша просил убрать «художник по образованию»;
-           «Свой эскиз — рисую с нуля» — Миша просил «под каждого клиента», «с нуля» — неудачная формулировка -->
       <p class="eyebrow ab-why" data-rv>Почему меня выбирают</p>
       <ul class="ab-plates" data-rv-stagger>
         <li data-rv><b>12&nbsp;лет</b><span>в&nbsp;тату</span></li>
@@ -1422,9 +1373,6 @@ a[href^="#"]{-webkit-touch-callout:none}
         <li data-rv><b>5&nbsp;звёзд</b><span>на&nbsp;всех отзывах</span></li>
         <li data-rv><b>Эскиз</b><span>под ваши пожелания и&nbsp;анатомию</span></li>
       </ul>
-      <!-- «Мои картины» — картины Миши в рамах на стене (макеты Владимира из Gemini, 27.10.2026). Обрезка 3:4, картина ~76% ширины кадра — все одного размера.
-           Круглые и прямоугольные через одну. Открываются крупно, как работы; стрелки листают только картины.
-           Новая картина: img/art-NN.webp (768×1024) и img/thumbs/art-NN.webp (520×693), скопировать <figure>, поменять data-n, имя в src и srcset, название и описание -->
       <p class="eyebrow ab-why" data-rv>Мои картины</p>
       <div class="art" id="art" data-rv>
         <figure class="work" data-n="art-01" data-t="Бабушка" data-alt="Картина: бабушка в очках с репликой про наколки, круглый холст">
@@ -1457,14 +1405,6 @@ a[href^="#"]{-webkit-touch-callout:none}
         <h2>Цены</h2><span class="sh-sl" aria-hidden="true"></span>
         <p class="sh-lede">Оплата — за&nbsp;сеанс. Нажмите на&nbsp;фото, чтобы посмотреть мои работы за&nbsp;один, два и&nbsp;<span class="nw">4–5&nbsp;сеансов</span></p>
       </header>
-      <!-- сеанс — полный рабочий день, 40 000 ₽ (Миша, 27.10.2026: «по 50 никого не записывал»); консультация и эскиз бесплатно.
-           Примеры — фото Миши из Telegram (27.10.2026, «От Миши/Примеры по сеансам»): «эти за один сеанс» — 19, «два сеанса» и слон — 6, «рукав 4–5 сеансов» — 10.
-           Лежат в img/ex/ (s1-, s2-, rk-; 960×1280; квадратные — 1080×1080, широкий rk-02 — 1280×960, без полос), в «Работах» их нет.
-           data-ex — фото через пробел, первое — на карточке (превью img/thumbs/ex-…); data-ex-t — подпись в просмотре.
-           Не 3:4 — дописать форму (ширина / высота): квадрат «ex/s1-03:1», широкое 4:3 «ex/rk-02:1.333».
-           Новое фото: img/ex/s1-20.webp и дописать ex/s1-20 в data-ex, поправить число на плашке и в aria-label.
-           Рукав (28.10.2026, вечер): вместо 10 отдельных фото — 5: коллажи Миши rk-c1 (Мэрилин), rk-c2 (око, облака, часы), rk-c3 (замок),
-           архангел rk-04 — фото Владимира, «где нет стула» (второе фото архангела убрано — Миша), Иисус rk-02. На карточке по-прежнему Мэрилин (rk-01) -->
       <div class="why-grid" data-rv-stagger>
         <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="ex/s1-01 ex/s1-02 ex/s1-03:1 ex/s1-04 ex/s1-05 ex/s1-06 ex/s1-07:1 ex/s1-08:1 ex/s1-09:1 ex/s1-10 ex/s1-11 ex/s1-12 ex/s1-13 ex/s1-14 ex/s1-15 ex/s1-16 ex/s1-17 ex/s1-18 ex/s1-19" data-ex-t="1 сеанс — 40 000 ₽" aria-label="Примеры работ за один сеанс: 19 фото"><img src="img/thumbs/ex-s1-01.webp" srcset="img/thumbs/ex-s1-01.webp 520w, img/ex/s1-01.webp 960w" sizes="25vw" alt="" width="520" height="693" loading="lazy" decoding="async"><span class="pr-n" aria-hidden="true">19 работ</span></button><h3>1 сеанс<span class="pr">40&nbsp;000&nbsp;₽</span></h3><p>Предплечье, голень или плечо: один образ с&nbsp;фоном</p></div>
         <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="ex/s2-01 ex/s2-02:1 ex/s2-03 ex/s2-04:1 ex/s2-05 ex/s2-06" data-ex-t="2 сеанса — 80 000 ₽" aria-label="Примеры работ за два сеанса: 6 фото"><img src="img/thumbs/ex-s2-01.webp" srcset="img/thumbs/ex-s2-01.webp 520w, img/ex/s2-01.webp 960w" sizes="25vw" alt="" width="520" height="693" loading="lazy" decoding="async"><span class="pr-n" aria-hidden="true">6 работ</span></button><h3>2 сеанса<span class="pr">80&nbsp;000&nbsp;₽</span></h3><p>Крупная работа на&nbsp;плече или голени, перекрытие</p></div>
@@ -1480,9 +1420,6 @@ a[href^="#"]{-webkit-touch-callout:none}
         <h2>Отзывы</h2><span class="sh-sl" aria-hidden="true"></span>
         <p class="sh-lede">Что говорят клиенты после сеанса и&nbsp;заживления</p>
       </header>
-      <!-- настоящие отзывы — скриншоты от Миши (28.10.2026, «От Миши/Отзывы», 01–14); переписки с клиентами (15–16) не ставим — Владимир.
-           Слова клиентов, поправлены только пробелы, знаки и опечатки; цены из отзывов не показываем (старые, ниже 40 000), фамилии — тоже.
-           Первая плашка — итог. Видно: на компьютере итог + 5 (два ряда по три), на телефоне итог + 2; .rv-p и .rv-m — под кнопкой -->
       <div class="rv-grid" data-rv-stagger>
         <div class="rv-c rv-sum" data-rv><span class="rv-score">5,0</span><span class="stars" aria-label="5 из 5">★★★★★</span><span class="rv-cnt">14&nbsp;отзывов клиентов, все — на&nbsp;пять звёзд</span></div>
         <figure class="rv-c" data-rv><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>Провёл с&nbsp;Михаилом два дня в&nbsp;уютной студии. Не&nbsp;пытается переносить то, что можно сделать сегодня. Сидели по&nbsp;8–9 часов. За&nbsp;два дня сделал мне полноценное плечо с&nbsp;килограммом детализации, а&nbsp;в&nbsp;следующий день «исправляли» залитое предплечье. Всем доволен, в&nbsp;ближайшем будущем пойду добивать полноценный рукав. Своих денег качество стоит. Приходи к&nbsp;нему с&nbsp;идеей, и&nbsp;он&nbsp;предложит варианты</blockquote><figcaption><b>Роман</b><span>Чёрно-белая тату · июль 2026</span></figcaption></figure>
@@ -1510,8 +1447,6 @@ a[href^="#"]{-webkit-touch-callout:none}
         <h2>Вопросы</h2><span class="sh-sl" aria-hidden="true"></span>
         <p class="sh-lede">Коротко о&nbsp;том, что обычно спрашивают перед первым сеансом</p>
       </header>
-      <!-- 10 вопросов: на компьютере две колонки (5 и 5), на телефоне первая колонка и кнопка «Ещё».
-           Подготовка и уход — здесь же (отдельного раздела нет, чтобы не повторяться) -->
       <div class="qa" data-rv>
         <div class="qa-col">
           <details open class="on"><summary>Сколько стоит татуировка?</summary>
@@ -1521,7 +1456,7 @@ a[href^="#"]{-webkit-touch-callout:none}
           <details><summary>Больно ли это?</summary>
             <p>Зависит от места и вашей чувствительности. Предплечье и плечо обычно переносятся легче, чем рёбра, ключицы или кисти. Можно делать перерывы.</p></details>
           <details><summary>Как записаться?</summary>
-            <p>Оставьте <a href="#contact">заявку</a> — это займёт минуту. Или напишите мне в&nbsp;<a href="https://t.me/ru_misha" target="_blank" rel="noopener">Телеграм</a>, в&nbsp;<a href="https://wa.me/79221250080" target="_blank" rel="noopener">WhatsApp</a> или позвоните: <a href="tel:+79221250080">+7&nbsp;922&nbsp;125-00-80</a>. Пришлите идею, фото места на&nbsp;теле и&nbsp;пару референсов — предложу, как лучше это сделать.</p></details>
+            <p>Оставьте <a href="#contact">заявку</a> — это займёт минуту. Или напишите мне в&nbsp;<a href="https://t.me/ru_misha" target="_blank" rel="noopener">Телеграм</a>, в&nbsp;<a href="https://wa.me/79221250080" target="_blank" rel="noopener">WhatsApp</a> или позвоните: <a href="tel:+79221250080">+7&nbsp;922&nbsp;125-00-80</a>. Пришлите идею, фото места на&nbsp;теле и&nbsp;пару референсов — предложу, как лучше это сделать. Работаю только с&nbsp;18&nbsp;лет.</p></details>
           <details><summary>Можно перекрыть старую татуировку?</summary>
             <p>Да. Пришлите фото старой работы — скажу, что можно сделать.</p></details>
         </div>
@@ -1530,7 +1465,6 @@ a[href^="#"]{-webkit-touch-callout:none}
             <p>В Москве, в&nbsp;тату-студии у&nbsp;метро Серпуховская. Точный адрес пришлю, когда договоримся о&nbsp;дате.</p></details>
           <details class="qa-more"><summary>Как подготовиться к&nbsp;сеансу?</summary>
             <p>Выспитесь и&nbsp;плотно поешьте за&nbsp;час-два до&nbsp;сеанса, возьмите с&nbsp;собой воду и&nbsp;перекус. За&nbsp;сутки — без алкоголя: он разжижает кровь, и&nbsp;краска ложится хуже. Наденьте удобную одежду, которая открывает место татуировки.</p></details>
-          <!-- памятка Миши — папка uhod (копия общей памятки: его имя, значок-пантера, «Написать» — Телеграм, WhatsApp, звонок) -->
           <details class="qa-more"><summary>Как ухаживать за&nbsp;татуировкой?</summary>
             <p>Заживает около двух недель. Не&nbsp;снимайте плёнку раньше срока, мойте тату тёплой водой и&nbsp;мажьте кремом, без бани, бассейна и&nbsp;солнца. Всё по&nbsp;дням — в&nbsp;<a href="uhod/" target="_blank" rel="noopener">памятке по&nbsp;уходу</a>.</p></details>
           <details class="qa-more"><summary>Можно принести свой эскиз или референс?</summary>
@@ -1549,8 +1483,6 @@ a[href^="#"]{-webkit-touch-callout:none}
 <div class="finale">
   <section class="sec" id="contact" style="padding-top:0">
     <div class="wrap">
-      <!-- запись — анкета по одному вопросу (окно на компьютере, шторка на телефоне); её открывает любая кнопка «Оставить заявку» (было «Записаться» — Миша, 27.10.2026).
-           Справа — Телеграм и WhatsApp в один ряд, телефон под ними -->
       <div class="q-card" data-rv>
         <div class="q-main">
           <h2 class="q-h">Оставьте заявку за&nbsp;минуту</h2>
@@ -1571,7 +1503,6 @@ a[href^="#"]{-webkit-touch-callout:none}
 
 <footer class="foot dcard dark grain">
   <div class="wrap">
-    <!-- подвал: мои контакты и одна строка внизу; разделы есть в меню, адрес сеансов добавим позже -->
     <div class="foot-grid" data-rv>
       <div class="ft-col"><h3>Мои контакты</h3><div class="ft-links">
         <a href="https://t.me/ru_misha" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.910.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Телеграм</a>
@@ -1589,13 +1520,11 @@ a[href^="#"]{-webkit-touch-callout:none}
 </div>
 </div>
 
-<!-- телефон: запись под рукой — появляется после главного экрана, прячется у формы записи -->
 <div class="dock" id="dock" inert>
   <a class="dock-b dock-main" href="#contact">Оставить заявку</a>
   <a class="dock-b" href="https://t.me/ru_misha" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.5 2.5-11 11"/><path d="m21.5 2.5-7 19-4-8-8-4z"/></svg>Задать вопрос</a>
 </div>
 
-<!-- анкета записи: шаги рисует скрипт (раздел «quiz») -->
 <div class="qz-dim" id="qz-dim" hidden></div>
 <div class="qz" id="qz" hidden role="dialog" aria-modal="true" aria-labelledby="qz-h">
   <div class="qz-grab" aria-hidden="true"></div>
@@ -2297,7 +2226,8 @@ a[href^="#"]{-webkit-touch-callout:none}
         if (ans.when) rows.push(["Когда", ans.when]); rows.push(["Имя", ans.name]); if (ans.phone) rows.push(["Телефон", ans.phone]);
         return '<h2 id="qz-h">Всё верно?</h2><dl class="qz-sum">' + rows.map(function(r){ return "<div><dt>" + r[0] + "</dt><dd>" + esc(r[1]) + "</dd></div>"; }).join("") + "</dl>" +
           '<div class="qz-act"><a class="qz-go" id="qz-send" href="' + TG + '" target="_blank" rel="noopener">' + SEND_IC + 'Отправить в\u00a0Телеграм</a></div>' +
-          '<p class="qz-note"><span class="lamp" aria-hidden="true"></span>заявку читаю сам</p>';
+          '<p class="qz-note"><span class="lamp" aria-hidden="true"></span>заявку читаю сам</p>' +
+          '<p class="qz-priv">Сайт не\u00a0хранит ваши данные\u00a0— заявка уходит из\u00a0вашего Телеграма</p>';
       }
       if (s === "done" && files.length){
         var canShare = navigator.canShare && navigator.canShare({ files: files.map(function(f){ return f.file; }) });
